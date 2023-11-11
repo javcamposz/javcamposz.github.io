@@ -53,3 +53,14 @@ footer {
     height: auto;
     /* Additional styling rules for the image can go here */
 }
+
+.construction-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.construction-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
