@@ -20,7 +20,7 @@ author: Francisco Javier Campos Zabala
 ###############################################
 
 navbar-links:
-  About Me: "author.html"
+  About Me: "author.md"
   Buy the Book: "https://link.springer.com/book/10.1007/978-1-4842-9669-1"
   Book Resources:
     - Bonus Chapter - Putting It All Together: "UnderCons.html"
@@ -28,7 +28,7 @@ navbar-links:
     - References and Resources: "references.html"
   Newsletter: "blog.html"
   AI MythBusters Podcast: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
-  Article on Implementing Large Language Models: "Javier Campos Article.pdf"
+  Article on Implementing Large Language Models: "/assets/Javier Campos Article.pdf"
 
 ################
 # --- Logo --- #
@@ -43,7 +43,7 @@ navbar-links:
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
-title-img: "/assets/img/book-cover.png"
+title-img: "/assets/img/book-cover.jpg"
 
 
 #####################################
@@ -273,7 +273,7 @@ date_format: "%B %-d, %Y"
 #################################################################################
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "London"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
