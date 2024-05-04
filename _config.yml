@@ -10,21 +10,25 @@
 ############################
 
 # Name of website
-title: My website
+title: Javier Campos's Personal Site
 
 # Your name to show in the footer
-author: Some Person
+author: Francisco Javier Campos Zabala
 
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  About Me: "author.html"
+  Buy the Book: "https://link.springer.com/book/10.1007/978-1-4842-9669-1"
+  Book Resources:
+    - Bonus Chapter - Putting It All Together: "UnderCons.html"
+    - Code from the Book: "UnderCons.html"
+    - References and Resources: "references.html"
+  Newsletter: "blog.html"
+  AI MythBusters Podcast: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
+  Article on Implementing Large Language Models: "Javier Campos Article.pdf"
 
 ################
 # --- Logo --- #
@@ -50,17 +54,15 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
+  email: "javcamposz@hotmail.com"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+  linkedin: camposjavier
+  facebook: javcamposz
+  github: javcamposz
+  twitter: javcamposz
+  youtube: "www.youtube.com/@JavierCamposMythBusterAI"
 #  medium: yourname
 #  reddit: yourname
-#  linkedin: daattali
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
