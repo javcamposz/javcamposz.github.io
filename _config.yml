@@ -20,13 +20,13 @@ author: Francisco Javier Campos Zabala
 ###############################################
 
 navbar-links:
-  About Me: "author.md"
+  About Me: "/author"
   Buy the Book: "https://link.springer.com/book/10.1007/978-1-4842-9669-1"
   Book Resources:
-    - Bonus Chapter - Putting It All Together: "UnderCons.html"
-    - Code from the Book: "UnderCons.html"
-    - References and Resources: "references.html"
-  Newsletter: "blog.html"
+    - Bonus Chapter - Putting It All Together: "/under-construction"
+    - Code from the Book: "/under-construction"
+    - References and Resources: "/references"
+  Newsletter: "/under-construction"
   AI MythBusters Podcast: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
   Article on Implementing Large Language Models: "/assets/Javier Campos Article.pdf"
 
@@ -297,6 +297,9 @@ defaults:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
+
+include:
+  - _pages
 
 # Exclude these files from production site
 exclude:
