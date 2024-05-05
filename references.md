@@ -24,4 +24,3 @@ permalink: /references/
 - [OpenAI](https://openai.com/blog){:target="_blank"}
 - [IBM Watson](https://www.ibm.com/watson){:target="_blank"}
 
-*© 2024 by Francisco Javier Campos Zabala*

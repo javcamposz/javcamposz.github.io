@@ -12,6 +12,8 @@ author: Francisco Javier Campos Zabala
 
 Welcome to the inaugural edition of our **AI Horizons** newsletter, where we delve into the transformative power of Artificial Intelligence. As your guide, I am thrilled to share insights from my book, "How to Grow Your Business with AI," and explore practical applications of AI using a first principles approach.
 
+<button class="ml-onclick-form" onclick="ml('show', 'SSSyfc', true)">Sign up now!</button>
+
 ## Exclusive Content: Understanding AI from the Ground Up
 
 Today, we'll uncover the basics of **machine learning**—the foundation upon which AI is built. Machine learning enables computers to learn from data, enhancing their capabilities without explicit programming. This transformative technology powers applications from natural language processing to autonomous driving.

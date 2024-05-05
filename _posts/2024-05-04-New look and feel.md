@@ -2,7 +2,7 @@
 layout: post
 title: New Site, New Podcast, New Newsletter!
 subtitle: Exciting updates to explore
-gh-repo: javcamposz/NewWebsite
+gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 tags: [AI, Business, Technology]
 comments: true
