@@ -10,9 +10,19 @@ mathjax: true
 author: Francisco Javier Campos Zabala
 ---
 
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '934676');
+</script>
+<!-- End MailerLite Universal -->
+
 Welcome to the inaugural edition of our **AI Horizons** newsletter, where we delve into the transformative power of Artificial Intelligence. As your guide, I am thrilled to share insights from my book, "How to Grow Your Business with AI," and explore practical applications of AI using a first principles approach.
 
-<button class="ml-onclick-form" onclick="ml('show', 'SSSyfc', true)">Sign up now!</button>
+<a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'SSSyfc', true)">Sign up now!</a>
 
 ## Exclusive Content: Understanding AI from the Ground Up
 
