@@ -1,18 +1,16 @@
----
-layout: home
-title: AI Horizons
-subtitle: Javier Campos'personal site
----
-<div class="consent-form" style="position: fixed; bottom: 20px; background-color: white; color: black; padding: 10px; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2); left: 20px; z-index: 1000;">
+<div class="consent_form">
     <h3>We use cookies to improve your experience.</h3>
     <p>By continuing to browse, you consent to the use of cookies in accordance with our <a href="/privacy-policy">Privacy Policy</a>.</p>
-    <button id="accept-cookies" style="cursor: pointer;">Accept</button>
+    <button id="accept-cookies">Accept</button>
   </div>
   
   <script>
     const acceptButton = document.getElementById('accept-cookies');
     acceptButton.addEventListener('click', () => {
+      // Set a cookie to indicate consent (replace 'your_cookie_name' with your desired name)
       document.cookie = 'your_cookie_name=accepted; expires=Fri, 31 Dec 2099 23:59:59 GMT; path=/';
+      // Optionally, hide the consent form after acceptance
       document.querySelector('.consent-form').style.display = 'none';
     });
   </script>
+    

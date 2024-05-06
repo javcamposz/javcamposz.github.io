@@ -4,6 +4,8 @@ layout: base
 
 <div class="intro-header"></div>
 
+
+
 <!-- MailerLite Universal -->
 <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -24,6 +26,8 @@ layout: base
   {% endif %}
 
   {{ content }}
+
+  {% include consent_form.html %}
 
   {% if page.after-content %}
     <div class="after-content">
