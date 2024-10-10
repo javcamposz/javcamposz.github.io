@@ -3,7 +3,11 @@ layout: post
 title: "LLM Deep Dive Series (1 of 7): The Reality Behind Large Language Models (LLMs): A Tamed Monster?"
 date: 2024-10-10
 categories: AI LLM
-author: Your Name
+author: Francisco Javier Campos Zabala
+gh-repo: javcamposz/
+gh-badge: [star, fork, follow]
+tags: [llms, artificial intelligence, future]
+comments: true
 ---
 
 ## 🚨 LLM Deep Dive Series (1 of 7): The Reality Behind Large Language Models (LLMs): A Tamed Monster? 🧠🤖
