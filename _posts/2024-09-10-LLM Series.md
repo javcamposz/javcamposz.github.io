@@ -6,8 +6,6 @@ categories: AI LLM
 author: Your Name
 ---
 
-![LLM Monster Metaphor](LLM_Monster.jpg)
-
 ## 🚨 LLM Deep Dive Series (1 of 7): The Reality Behind Large Language Models (LLMs): A Tamed Monster? 🧠🤖
 
 This is the first in a 7-part series on **Large Language Models (LLMs)**. Over the next few posts, I’ll blend theoretical insights with practical advice to help you understand how these models work at their core and how you can leverage them in business and technology.
@@ -60,6 +58,8 @@ This post marks the beginning of a deep dive into LLMs. In the coming posts, I w
 Stay tuned as we explore these topics in both a theoretical and hands-on practical approach.
 
 P.S. Don’t forget to check out my book, *Grow Your Business with AI*, for a deeper dive into leveraging AI for business success! 📚 [Check it out here](https://bit.ly/4b31PEG).
+
+![LLM Monster Metaphor](/LLM_monster.jpg)
 
 ---
 
