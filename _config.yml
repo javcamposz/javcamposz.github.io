@@ -2,6 +2,11 @@
 title: Javier Campos
 author: Francisco Javier Campos Zabala
 
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+
 # --- Navigation ---
 navbar-links:
   About Me/Contact: "/author/"
@@ -14,7 +19,7 @@ navbar-links:
   Podcasts:
     - Business Growth with AI: "/How to grow your business with AI.wav"
     - AI MythBusters: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
-  Blog: /
+  Blog: "/""
   Newsletter: /Firstnewsletter/
 
 
@@ -42,6 +47,11 @@ social-network-links:
   youtube: "@JavierCamposMythBusterAI"
   rss: true
 
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
+
 # --- General options ---
 url: "https://javcamposz.github.io/"
 baseurl: ""
@@ -66,6 +76,15 @@ feed_show_tags: true
 
 # Add a search button to the navbar
 post_search: true
+
+link-col: "#404040"
+
+mobile-theme-col: "#0085A1"
+
+site-css: "/assets/css/custom_styles.css"
+site-js: "/assets/js/custom_script.js"
+
+edit_page_button: true
 
 # --- Colours / background image ---
 # Personalize the colours in your website. Colour values can be any valid CSS colour
@@ -132,9 +151,7 @@ exclude:
   - screenshot.png
   - docs/
 
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
