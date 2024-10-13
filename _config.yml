@@ -3,7 +3,6 @@ title: Javier Campos
 author: Francisco Javier Campos Zabala
 
 plugins:
-  - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
 
@@ -78,7 +77,6 @@ feed_show_tags: true
 post_search: true
 
 link-col: "#404040"
-
 mobile-theme-col: "#0085A1"
 
 site-css: "/assets/css/custom_styles.css"
@@ -93,7 +91,7 @@ navbar-text-col: "#404040"
 navbar-border-col: "#DDDDDD"
 page-col: "#FFFFFF"
 text-col: "#404040"
-link-col: "#008AFF"
+#link-col: "#008AFF"
 hover-col: "#0085A1"
 footer-col: "#EAEAEA"
 footer-text-col: "#777777"
