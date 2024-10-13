@@ -1,110 +1,83 @@
-# Improved configuration for Javier Campos's Personal Site
+# Configuration for Javier Campos's Personal Site using Beautiful Jekyll's Dirt theme
 
 # --- Required options ---
 title: "Javier Campos | AI & Business Growth Expert"
-author: "Francisco Javier Campos Zabala"
+author: Francisco Javier Campos Zabala
 
 # --- Navigation ---
 navbar-links:
-  About: "about/"
+  About Me: "author/"
   Book:
     - Buy the Book: "https://www.dpbolvw.net/click-101158208-12898971?url=https%3A%2F%2Flink.springer.com%2Fbook%2F10.1007%2F978-1-4842-9669-1"
-    - Summary: "summary-book/"
-    - Code & Resources: "resources/"
-  Podcast:
-    - Business Growth with AI: "podcast/business-growth-ai/"
+    - Summary Book: "summary-book/"
+    - Code & Resources: "references/"
+  Podcasts:
+    - Business Growth with AI: "How to grow your business with AI.wav"
     - AI MythBusters: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
-  Articles:
-    - Implementing LLMs: "articles/implementing-llms/"
-    - All Articles: "articles/"
-  Newsletter: "newsletter/"
-  Contact: "contact/"
+  Newsletter: "Firstnewsletter/"
+  Articles: "Javier Campos Article.pdf"
 
-# --- Logo & Branding ---
-title-img: "/assets/img/javier-campos-logo.png"
-favicon: "/assets/img/favicon.ico"
+# --- Logo ---
+title-img: "/assets/img/book-cover.jpg"
 
 # --- Footer social media links ---
 social-network-links:
   email: "javcamposz@hotmail.com"
   linkedin: camposjavier
-  twitter: javcamposz
-  github: javcamposz
-  youtube: "@JavierCamposMythBusterAI"
   facebook: javcamposz
+  github: javcamposz
+  twitter: javcamposz
+  youtube: "www.youtube.com/@JavierCamposMythBusterAI"
+  rss: true
 
-# --- Sharing options ---
-share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
-
-# --- Website Settings ---
+# --- General options ---
 url-pretty: "javiercampos.ai"
-google_analytics: "G-H83V6SRTMF"
 
-# --- Theme Colors ---
-navbar-col: "#FFFFFF"
-navbar-text-col: "#404040"
-navbar-border-col: "#EAEAEA"
-page-col: "#FFFFFF"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#F5F5F5"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
+# --- Theme selection ---
+# Use the Dirt theme
+theme: dirt
 
-# --- Fonts ---
-# Add Google Fonts
-google_fonts:
-  - "Roboto:300,400,700"
-  - "Open Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+# --- Web Analytics Section ---
+gtag: "G-H83V6SRTMF"
 
-# Use Google Fonts
-font-family: "Roboto, 'Open Sans', sans-serif"
 
-# --- Additional Customization ---
-# Add custom CSS
-extra_css:
-  - "/assets/css/custom-styles.css"
+# --- Comments ---
+# You can enable Disqus comments by providing your shortname here:
+# disqus: ""
 
-# Enable dark mode toggle
-dark_mode: true
+# --- Misc ---
+# Fill in your Cloudflare Analytics beacon token to track your website using Cloudflare Analytics
+#cloudflare_analytics: ""
 
-# Add a cookie consent banner
-cookie_consent:
-  enabled: true
-  message: "This website uses cookies to ensure you get the best experience."
-  dismiss: "Got it!"
-  link: "Learn more"
+# --- Don't need to touch anything below here (unless you know what you're doing) ---
 
-# Enable a back-to-top button
-back_to_top: true
+# Output options (more information on Jekyll's site)
+timezone: "London"
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate: 5
 
-# Add reading time estimate to posts
-reading_time: true
+kramdown:
+  input: GFM
 
-# Enable table of contents for posts
-toc:
-  enabled: true
-  h_min: 2
-  h_max: 3
+# Default YAML values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "page"
 
-# --- SEO Optimization ---
-description: "Javier Campos - Expert in AI and business growth strategies. Author, speaker, and consultant helping businesses leverage AI for success."
-keywords: "AI, artificial intelligence, business growth, digital transformation, machine learning, consulting"
-
-# --- Performance Optimization ---
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  profile: false
-  blanklines: false
-  ignore:
-    envs: []
-
-# Exclude unnecessary files from production site
+# Exclude these files from production site
 exclude:
   - CHANGELOG.md
   - CNAME
@@ -114,31 +87,10 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
-  - vendor/
 
-# --- Plugin Settings ---
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
 
-# Pagination settings
-paginate: 6
-paginate_path: "/page:num/"
-
-# RSS Feed
-feed:
-  path: feed.xml
-
-# Sitemap settings
-sitemap:
-  filename: "/sitemap.xml"
-  exclude:
-    - "/atom.xml"
-    - "/feed.xml"
-    - "/feed/index.xml"
-  include_posts:
-    - "/index.html"
-  change_frequency_name: "change_frequency"
-  priority_name: "priority"
+# Beautiful Jekyll / Dean Attali
+# 2fc73a3a967e97599c9763d05e564189
