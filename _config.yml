@@ -48,7 +48,12 @@ baseurl: ""
 
 # --- Add a large banner image to the top of the page ---
 # Comment this out if you don't want a banner image
-page-img: "/assets/img/banner1.jpeg"
+# page-img: "/assets/img/banner1.jpeg"
+
+page-img:
+  - "/assets/img/banner1.jpeg"
+  - "/assets/img/banner2.jpeg"
+  - "/assets/img/banner3.jpeg"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
