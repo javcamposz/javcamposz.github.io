@@ -1,8 +1,44 @@
 ---
 layout: home
 title: AI Horizons
-subtitle: Javier Campos'personal site
+subtitle: AI & Business Growth Expert
 ---
+
+<!-- Your intro text here -->
+<p>Welcome to my website! I'm Javier Campos, an expert in AI and business growth strategies.</p>
+
+<!-- Recent Posts -->
+<h2>Recent Posts</h2>
+{% for post in site.posts limit:5 %}
+  <article class="post-preview">
+    <a href="{{ post.url | relative_url }}">
+      <h3 class="post-title">{{ post.title }}</h3>
+      {% if post.subtitle %}
+        <h4 class="post-subtitle">{{ post.subtitle }}</h4>
+      {% endif %}
+    </a>
+    <p class="post-meta">Posted on {{ post.date | date: site.date_format }}</p>
+    <div class="post-entry-container">
+      {% if post.thumbnail-img %}
+      <div class="post-image">
+        <a href="{{ post.url | relative_url }}">
+          <img src="{{ post.thumbnail-img | relative_url }}">
+        </a>
+      </div>
+      {% endif %}
+      <div class="post-entry">
+        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
+        <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
+      </div>
+    </div>
+    {% if post.tags.size > 0 %}
+    <div class="blog-tags">
+      Tags: {{ post.tags | join: ", " }}
+    </div>
+    {% endif %}
+  </article>
+{% endfor %}
+
 <div class="consent-form" style="position: fixed; bottom: 20px; background-color: white; color: black; padding: 10px; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2); left: 20px; z-index: 1000;">
     <h3>We use cookies to improve your experience.</h3>
     <p>By continuing to browse, you consent to the use of cookies in accordance with our <a href="/privacy-policy">Privacy Policy</a>.</p>

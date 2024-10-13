@@ -1,24 +1,36 @@
-# Configuration for Javier Campos's Personal Site
-
 # --- Required options ---
-title: "Javier Campos | AI & Business Growth Expert"
+title: Javier Campos
 author: Francisco Javier Campos Zabala
 
 # --- Navigation ---
 navbar-links:
-  About Me/Contact: "author/"
-  Book:
+  About Me/Contact: "/author/"
+  Books: 
     - Buy the Book: "https://www.dpbolvw.net/click-101158208-12898971?url=https%3A%2F%2Flink.springer.com%2Fbook%2F10.1007%2F978-1-4842-9669-1"
-    - Summary Book: "summary-book/"
-    - Code & Resources: "references/"
+    - Summary Book: "/summary-book/"  
+    - Code from the Book: "/under-construction/"
+    - References and Resources: "/references/"
+    - Article on Implementing Large Language Models: "/Javier Campos Article.pdf"
   Podcasts:
-    - Business Growth with AI: "How to grow your business with AI.wav"
+    - Business Growth with AI: "/How to grow your business with AI.wav"
     - AI MythBusters: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
-  Newsletter: "Firstnewsletter/"
-  Articles: "Javier Campos Article.pdf"
+  Blog: "blog"
+  Newsletter: /Firstnewsletter/"
+
 
 # --- Logo ---
-title-img: "/assets/img/book-cover.jpg"
+# Image in navbar, can be:
+# - A string like 'amc' that refers to a preset
+# - A url to an image
+# - Commented out to not have an image
+avatar: "/assets/img/JavierCampos.jpg"
+
+# By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
+round-avatar: true
+
+# If you want to have an image logo in the top-left corner instead of having the title of the website,
+# then specify the following parameter
+#title-img: /path/to/image
 
 # --- Footer social media links ---
 social-network-links:
@@ -27,46 +39,63 @@ social-network-links:
   facebook: javcamposz
   github: javcamposz
   twitter: javcamposz
-  youtube: "www.youtube.com/@JavierCamposMythBusterAI"
+  youtube: "@JavierCamposMythBusterAI"
   rss: true
 
 # --- General options ---
-url-pretty: "javiercampos.ai"
+url: "https://javiercampos.ai"
+baseurl: ""
 
-# --- Colour / background options ---
-navbar-col: "#F5F5F5"
+# --- Add a large banner image to the top of the page ---
+# Comment this out if you don't want a banner image
+page-img: "/assets/img/banner-image.jpg"
+
+# Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
+excerpt_length: 50
+
+# Whether or not to show an excerpt for every blog post in the feed page
+feed_show_excerpt: true
+
+# Whether or not to show a list of tags below each post preview in the feed page
+feed_show_tags: true
+
+# Add a search button to the navbar
+post_search: true
+
+# --- Colours / background image ---
+# Personalize the colours in your website. Colour values can be any valid CSS colour
+navbar-col: "#EAEAEA"
 navbar-text-col: "#404040"
 navbar-border-col: "#DDDDDD"
 page-col: "#FFFFFF"
+text-col: "#404040"
 link-col: "#008AFF"
 hover-col: "#0085A1"
-footer-col: "#F5F5F5"
+footer-col: "#EAEAEA"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
-
-# --- Thumbnail size options ---
-thumbnail-size: 250
 
 # --- Analytics ---
 gtag: "G-H83V6SRTMF"
 
-# Don't include a page date
-page-date: false
+# --- Comments ---
+# To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
+#disqus: ""
 
-# Don't show the "Next post" and "Previous post" links
-post-navigation: false
+# --- Misc ---
+# Character used to separate site title and description in HTML document title
+# and RSS feed title
+title-separator: "-"
 
-# Enable pagination
-paginate: 5
-
-# Enable comments (via Disqus)
-# disqus: "your-disqus-shortname"
+# Ruby Date Format to show dates of posts
+date_format: "%B %-d, %Y"
 
 # Output options (more information on Jekyll's site)
 timezone: "London"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
+paginate: 5
 
 kramdown:
   input: GFM
