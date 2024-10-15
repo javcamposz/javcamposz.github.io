@@ -2,6 +2,7 @@
 layout: post
 title: New Site, New Podcast, New Newsletter!
 subtitle: Exciting updates to explore
+date: 2024-05-04
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 tags: [AI, Business, Technology]

@@ -2,6 +2,7 @@
 layout: post
 title: Architectures for AI Agents - Exploring the Building Blocks of Intelligent Systems
 subtitle: Understanding the structures and designs behind AI agents
+date: 2024-06-15
 gh-repo: javcamposz
 gh-badge: [star, fork, follow]
 tags: [AI, architecture, agents]

@@ -2,6 +2,7 @@
 layout: post
 title- Demystifying the Future: Top Trends in Large Language Models (LLMs)
 author: Francisco Javier Campos Zabala
+date: 2024-05-03
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 tags: [llms, artificial intelligence, future]
