@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "LLM Deep Dive Series (1 of 7): The Reality Behind Large Language Models (LLMs): A Tamed Monster?"
 date: 2024-10-10
 thumbnail-img: /LLM_monster.jpg

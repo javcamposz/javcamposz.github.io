@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI in Financial Services Series (3 of 7): Personalized Banking and Customer Experience  "
 date: 2024-10-22
 author: Francisco Javier Campos Zabala

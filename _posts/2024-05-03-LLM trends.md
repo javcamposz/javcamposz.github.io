@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title- Demystifying the Future: Top Trends in Large Language Models (LLMs)
 author: Francisco Javier Campos Zabala
 date: 2024-05-03

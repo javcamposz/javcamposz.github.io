@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: Under Construction
 permalink: /under-construction/
 ---

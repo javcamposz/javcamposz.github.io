@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Prompt Power: How LLM Usage Is Shaping the Future of AI Agents"
 date: 2025-09-19
 author: Francisco Javier Campos Zabala

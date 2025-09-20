@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "LLM Deep Dive Series (7 of 7): Unmasking the Monster: A Deep Dive into Large Language Models"
 date: 2024-10-16
 author: [Your Name]

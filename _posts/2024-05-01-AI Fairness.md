@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Fairness in AI - Navigating the Challenges of Contextual Ethics
 subtitle: Understanding the complexities of fairness in AI systems
 date: 2024-05-01

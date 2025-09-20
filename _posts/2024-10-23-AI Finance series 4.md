@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI in Financial Services Series (4 of 7):Trading and Investment - Algorithmic Strategies Unveiled"
 date: 2024-10-23
 author: Francisco Javier Campos Zabala

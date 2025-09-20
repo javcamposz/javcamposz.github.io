@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI Revolution in Telcos (1 of 7): Generative AI in Telcos: Real Success Stories & Implementation Guide"
 date: 2024-10-30
 author: Francisco Javier Campos Zabala

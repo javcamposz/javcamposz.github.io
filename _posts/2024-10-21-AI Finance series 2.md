@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI in Financial Services Series (2 of 7): Risk Management and Fraud Detection—AI as the New Sentinel"
 date: 2024-10-21
 author: Francisco Javier Campos Zabala

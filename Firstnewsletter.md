@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Unveiling the Power of AI - A First Look at How It Can Transform Your World
 subtitle: Embark on a journey to unlock AI's potential in your life and business!
 gh-repo: javcamposz

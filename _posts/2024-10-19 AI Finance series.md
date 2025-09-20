@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI in Financial Services Series (Intro): Transforming the Future of Finance"
 date: 2024-10-19
 author: Francisco Javier Campos Zabala

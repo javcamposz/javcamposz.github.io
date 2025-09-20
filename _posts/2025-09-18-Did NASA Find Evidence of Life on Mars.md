@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Did NASA Just Find Evidence of Life on Mars... and a Warning for Humanity?"
 date: 2025-09-18
 author: Francisco Javier Campos Zabala

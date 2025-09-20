@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI in Financial Services Series (6 of 7): Implementing AI Solutions - From Vision to Reality"
 date: 2024-10-25
 author: Francisco Javier Campos Zabala

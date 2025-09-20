@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI in Financial Services Series (5 of 7): Regulatory Compliance and Ethical Considerations - Navigating the AI Governance Maze "
 date: 2024-10-24
 author: Francisco Javier Campos Zabala

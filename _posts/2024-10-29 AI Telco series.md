@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI Revolution in Telcos: A 7-Part Deep Dive"
 date: 2024-10-29
 author: Francisco Javier Campos Zabala

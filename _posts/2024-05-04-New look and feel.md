@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: New Site, New Podcast, New Newsletter!
 subtitle: Exciting updates to explore
 date: 2024-05-04

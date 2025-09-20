@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Can We Trust a 'Well-Behaved' AI? The Challenge of Deceptive Alignment"
 date: 2025-09-20
 author: Francisco Javier Campos Zabala

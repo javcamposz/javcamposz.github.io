@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "AI Horizons: A Briefing Document"
 subtitle: "Key themes and insights from Javier Campos's works"
 ---

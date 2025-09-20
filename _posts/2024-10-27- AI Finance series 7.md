@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "AI in Financial Services Series (7 of 7): The Future of AI in Financial Services: Beyond the Hype and Into Reality"
 date: 2024-10-27
 author: Francisco Javier Campos Zabala
