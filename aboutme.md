@@ -1,16 +1,34 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About Me
+subtitle: AI Expert & Technology Leader
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+## Francisco Javier Campos Zabala
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+I'm a technology leader passionate about AI innovation and responsible AI development. With extensive experience in delivering tech transformations across marketing, telco, and financial services, I focus on scaling high-performing teams in data science and AI with a product-centered mindset.
 
-What else do you need?
+### My Expertise
+- **AI & Machine Learning**: Specializing in ethical AI deployment and AI safety frameworks
+- **Business Growth**: Leveraging AI for strategic business transformation
+- **Enterprise AI Scaling**: Building robust AI systems for large corporations
+- **AI Ethics & Safety**: Advocating for responsible AI development and deployment
 
-### My story
+### Professional Background
+I've worked with leading organizations like Accenture and WPP, delivering innovative solutions that drive business value through technology. From 2020-2022, I served on the Bank of England's exclusive panel of industry experts to craft guidelines for accelerating AI use in financial services.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+### Speaking & Thought Leadership
+I'm a regular speaker at major tech events including London Tech Week, BBC, NASA, IDC, and Gartner IT Symposium. My focus areas include:
+- Ethical AI implementation
+- AI safety and governance
+- Strategic AI adoption in enterprises
+- The future of AI in business
+
+### Connect With Me
+- [LinkedIn Profile](https://www.linkedin.com/in/camposjavier/){:target="_blank"}
+- [Key Videos and Talks](#)
+
+### Recent & Upcoming Engagements
+- AI World Congress 2024 (London, UK)
+- AI & Big Data Expo (London)
+- Various speaking engagements on AI ethics and safety
