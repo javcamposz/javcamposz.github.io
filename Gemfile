@@ -10,6 +10,7 @@ gem "jekyll-feed"
 gem "jekyll-include-cache"
 gem "jekyll-remote-theme"
 gem "jekyll-sass-converter", ">= 1.5", "< 3.0"
+gem "kramdown-parser-gfm"
 gem "webrick", "~> 1.8"
 
 group :development do
