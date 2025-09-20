@@ -9,8 +9,7 @@ gem "jekyll-gist"
 gem "jekyll-feed"
 gem "jekyll-include-cache"
 gem "jekyll-remote-theme"
-gem "jekyll-sass-converter", "~> 2.2"
-gem "sassc"
+gem "jekyll-sass-converter", ">= 1.5", "< 3.0"
 gem "webrick", "~> 1.8"
 
 group :development do
