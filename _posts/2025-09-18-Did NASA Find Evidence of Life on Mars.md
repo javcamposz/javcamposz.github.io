@@ -5,7 +5,7 @@ date: 2025-09-18
 author: Francisco Javier Campos Zabala
 categories: [Science, Space, Artificial Intelligence, Technology]
 tags: [NASA, Mars, Life, Fermi Paradox, AI, Space Exploration]
-thumbnail-img: /assets/img/JavierCampos.jpg
+thumbnail-img: /assets/img/mars.jpeg
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 comments: true

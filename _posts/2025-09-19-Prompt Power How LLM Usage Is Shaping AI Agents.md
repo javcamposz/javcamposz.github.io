@@ -5,7 +5,7 @@ date: 2025-09-19
 author: Francisco Javier Campos Zabala
 categories: [Artificial Intelligence, AI Agents, Technology]
 tags: [AI, LLM, Prompt Data, Meta, OpenAI, Anthropic, Software Agents]
-thumbnail-img: /assets/img/JavierCampos.jpg
+thumbnail-img: /assets/img/llm_prompt.png
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 comments: true
