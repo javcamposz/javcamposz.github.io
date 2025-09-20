@@ -11,7 +11,6 @@ gh-badge: [star, fork, follow]
 comments: true
 ---
 
-# Prompt Power: How LLM Usage Is Shaping the Future of AI Agents
 
 You might be wondering why Mark Zuckerberg and Meta have recently spent hundreds of millions hiring the very best AI talent in the industry. The reason? He wants Meta to own—and power—the top large language model (LLM) so that it becomes the default tool people use, and in turn, Meta can capture uniquely rich data about human behavior.
 

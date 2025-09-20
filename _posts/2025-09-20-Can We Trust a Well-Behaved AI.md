@@ -11,7 +11,6 @@ gh-badge: [star, fork, follow]
 comments: true
 ---
 
-# Can We Trust a 'Well-Behaved' AI? The Challenge of Deceptive Alignment
 
 As someone very involved in the field of AI safety, I'm constantly grappling with what I consider one of the most critical and difficult challenges of our time: ensuring that increasingly intelligent systems remain aligned with human values. The task is monumental. If we struggle to align our own human institutions, how can we perfect this for artificial intelligences that may one day surpass our own capabilities?
 

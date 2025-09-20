@@ -11,7 +11,6 @@ gh-badge: [star, fork, follow]
 comments: true
 ---
 
-# AI in Financial Services (3 of 7): Personalized Banking and Customer Experience 👤🎯
 
 The financial services industry is undergoing a profound transformation, driven by the power of Artificial Intelligence (AI). In this third installment of our series, we explore how AI is revolutionizing customer experience in banking through unprecedented personalization, reshaping the way financial institutions interact with and serve their customers.
 

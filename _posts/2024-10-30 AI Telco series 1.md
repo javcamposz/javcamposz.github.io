@@ -11,7 +11,6 @@ gh-badge: [star, fork, follow]
 comments: true
 ---
 
-# 🚀 AI Revolution in Telcos (1 of 7): Generative AI in Telcos: Real Success Stories & Implementation Guide
 
 Let's cut through the hype and talk about how GenAI is actually changing the telecom industry - both the good and the challenging parts. For start, let's be honest - AI isn't magic and specially GenAI. Here's what you need to know:
 ➡ Getting to 80% accuracy is easy, but that last 20%? That's where things get tough

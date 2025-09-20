@@ -11,7 +11,6 @@ mathjax: true
 author: Fco Javier Campos Zabala
 ---
 
-# Welcome to the New Look!
 We're thrilled to unveil the fresh face of our website! This redesign brings a sleeker, more accessible platform where you can easily find resources, insights, and tools to help you grow your business with AI. Explore our new features and enhancements designed with you in mind.
 
 ## Where to Buy the Book

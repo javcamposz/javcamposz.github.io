@@ -11,7 +11,6 @@ gh-badge: [star, fork, follow]
 comments: true
 ---
 
-# Did NASA Just Find Evidence of Life on Mars... and a Warning for Humanity?
 
 This has been a very eventful week from many perspectives, but within the noise of political crises and wars, news from NASA risks getting lost—a development that could reshape humanity's view of our place in the cosmos.
 

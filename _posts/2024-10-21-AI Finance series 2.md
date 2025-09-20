@@ -11,7 +11,6 @@ gh-badge: [star, fork, follow]
 comments: true
 ---
 
-# AI in Financial Services(2 of 7): Risk Management and Fraud Detection—AI as the New Sentinel 🛡️🤖
 
 In the ever-evolving landscape of financial services, Artificial Intelligence (AI) has emerged as a powerful ally in the fight against fraud and in managing complex risks. As we delve into the second part of our 7-part series on AI in Financial Services, we'll explore how AI is revolutionizing risk management and fraud detection, becoming the new sentinel guarding the financial sector.
 
