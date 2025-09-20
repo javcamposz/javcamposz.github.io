@@ -12,11 +12,10 @@ author_profile: true
 <p>Exploring the intersection of artificial intelligence, business transformation, and ethical technology development.</p>
 
 <h3>Recent Posts</h3>
-<div class="grid__wrapper">
-  {% for post in site.posts limit:6 %}
-    {% include archive-single.html type="grid" %}
-  {% endfor %}
-</div>
+
+{% for post in site.posts limit:6 %}
+  {% include archive-single.html %}
+{% endfor %}
 
 <div class="notice--success">
   <h4>Connect & Collaborate</h4>
