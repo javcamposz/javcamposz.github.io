@@ -1,88 +1,25 @@
 ---
 layout: home
-title: AI Horizons
-subtitle: AI & Business Growth Expert
+author_profile: true
 ---
 
-<div id="page-banner" style="background-image: url('{{ site.page-img[0] }}');">
-  <!-- Your banner content here -->
+<div class="notice--info">
+  <h4>Welcome to AI Horizons</h4>
+  <p>I'm Francisco Javier Campos Zabala, a technology leader specializing in AI innovation, ethical AI deployment, and AI safety frameworks. With extensive experience in scaling AI solutions across industries, I focus on responsible AI development that drives business growth while ensuring safety and ethical standards.</p>
 </div>
 
-<!-- Your intro text here -->
-<p>Welcome to my website! I'm Francisco Javier Campos Zabala, a technology leader specializing in AI innovation, ethical AI deployment, and AI safety frameworks. With extensive experience in scaling AI solutions across industries, I focus on responsible AI development that drives business growth while ensuring safety and ethical standards.</p>
+<h2>Latest Insights</h2>
+<p>Exploring the intersection of artificial intelligence, business transformation, and ethical technology development.</p>
 
-
-<!-- Recent Posts -->
-<h2>Recent Posts</h2>
-{% for post in site.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | relative_url }}">
-      <h3 class="post-title">{{ post.title }}</h3>
-      {% if post.subtitle %}
-        <h4 class="post-subtitle">{{ post.subtitle }}</h4>
-      {% endif %}
-    </a>
-    <p class="post-meta">Posted on {{ post.date | date: site.date_format }}</p>
-    <div class="post-entry-container">
-      {% if post.thumbnail-img %}
-      <div class="post-image">
-        <a href="{{ post.url | relative_url }}">
-          <img src="{{ post.thumbnail-img | relative_url }}">
-        </a>
-      </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
-      </div>
-    </div>
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags: {{ post.tags | join: ", " }}
-    </div>
-    {% endif %}
-  </article>
-{% endfor %}
-
-
-
-<!-- Pagination links -->
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
-  {% else %}
-    <span>&laquo; Prev</span>
-  {% endif %}
-
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <em>{{ page }}</em>
-    {% elsif page == 1 %}
-      <a href="{{ '/' | relative_url }}">{{ page }}</a>
-    {% else %}
-      <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
+<h3>Recent Posts</h3>
+<div class="grid__wrapper">
+  {% for post in site.posts limit:6 %}
+    {% include archive-single.html type="grid" %}
   {% endfor %}
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
-  {% else %}
-    <span>Next &raquo;</span>
-  {% endif %}
 </div>
-{% endif %}
 
-<div class="consent-form" style="position: fixed; bottom: 20px; background-color: white; color: black; padding: 10px; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2); left: 20px; z-index: 1000;">
-    <h3>We use cookies to improve your experience.</h3>
-    <p>By continuing to browse, you consent to the use of cookies in accordance with our <a href="/privacy-policy">Privacy Policy</a>.</p>
-    <button id="accept-cookies" style="cursor: pointer;">Accept</button>
-  </div>
-  
-  <script>
-    const acceptButton = document.getElementById('accept-cookies');
-    acceptButton.addEventListener('click', () => {
-      document.cookie = 'your_cookie_name=accepted; expires=Fri, 31 Dec 2099 23:59:59 GMT; path=/';
-      document.querySelector('.consent-form').style.display = 'none';
-    });
-  </script>
+<div class="notice--success">
+  <h4>Connect & Collaborate</h4>
+  <p>Let's discuss AI innovation, safety frameworks, and business transformation opportunities. Reach out to explore how we can work together.</p>
+  <a href="https://www.linkedin.com/in/camposjavier/" class="btn btn--primary">Connect on LinkedIn</a>
+</div>

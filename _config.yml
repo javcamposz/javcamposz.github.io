@@ -1,155 +1,158 @@
-# --- Required options ---
-title: Javier Campos
-author: Francisco Javier Campos Zabala
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
 
+# Theme Settings
+remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Settings
+locale                   : "en-US"
+title                    : "Francisco Javier Campos - AI & Business Growth Expert"
+title_separator          : "-"
+subtitle                 : "AI Innovation, Ethical AI Deployment & AI Safety Frameworks"
+name                     : "Francisco Javier Campos Zabala"
+description              : "Technology leader specializing in AI innovation, ethical AI deployment, and AI safety frameworks. Expert in scaling AI solutions across industries with extensive experience in marketing, telco, and financial services."
+url                      : "https://javcamposz.github.io"
+baseurl                  : ""
+repository               : "javcamposz/javcamposz.github.io"
+teaser                   : "/assets/img/JavierCampos.jpg"
+logo                     : "/assets/img/JavierCampos.jpg"
+masthead_title           : "AI Horizons"
+breadcrumbs              : false
+words_per_minute         : 200
+comments:
+  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+reCaptcha:
+  siteKey                :
+  secret                 :
+atom_feed:
+  hide                   : false
+search                   : true
+search_full_content      : true
+search_provider          : lunr
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+naver_site_verification  :
+yandex_site_verification :
+baidu_site_verification  :
+
+# Social Sharing
+twitter:
+  username               : javcamposz
+facebook:
+  username               : javcamposz
+og_image                 : "/assets/img/JavierCampos.jpg"
+
+# For specifying social profiles
+social:
+  type                   : Person
+  name                   : Francisco Javier Campos Zabala
+  links:
+    - "https://www.linkedin.com/in/camposjavier/"
+    - "https://github.com/javcamposz"
+    - "https://twitter.com/javcamposz"
+
+# Analytics
+analytics:
+  provider               : google
+  google:
+    tracking_id          : "G-H83V6SRTMF"
+    anonymize_ip         : true
+
+# Site Author
+author:
+  name             : "Francisco Javier Campos Zabala"
+  avatar           : "/assets/img/JavierCampos.jpg"
+  bio              : "Technology leader specializing in AI innovation, ethical AI deployment, and AI safety frameworks. Expert in scaling AI solutions across industries."
+  location         : "London, UK"
+  email            : "javcamposz@hotmail.com"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/camposjavier/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/javcamposz"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/javcamposz"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/@JavierCamposMythBusterAI"
+
+# Site Footer
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/camposjavier/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/javcamposz"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/javcamposz"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/@JavierCamposMythBusterAI"
+  since: "2020"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Europe/London
+paginate: 5
+paginate_path: /page:num/
+
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
 
-# --- Navigation ---
-navbar-links:
-  Books: 
-    - About Me/Contact: "/author/"
-    - Buy the Book: "https://www.dpbolvw.net/click-101158208-12898971?url=https%3A%2F%2Flink.springer.com%2Fbook%2F10.1007%2F978-1-4842-9669-1"
-    - Summary Book: "/summary-book/"  
-    - Code from the Book: "/under-construction/"
-    - References and Resources: "/references/"
-    - Article on Implementing Large Language Models: "/Javier Campos Article.pdf"
-  Podcasts:
-    - Business Growth with AI: "/How to grow your business with AI.wav"
-    - AI MythBusters: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
-  Second Book - Autonomous Minds: "https://www.wiley.com/en-us/Autonomous+Minds%3A+How+Agentic+AI+Predicts+and+Learns+to+Enable+Productivity+and+Empowerment-p-9781394350100"
-  # Newsletter: /Firstnewsletter/
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
 
-# --- Logo ---
-# Image in navbar, can be:
-# - A string like 'amc' that refers to a preset
-# - A url to an image
-# - Commented out to not have an image
-avatar: "/assets/img/JavierCampos.jpg"
-
-# By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
-round-avatar: true
-
-# If you want to have an image logo in the top-left corner instead of having the title of the website,
-# then specify the following parameter
-#title-img: /path/to/image
-
-# --- Footer social media links ---
-social-network-links:
-  email: "javcamposz@hotmail.com"
-  linkedin: camposjavier
-  facebook: javcamposz
-  github: javcamposz
-  twitter: javcamposz
-  youtube: "@JavierCamposMythBusterAI"
-  rss: true
-
-share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
-
-# --- General options ---
-url: "https://javcamposz.github.io/"
-baseurl: ""
-
-# --- Add a large banner image to the top of the page ---
-# Comment this out if you don't want a banner image
-# page-img: "/assets/img/banner1.jpeg"
-
-page-img:
-  - "/assets/img/banner1.jpeg"
-  - "/assets/img/banner2.jpeg"
-  - "/assets/img/banner3.jpeg"
-
-# Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
-excerpt_length: 50
-
-# Whether or not to show an excerpt for every blog post in the feed page
-feed_show_excerpt: true
-
-# Whether or not to show a list of tags below each post preview in the feed page
-feed_show_tags: true
-
-# Add a search button to the navbar
-post_search: true
-
-link-col: "#404040"
-mobile-theme-col: "#0085A1"
-
-site-css: "/assets/css/custom_styles.css"
-site-js: "/assets/js/custom_script.js"
-
-edit_page_button: true
-
-# --- Colours / background image ---
-# Personalize the colours in your website. Colour values can be any valid CSS colour
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
-page-col: "#FFFFFF"
-text-col: "#404040"
-#link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-
-# --- Analytics ---
-gtag: "G-H83V6SRTMF"
-
-# --- Comments ---
-# To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
-#disqus: ""
-
-# --- Misc ---
-# Character used to separate site title and description in HTML document title
-# and RSS feed title
-title-separator: "-"
-
-# Ruby Date Format to show dates of posts
-date_format: "%B %-d, %Y"
-
-# Output options (more information on Jekyll's site)
-timezone: "London"
-markdown: kramdown
-highlighter: rouge
-permalink: /:year-:month-:day-:title/
-paginate: 5
-
-kramdown:
-  input: GFM
-
-# Default YAML values
+# Defaults
 defaults:
-  -
-    scope:
+  # _posts
+  - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
+      layout: single
+      author_profile: true
+      read_time: true
       comments: true
-      social-share: true
-  -
-    scope:
+      share: true
+      related: true
+  # _pages
+  - scope:
       path: ""
+      type: pages
     values:
-      layout: "page"
-
-# Exclude these files from production site
-exclude:
-  - CHANGELOG.md
-  - CNAME
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - screenshot.png
-  - docs/
-
-
-
-# Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189
+      layout: single
+      author_profile: true
