@@ -6,6 +6,9 @@ author: Francisco Javier Campos Zabala
 categories: [Artificial Intelligence, AI Safety, Technology]
 tags: [AI, AI Safety, Alignment, Machine Learning, Ethics]
 thumbnail-img: /assets/img/llm_deception.png
+header:
+  teaser: /assets/img/llm_deception.png
+image: /assets/img/llm_deception.png
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 comments: true

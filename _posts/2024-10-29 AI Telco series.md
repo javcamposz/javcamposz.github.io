@@ -6,6 +6,9 @@ author: Francisco Javier Campos Zabala
 categories: [Artificial Intelligence, Financial Services, Technology]
 tags: [AI, Telco, Machine Learning]
 thumbnail-img: /assets/img/telco-ai.jpeg
+header:
+  teaser: /assets/img/telco-ai.jpeg
+image: /assets/img/telco-ai.jpeg
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 comments: true

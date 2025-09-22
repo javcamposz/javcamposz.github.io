@@ -3,6 +3,9 @@ layout: single
 title: "LLM Deep Dive Series (1 of 7): The Reality Behind Large Language Models (LLMs): A Tamed Monster?"
 date: 2024-10-10
 thumbnail-img: /LLM_monster.jpg
+header:
+  teaser: /LLM_monster.jpg
+image: /LLM_monster.jpg
 categories: AI LLM
 author: Francisco Javier Campos Zabala
 gh-repo: javcamposz/

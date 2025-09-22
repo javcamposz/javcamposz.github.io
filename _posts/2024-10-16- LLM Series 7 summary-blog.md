@@ -6,6 +6,9 @@ author: [Your Name]
 categories: [Artificial Intelligence, Machine Learning, Technology]
 tags: [LLM, AI, Deep Learning, NLP]
 thumbnail-img: /assets/img/compute-trends.png
+header:
+  teaser: /assets/img/compute-trends.png
+image: /assets/img/compute-trends.png
 author: Francisco Javier Campos Zabala
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]

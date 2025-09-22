@@ -6,6 +6,9 @@ author: Francisco Javier Campos Zabala
 categories: [Science, Space, Artificial Intelligence, Technology]
 tags: [NASA, Mars, Life, Fermi Paradox, AI, Space Exploration]
 thumbnail-img: /assets/img/mars.jpeg
+header:
+  teaser: /assets/img/mars.jpeg
+image: /assets/img/mars.jpeg
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 comments: true
