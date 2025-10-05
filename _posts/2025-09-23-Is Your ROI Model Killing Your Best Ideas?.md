@@ -5,10 +5,10 @@ date: 2025-09-23
 author: Francisco Javier Campos Zabala
 categories: [Artificial Intelligence, AI Safety, Technology]
 tags: [AI, AI Safety, Alignment, Machine Learning, Ethics]
-thumbnail-img: /assets/img/llm_deception.png
+thumbnail-img: /assets/img/roi.jpeg
 header:
-  teaser: /assets/img/llm_deception.png
-image: /assets/img/llm_deception.png
+  teaser: /assets/img/roi.jpeg
+image: /assets/img/roi.jpeg
 gh-repo: javcamposz/
 gh-badge: [star, fork, follow]
 comments: true
