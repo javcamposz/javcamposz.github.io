@@ -94,21 +94,15 @@ nav:
     url: /author/
   - title: "Books"
     children:
-      - title: "Buy the Book"
+      - title: "Grow Your Business"
         url: "https://www.dpbolvw.net/click-101158208-12898971?url=https%3A%2F%2Flink.springer.com%2Fbook%2F10.1007%2F978-1-4842-9669-1"
-      - title: "Summary Book"
-        url: /summary-book/
-      - title: "Code from the Book"
-        url: /under-construction/
-      - title: "References and Resources"
-        url: /references/
-      - title: "Implementing LLMs Article"
-        url: /Javier%20Campos%20Article.pdf
+      - title: "Autonomous Minds"
+        url: /autonomous-minds/
   - title: "Podcasts"
     children:
-      - title: "AI MythBusters Podcast"
-        url: "https://shows.acast.com/mythbusters-ai-edition-for-adtech-pioneers"
-      - title: "Book Podcast"
+      - title: "YouTube Podcast"
+        url: "https://www.youtube.com/@JavierCamposMythBusterAI"
+      - title: "Grow Your Business Podcast"
         url: /How%20to%20grow%20your%20business%20with%20AI.wav
   - title: "Newsletter"
     url: /Firstnewsletter/
