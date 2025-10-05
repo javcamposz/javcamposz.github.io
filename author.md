@@ -20,5 +20,6 @@ Francisco Javier Campos Zabala is a technology leader who has delivered innovati
 - [Interview: How The EU AI Act Was Born With Javier Campos](https://www.youtube.com/watch?v=FcdbhVtvYjY){:target="_blank"}
 
 ## Recent & Upcoming Conferences
+- [Ecosystems2030 - Agentic AI Masterclass,  October 1st-4th, 2025 in A Coruna, Spain](https://ecosystems2030.com/agentic-ai-masterclass/){:target="_blank"}
 - [AI World Congress 2024,  May 30-31, 2024 in London, UK](https://aiconference.london/agenda/){:target="_blank"} 
 - [AI & Big Data Expo - 30th Nov London](https://www.ai-expo.net/global/speaker/javier-campos/){:target="_blank"}
