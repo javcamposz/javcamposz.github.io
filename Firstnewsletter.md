@@ -8,6 +8,7 @@ tags: [AI, technology, newsletter]
 comments: true
 mathjax: true
 author: Francisco Javier Campos Zabala
+permalink: /newsletter/
 ---
 
 <!-- MailerLite Universal -->

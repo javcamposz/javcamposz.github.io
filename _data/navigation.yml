@@ -22,7 +22,7 @@ main:
       - title: "Book Podcast"
         url: /How%20to%20grow%20your%20business%20with%20AI.wav
   - title: "Newsletter"
-    url: /Firstnewsletter/
+    url: /newsletter/
   - title: "Blog"
     url: /blog/
   - title: "Categories"

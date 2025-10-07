@@ -2,6 +2,7 @@
 layout: single
 title: "AI Horizons: A Briefing Document"
 subtitle: "Key themes and insights from Javier Campos's works"
+permalink: /summary-book/
 ---
 
 This document reviews key themes and insights from excerpts of "AI Horizons" by Javier Campos and "Grow Your Business with AI" by Francisco Javier Campos Zabala, focusing on the potential and challenges of AI implementation for businesses.
