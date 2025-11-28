@@ -21,7 +21,7 @@ Matica Partners, la Escuela Técnica Superior de Ingenieros Industriales y el au
 
 ### Detalles del Evento
 *   **Fecha:** 9 de Diciembre de 2025
-*   **Hora:** 19:00 h - 21:30 h
+*   **Hora:** 18:45 h - 21:30 h
 *   **Lugar:** Salón de Actos, Escuela Técnica Superior de Ingenieros Industriales (Paseo de la Castellana 106, Madrid)
 *   **Confirmar antes del:** 5 de Diciembre de 2025
 
@@ -30,33 +30,35 @@ Matica Partners, la Escuela Técnica Superior de Ingenieros Industriales y el au
 ### Formulario de Registro
 Por favor, rellene el siguiente formulario para confirmar su asistencia.
 
-<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbxHMzJGLc0XxtQcmKTvIGOhP6LsqbVdS1Xce4xrQO4rl1YqYiXAQO8Et8OdFmgZ6yUS/exec" method="POST" class="page__form">
+<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbzrwXMmRucp99DR9u8AUibejn32HlCqhZPalgZsca7DsGK1qMp_bmk43eIoW_aLERvc/exec" method="POST" class="page__form">
   
+  <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">* Campos obligatorios</p>
+
   <div class="form-group">
-    <label for="name">Nombre Completo</label>
+    <label for="name">Nombre Completo *</label>
     <input type="text" id="name" name="name" required placeholder="Juan Pérez" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
   <div class="form-group">
-    <label for="company">Empresa / Organización</label>
+    <label for="company">Empresa / Organización *</label>
     <input type="text" id="company" name="company" required placeholder="Nombre de su empresa" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
   <div class="form-group">
-    <label for="email">Correo Electrónico</label>
-    <input type="email" id="email" name="email" required placeholder="juan@ejemplo.com" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+    <label for="email">Correo Electrónico *</label>
+    <input type="email" id="email" name="email" required placeholder="juan@ejemplo.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Por favor, introduce una dirección de correo válida" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
   <div class="form-group">
-    <label for="comments">Restricciones Alimentarias / Comentarios</label>
-    <textarea id="comments" name="comments" rows="3" placeholder="Vegetariano, sin gluten, etc." style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+    <label for="phone">Teléfono (Opcional)</label>
+    <input type="tel" id="phone" name="phone" placeholder="600123456" pattern="[0-9]+" title="Por favor, introduce solo números" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
   <!-- CHECKBOX RGPD -->
   <div class="form-group" style="margin-bottom: 20px; font-size: 0.9em;">
     <label style="display: flex; align-items: start; gap: 10px;">
       <input type="checkbox" name="gdpr_consent" value="yes" required style="margin-top: 5px;">
-      <span>Acepto el tratamiento de mis datos personales para la gestión del evento de acuerdo con la política de privacidad descrita abajo.</span>
+      <span>* Acepto el tratamiento de mis datos personales para la gestión del evento de acuerdo con la política de privacidad descrita abajo.</span>
     </label>
   </div>
 
