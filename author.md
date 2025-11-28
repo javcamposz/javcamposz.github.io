@@ -4,6 +4,9 @@ title: About the Author
 permalink: /author/
 ---
 
+
+![Javier Campos CV](/assets/img/Javier_cv_lor.jpeg)
+
 # About Francisco Javier Campos Zabala
 
 ## Biography
