@@ -8,9 +8,9 @@ author_profile: false
 <!-- SECCIÓN DE LOGOS -->
 <!-- Sustituye 'URL_DEL_LOGO_...' por los enlaces reales a tus imágenes -->
 <div style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
-    <img src="/assets/img/logo-etsii.png" alt="Escuela Ingenieros Industriales" style="max-height: 80px; max-width: 30%;">
-    <img src="/assets/img/logo-asociacion.png" alt="Asociación" style="max-height: 80px; max-width: 30%;">
-    <img src="/assets/img/logo-matica.png" alt="Matica Partners" style="max-height: 80px; max-width: 30%;">
+    <img src="/assets/img/logo-etsii.png" alt="Escuela Ingenieros Industriales" style="max-height: 80px; max-width: 30%; background-color: white; padding: 10px; border-radius: 8px;">
+    <img src="/assets/img/logo-asociacion.png" alt="Asociación" style="max-height: 80px; max-width: 30%; background-color: white; padding: 10px; border-radius: 8px;">
+    <img src="/assets/img/logo-matica.png" alt="Matica Partners" style="max-height: 80px; max-width: 30%; background-color: white; padding: 10px; border-radius: 8px;">
 </div>
 
 ### ¡Estás invitado!
