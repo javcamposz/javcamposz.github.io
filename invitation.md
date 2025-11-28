@@ -23,7 +23,7 @@ Matica Partners, la Escuela Técnica Superior de Ingenieros Industriales y el au
 *   **Fecha:** 9 de Diciembre de 2025
 *   **Hora:** 18:45 h - 21:30 h
 *   **Lugar:** Salón de Actos, Escuela Técnica Superior de Ingenieros Industriales (Paseo de la Castellana 106, Madrid)
-*   **Confirmar antes del:** 5 de Diciembre de 2025
+*   **Confirmar antes del:** 7 de Diciembre de 2025
 
 ---
 
