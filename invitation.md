@@ -1,48 +1,76 @@
 ---
 layout: single
-title: "You're Invited!"
-permalink: /invitation/
+title: "Registro al Evento"
+permalink: /invitacion/
 author_profile: false
 ---
 
-We are thrilled to invite you to our upcoming event. Please join us for an evening of networking, learning, and celebration.
+<!-- SECCIÓN DE LOGOS -->
+<!-- Sustituye 'URL_DEL_LOGO_...' por los enlaces reales a tus imágenes -->
+<div style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
+    <img src="/assets/img/logo-etsii.png" alt="Escuela Ingenieros Industriales" style="max-height: 80px; max-width: 30%;">
+    <img src="/assets/img/logo-asociacion.png" alt="Asociación" style="max-height: 80px; max-width: 30%;">
+    <img src="/assets/img/logo-matica.png" alt="Matica Partners" style="max-height: 80px; max-width: 30%;">
+</div>
 
-### Event Details
-*   **Date:** December 15, 2025
-*   **Time:** 6:00 PM - 9:00 PM
-*   **Location:** The Grand Hall, 123 Innovation Drive, Tech City
-*   **RSVP By:** December 1, 2025
+### ¡Estás invitado!
+
+Matica Partners, la Escuela Técnica Superior de Ingenieros Industriales y el autor, Javier Campos, estarían encantados de contar con su presencia en este evento exclusivo.
+
+Únase a nosotros para una tarde de aprendizaje, debate sobre el futuro de la IA y *networking*.
+
+### Detalles del Evento
+*   **Fecha:** 9 de Diciembre de 2025
+*   **Hora:** 19:00 h - 21:30 h
+*   **Lugar:** Salón de Actos, Escuela Técnica Superior de Ingenieros Industriales (Paseo de la Castellana 106, Madrid)
+*   **Confirmar antes del:** 5 de Diciembre de 2025
 
 ---
 
-### Registration Form
-Please fill out the form below to confirm your attendance.
+### Formulario de Registro
+Por favor, rellene el siguiente formulario para confirmar su asistencia.
 
 <form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbykJ1ftbB_g1wUVZmmOrOG9mWGn4YMTVPblCX0h0Uy7ECS9CjadP8hZOHJE9GRsrl4/exec" method="POST" class="page__form">
+  
   <div class="form-group">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" required placeholder="John Doe" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+    <label for="name">Nombre Completo</label>
+    <input type="text" id="name" name="name" required placeholder="Juan Pérez" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
   <div class="form-group">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" required placeholder="john@example.com" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+    <label for="company">Empresa / Organización</label>
+    <input type="text" id="company" name="company" required placeholder="Nombre de su empresa" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
   <div class="form-group">
-    <label for="guests">Number of Guests (including yourself)</label>
-    <input type="number" id="guests" name="guests" min="1" max="5" value="1" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+    <label for="email">Correo Electrónico</label>
+    <input type="email" id="email" name="email" required placeholder="juan@ejemplo.com" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
   <div class="form-group">
-    <label for="comments">Dietary Restrictions / Comments</label>
-    <textarea id="comments" name="comments" rows="3" placeholder="Vegetarian, gluten-free, etc." style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+    <label for="comments">Restricciones Alimentarias / Comentarios</label>
+    <textarea id="comments" name="comments" rows="3" placeholder="Vegetariano, sin gluten, etc." style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
   </div>
 
-  <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">Submit RSVP</button>
+  <!-- CHECKBOX RGPD -->
+  <div class="form-group" style="margin-bottom: 20px; font-size: 0.9em;">
+    <label style="display: flex; align-items: start; gap: 10px;">
+      <input type="checkbox" required style="margin-top: 5px;">
+      <span>Acepto el tratamiento de mis datos personales para la gestión del evento de acuerdo con la política de privacidad descrita abajo.</span>
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">Confirmar Asistencia</button>
 </form>
 
 <div id="form-message" style="display:none; margin-top: 20px; padding: 15px; border-radius: 4px;"></div>
+
+<!-- TEXTO LEGAL RGPD -->
+<hr style="margin-top: 40px;">
+<div style="font-size: 0.8em; color: #666;">
+    <strong>Información Básica sobre Protección de Datos (RGPD):</strong><br>
+    Sus datos serán tratados por los organizadores (Matica Partners y Javier Campos) con la única finalidad de gestionar su asistencia al evento y enviarle información logística relacionada. La legitimación es su consentimiento al enviar este formulario. Sus datos no se cederán a terceros salvo obligación legal o necesidad operativa para el acceso al recinto (Escuela de Ingenieros). Puede ejercitar sus derechos de acceso, rectificación, supresión y oposición enviando un email a los organizadores.
+</div>
 
 <script>
   document.getElementById('rsvp-form').addEventListener('submit', function(e) {
@@ -52,9 +80,9 @@ Please fill out the form below to confirm your attendance.
     var messageDiv = document.getElementById('form-message');
     var submitBtn = form.querySelector('button[type="submit"]');
     
-    // Disable button to prevent double submit
+    // Deshabilitar botón para evitar doble envío
     submitBtn.disabled = true;
-    submitBtn.textContent = "Submitting...";
+    submitBtn.textContent = "Enviando...";
     
     var formData = new FormData(form);
     
@@ -68,10 +96,10 @@ Please fill out the form below to confirm your attendance.
         messageDiv.style.display = 'block';
         messageDiv.style.backgroundColor = '#d4edda';
         messageDiv.style.color = '#155724';
-        messageDiv.textContent = "Thank you! Your registration has been confirmed.";
+        messageDiv.textContent = "¡Gracias! Tu registro ha sido confirmado correctamente.";
         form.reset();
       } else {
-        throw new Error('Submission failed');
+        throw new Error('Fallo en el envío');
       }
     })
     .catch(error => {
@@ -79,11 +107,11 @@ Please fill out the form below to confirm your attendance.
       messageDiv.style.display = 'block';
       messageDiv.style.backgroundColor = '#f8d7da';
       messageDiv.style.color = '#721c24';
-      messageDiv.textContent = "Oops! Something went wrong. Please try again later.";
+      messageDiv.textContent = "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo más tarde.";
     })
     .finally(() => {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Submit RSVP";
+      submitBtn.textContent = "Confirmar Asistencia";
     });
   });
 </script>
