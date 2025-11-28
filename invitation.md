@@ -30,7 +30,7 @@ Matica Partners, la Escuela Técnica Superior de Ingenieros Industriales y el au
 ### Formulario de Registro
 Por favor, rellene el siguiente formulario para confirmar su asistencia.
 
-<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbzrwXMmRucp99DR9u8AUibejn32HlCqhZPalgZsca7DsGK1qMp_bmk43eIoW_aLERvc/exec" method="POST" class="page__form">
+<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbwv62cU-eTIQcW3u7NVffkP3fcROXZOF5PVgE5MDIoUWwsPENgJYbaYEs0vXM-tmS0_/exec" method="POST" class="page__form">
   
   <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">* Campos obligatorios</p>
 
