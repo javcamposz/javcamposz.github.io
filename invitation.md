@@ -45,7 +45,7 @@ Por favor, rellene el siguiente formulario para confirmar su asistencia.
   </div>
 
   <div class="form-group">
-    <label for="email">Correo Electrónico *</label>
+    <label for="email">Correo Electrónico Profesional *</label>
     <input type="email" id="email" name="email" required placeholder="juan@ejemplo.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Por favor, introduce una dirección de correo válida" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
   </div>
 
