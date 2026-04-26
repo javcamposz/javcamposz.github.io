@@ -1,0 +1,62 @@
+{%- comment -%}
+  Talks list + speaking-event photo gallery.
+  Upcoming first (chronological asc), then past (chronological desc).
+  Gallery is curated photos from javier/mediapics — three Chile shots
+  tied to IAB Chile 2026.
+{%- endcomment -%}
+
+{%- assign upcoming = site.data.talks | where: "status", "upcoming" | sort: "date" -%}
+{%- assign past     = site.data.talks | where: "status", "past"     | sort: "date" | reverse -%}
+
+<section id="talks" class="landing__section landing__talks" aria-label="Talks and conferences">
+  <p class="landing__section-eyebrow">speaking</p>
+  <h2 class="landing__section-title">Talks &amp; conferences</h2>
+
+  <ul class="landing__talks-list">
+    {% for t in upcoming %}
+      <li class="talk">
+        <span class="talk__date">{{ t.date | date: "%b %d, %Y" }}</span>
+        <span>
+          <span class="talk__title">
+            {%- if t.url and t.url != "" -%}<a href="{{ t.url }}">{{ t.title }} — {{ t.organisation }}</a>{%- else -%}{{ t.title }} — {{ t.organisation }}{%- endif -%}
+          </span>
+          <span class="talk__org">{{ t.city }}{% if t.venue %} · {{ t.venue }}{% endif %}</span>
+        </span>
+        <span class="talk__badge talk__badge--upcoming">upcoming</span>
+      </li>
+    {% endfor %}
+    {% for t in past %}
+      <li class="talk">
+        <span class="talk__date">{{ t.date | date: "%b %d, %Y" }}</span>
+        <span>
+          <span class="talk__title">
+            {%- if t.url and t.url != "" -%}<a href="{{ t.url }}">{{ t.title }} — {{ t.organisation }}</a>{%- else -%}{{ t.title }} — {{ t.organisation }}{%- endif -%}
+          </span>
+          <span class="talk__org">{{ t.city }}{% if t.venue %} · {{ t.venue }}{% endif %}</span>
+        </span>
+        <span class="talk__badge talk__badge--past">past</span>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="landing__speaking-gallery" aria-label="Recent speaking events">
+    <figure class="speaking-shot">
+      <img src="{{ '/assets/img/mediapics/chile-panel.jpeg' | relative_url }}"
+           alt="Keynote at IAB Chile Tendencias 2026"
+           loading="lazy">
+      <figcaption>Keynote · IAB Chile · <em>Tendencias 2026</em></figcaption>
+    </figure>
+    <figure class="speaking-shot">
+      <img src="{{ '/assets/img/mediapics/chile-iab.jpeg' | relative_url }}"
+           alt="Panel at IAB Chile Tendencias 2026"
+           loading="lazy">
+      <figcaption>Panel · IAB Chile · <em>Tendencias 2026</em></figcaption>
+    </figure>
+    <figure class="speaking-shot">
+      <img src="{{ '/assets/img/mediapics/chile-tv.jpeg' | relative_url }}"
+           alt="TV interview in Santiago, Chile"
+           loading="lazy">
+      <figcaption>TV interview · Santiago, Chile</figcaption>
+    </figure>
+  </div>
+</section>

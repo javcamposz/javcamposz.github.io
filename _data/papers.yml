@@ -1,0 +1,34 @@
+# Papers — research output, surfaced on the landing page.
+# Order: most recent first.
+
+- id: deepmind-safety-case-review
+  title: "Lessons from External Review of DeepMind's Scheming Inability Safety Case"
+  authors: "Francisco Javier Campos Zabala et al."
+  venue: "Arcadia Impact preprint"
+  status: preprint
+  date: 2026-04-01
+  pdf: "/assets/papers/deepmind-safety-case-review.pdf"
+  summary: >
+    External review of DeepMind's public scheming-inability safety case for
+    Gemini 2.5, applying the Assurance 2.0 / Claims-Argument-Evidence
+    methodology. Translates the review into recommendations for AI developers,
+    AISIs and regulators on how frontier safety cases should be structured to
+    support external scrutiny.
+  tags: [safety-cases, governance, frontier-labs, assurance-2.0]
+  featured: true
+
+- id: agent-misalignment
+  title: "AgentMisalignment: Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents"
+  authors: "Francisco Javier Campos Zabala et al."
+  venue: "ICLR 2026"
+  status: accepted
+  date: 2025-06-04
+  arxiv: "https://arxiv.org/abs/2506.04018"
+  pdf: "/assets/papers/agent-misalignment.pdf"
+  summary: >
+    A propensity benchmark covering shutdown resistance, oversight evasion,
+    sandbagging and power-seeking on frontier models. Key finding: persona
+    system prompts shift misalignment more than the choice of model itself,
+    with direct implications for how enterprises configure deployed agents.
+  tags: [evals, alignment, agents, llm-safety]
+  featured: true

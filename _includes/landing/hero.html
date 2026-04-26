@@ -1,0 +1,52 @@
+{%- comment -%}
+  Hero — static, scannable USP block.
+  Two columns: name + role + USP + proof + CTAs on the left, photo on the right.
+  The streaming Q&A moves to landing/intro.html as the second beat.
+{%- endcomment -%}
+
+<section class="landing__hero" aria-label="Introduction">
+  <div class="landing__hero-grid">
+    <div class="landing__hero-content">
+      <h1 class="landing__name">
+        Francisco Javier<br>Campos&nbsp;Zabala
+      </h1>
+
+      <p class="landing__role">
+        Group CTO &amp; Chief AI Officer @ <a href="https://cape.io">Cape.io</a>
+        <span class="dot">·</span>
+        AI Safety Researcher
+        <span class="dot">·</span>
+        Cambridge AI Safety Hub &amp; Arcadia Impact
+      </p>
+
+      <p class="landing__usp">
+        I help boards and frontier labs turn AI into reality —
+        safely, and at scale.
+      </p>
+
+      <p class="landing__proof">
+        Author of <em>Autonomous Minds</em> (Wiley, 2025) and
+        <em>Grow Your Business with AI</em> (Springer, 2023).
+        Advisor to the Bank of England, FCA, and EU AI Act.
+        Co-author <em>AgentMisalignment</em> (ICLR 2026).
+      </p>
+
+      <div class="landing__cta">
+        <a class="btn btn--primary"
+           href="https://www.wiley.com/en-us/Autonomous+Minds%3A+How+Agentic+AI+Predicts+and+Learns+to+Enable+Productivity+and+Empowerment-p-9781394350100">
+          Get <em>Autonomous Minds</em>
+        </a>
+        <a class="btn btn--ghost" href="https://arxiv.org/abs/2506.04018">
+          Read AgentMisalignment →
+        </a>
+      </div>
+    </div>
+
+    <figure class="landing__hero-photo">
+      <img src="{{ '/assets/img/JavierCampos.jpg' | relative_url }}"
+           alt="Francisco Javier Campos Zabala"
+           loading="eager"
+           width="320" height="400">
+    </figure>
+  </div>
+</section>

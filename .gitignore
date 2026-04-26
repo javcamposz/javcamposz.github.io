@@ -11,3 +11,17 @@ ehthumbs.db
 Gemfile.lock
 
 beautiful-jekyll-theme-*.gem
+
+# Bundler local install path
+vendor/
+.bundle/
+
+# Private working folder — CV drafts, JD, source PDFs, raw mediapics.
+# Curated copies of public assets get checked into assets/. Anchored to
+# repo root so it does not collide with _sass/javier/.
+/javier/
+
+# Local drafts not ready to publish
+email_template.md
+google-apps-script.js
+invitation_1.md

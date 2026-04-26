@@ -1,0 +1,28 @@
+{%- comment -%}
+  Intro beat — the token-streaming Q&A.
+  Was the Phase 0 hero; demoted here to become a personality moment that
+  visitors choose to scroll into.
+  Three prompt/answer pairs, all driven by the landing.js typewriter.
+{%- endcomment -%}
+
+{%- assign p1 = page.intro_prompt_1 | default: "what are you working on right now?" -%}
+{%- assign a1 = page.intro_text_1   | default: "Agentic workforces at Cape.io. Frontier safety-case reviews at Arcadia Impact. Misalignment benchmarks at Cambridge." -%}
+{%- assign p2 = page.intro_prompt_2 | default: "what makes your work different?" -%}
+{%- assign a2 = page.intro_text_2   | default: "I operate AI at executive level and research what fails when agents get more autonomy than the systems around them can govern." -%}
+{%- assign p3 = page.intro_prompt_3 | default: "most underrated AI-safety finding right now?" -%}
+{%- assign a3 = page.intro_text_3   | default: "Persona system prompts. Our paper found they shift misalignment more than the choice of model itself." -%}
+
+<section class="landing__intro" aria-label="Q&amp;A">
+  <p class="landing__section-eyebrow">live</p>
+
+  <div class="stream__prompt">{{ p1 }}</div>
+  <p class="stream"><span class="stream__text" data-typewriter="{{ a1 | escape }}"></span></p>
+
+  <div class="stream__prompt">{{ p2 }}</div>
+  <p class="stream"><span class="stream__text" data-typewriter="{{ a2 | escape }}"></span></p>
+
+  <div class="stream__prompt">{{ p3 }}</div>
+  <p class="stream"><span class="stream__text" data-typewriter="{{ a3 | escape }}"></span></p>
+
+  <button class="stream__replay" data-typewriter-replay type="button" aria-label="Replay typing animation">↻ replay</button>
+</section>

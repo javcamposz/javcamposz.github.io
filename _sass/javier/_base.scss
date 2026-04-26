@@ -1,0 +1,77 @@
+// Base styles — resets, body, links, dark-mode media query.
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  font-size: $fs-base;
+  line-height: $lh-base;
+  color: $color-fg;
+  background: $color-bg;
+  font-feature-settings: "ss01", "cv11"; // Inter stylistic alternates
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-display;
+  font-weight: 500;
+  line-height: $lh-tight;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: $fs-2xl; }
+h2 { font-size: $fs-xl; }
+h3 { font-size: $fs-lg; }
+h4 { font-size: $fs-md; }
+
+p { margin: 0; }
+p + p { margin-top: 1em; }
+
+a {
+  color: $color-link;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(204, 120, 92, 0.45);
+  transition: color $dur-base $ease, text-decoration-color $dur-base $ease;
+}
+a:hover {
+  color: $color-link-hover;
+  text-decoration-color: $color-link-hover;
+}
+
+code, pre, kbd, samp { font-family: $font-mono; font-size: 0.92em; }
+
+img { max-width: 100%; display: block; }
+
+::selection { background: $color-accent-soft; color: $color-fg; }
+
+// ───── Dark mode ─────────────────────────────────────────────────────────
+@media (prefers-color-scheme: dark) {
+  body {
+    color: $color-fg-dark;
+    background: $color-bg-dark;
+  }
+  a {
+    color: $color-accent-dark;
+    text-decoration-color: rgba(224, 139, 110, 0.45);
+  }
+  a:hover {
+    color: $color-accent-dark;
+    text-decoration-color: $color-accent-dark;
+  }
+  ::selection { background: $color-accent-soft-dark; color: $color-fg-dark; }
+}
+
+// ───── Reduced motion ────────────────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}

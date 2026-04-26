@@ -1,0 +1,513 @@
+// Landing-page styles. Scoped under .landing.
+
+.landing {
+  min-height: 100vh;
+  padding: 0 $gutter;
+
+  &__inner { max-width: $measure-wide; margin: 0 auto; }
+
+  // ───── Top bar ────────────────────────────────────────────────────────
+  &__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    color: $color-fg-subtle;
+    @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
+  }
+  &__brand { font-weight: 500; letter-spacing: 0.02em; }
+  &__nav {
+    display: flex; gap: 1.5rem;
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: $color-accent; }
+    @media (prefers-color-scheme: dark) {
+      a:hover { color: $color-accent-dark; }
+    }
+    @media (max-width: 540px) { display: none; }
+  }
+
+  // ───── Hero (static, two-column) ──────────────────────────────────────
+  &__hero {
+    padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
+    border-bottom: 1px solid $color-border;
+    @media (prefers-color-scheme: dark) { border-bottom-color: $color-border-dark; }
+  }
+  &__hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: clamp(1.5rem, 5vw, 4rem);
+    align-items: start;
+    @media (max-width: 760px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__hero-content { min-width: 0; }
+  &__name {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 7.5vw, 5.25rem);
+    font-weight: 450;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin: 0 0 1.5rem 0;
+    color: $color-fg;
+    @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+  }
+  &__role {
+    font-family: $font-mono;
+    font-size: $fs-sm;
+    line-height: 1.6;
+    color: $color-fg-muted;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0;
+    max-width: 56ch;
+    a { color: inherit; text-decoration-color: rgba(0,0,0,0.15); }
+    a:hover { color: $color-accent; }
+    .dot { color: $color-accent; margin: 0 0.5rem; }
+    @media (prefers-color-scheme: dark) {
+      color: $color-fg-muted-dark;
+      .dot { color: $color-accent-dark; }
+      a:hover { color: $color-accent-dark; }
+    }
+  }
+  &__usp {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    margin: 0 0 2rem 0;
+    color: $color-fg;
+    max-width: 22em;
+    @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+  }
+  &__proof {
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    line-height: 1.7;
+    color: $color-fg-muted;
+    margin: 0 0 2rem 0;
+    max-width: 56em;
+    em { color: $color-fg; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      color: $color-fg-muted-dark;
+      em { color: $color-fg-dark; }
+    }
+  }
+  &__hero-photo {
+    margin: 0;
+    @media (max-width: 760px) {
+      max-width: 220px;
+      order: -1;
+      justify-self: start;
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: $radius-md;
+      filter: grayscale(0.2) sepia(0.04) brightness(0.99);
+      transition: filter $dur-slow $ease, transform $dur-slow $ease;
+      box-shadow: 0 1px 0 $color-border;
+      @media (prefers-color-scheme: dark) {
+        box-shadow: 0 1px 0 $color-border-dark;
+        filter: grayscale(0.2) brightness(0.92);
+      }
+    }
+    &:hover img {
+      filter: grayscale(0) sepia(0) brightness(1);
+      transform: translateY(-2px);
+    }
+  }
+
+  // ───── Intro (the streaming Q&A beat) ─────────────────────────────────
+  &__intro {
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+    border-bottom: 1px solid $color-border;
+    @media (prefers-color-scheme: dark) { border-bottom-color: $color-border-dark; }
+  }
+
+  // ───── Streaming text primitives (used in intro) ──────────────────────
+  .stream {
+    font-family: $font-display;
+    font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+    line-height: $lh-snug;
+    color: $color-fg;
+    @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+    margin: 0 0 1.5rem 0;
+    min-height: 1.2em;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    max-width: 36em;
+  }
+  .stream:last-of-type { margin-bottom: 0.75rem; }
+  .stream__prompt {
+    font-family: $font-mono;
+    font-size: $fs-sm;
+    color: $color-fg-subtle;
+    margin: 1.25rem 0 0.4rem 0;
+    @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
+    &::before { content: "> "; color: $color-accent; }
+    @media (prefers-color-scheme: dark) {
+      &::before { color: $color-accent-dark; }
+    }
+  }
+  .stream__prompt:first-of-type { margin-top: 0; }
+  .stream__text {
+    position: relative;
+    white-space: pre-wrap;
+  }
+  .stream__text::after {
+    content: "▋";
+    display: inline-block;
+    margin-left: 0.05em;
+    color: $color-accent;
+    animation: blink 1.05s steps(1) infinite;
+    vertical-align: baseline;
+    font-weight: 400;
+    font-family: $font-mono;
+    font-size: 0.8em;
+    @media (prefers-color-scheme: dark) { color: $color-accent-dark; }
+  }
+  .stream__text.done::after { display: none; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .stream__replay {
+    margin-top: 1rem;
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    color: $color-fg-subtle;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0;
+    transition: opacity $dur-slow $ease, color $dur-base $ease;
+    &.visible { opacity: 1; }
+    &:hover { color: $color-accent; }
+    @media (prefers-color-scheme: dark) {
+      color: $color-fg-subtle-dark;
+      &:hover { color: $color-accent-dark; }
+    }
+  }
+
+  // ───── CTA buttons ────────────────────────────────────────────────────
+  &__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.35rem;
+    font-family: $font-body;
+    font-size: $fs-sm;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    transition: background $dur-base $ease, color $dur-base $ease, border-color $dur-base $ease;
+    border: 1px solid transparent;
+    line-height: 1;
+    em { font-style: italic; font-weight: 500; }
+  }
+  .btn--primary {
+    background: $color-accent;
+    color: $color-bg;
+    &:hover { background: $color-accent-strong; color: $color-bg; text-decoration: none; }
+  }
+  .btn--ghost {
+    background: transparent;
+    color: $color-fg;
+    border-color: $color-border;
+    &:hover {
+      border-color: $color-accent;
+      color: $color-accent;
+      text-decoration: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      color: $color-fg-dark;
+      border-color: $color-border-dark;
+      &:hover { color: $color-accent-dark; border-color: $color-accent-dark; }
+    }
+  }
+
+  // ───── Section frame ──────────────────────────────────────────────────
+  &__section {
+    padding: $section-y 0;
+    border-bottom: 1px solid $color-border;
+    @media (prefers-color-scheme: dark) { border-bottom-color: $color-border-dark; }
+    &:last-of-type { border-bottom: 0; }
+  }
+  &__section-eyebrow {
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    color: $color-accent;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+    @media (prefers-color-scheme: dark) { color: $color-accent-dark; }
+  }
+  &__section-title {
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    font-weight: 450;
+    letter-spacing: -0.015em;
+    margin-bottom: 2rem;
+  }
+
+  // ───── Card grid (papers + books in selected_work) ────────────────────
+  &__grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .card {
+    padding: 1.5rem;
+    background: $color-bg-elevated;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color $dur-base $ease, transform $dur-base $ease;
+    @media (prefers-color-scheme: dark) {
+      background: $color-bg-elevated-dark;
+      border-color: $color-border-dark;
+    }
+    &:hover {
+      border-color: $color-accent;
+      transform: translateY(-2px);
+      @media (prefers-color-scheme: dark) { border-color: $color-accent-dark; }
+    }
+  }
+  .card__meta {
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    color: $color-fg-subtle;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
+  }
+  .card__title {
+    font-family: $font-display;
+    font-size: $fs-md;
+    font-weight: 500;
+    line-height: $lh-snug;
+    color: $color-fg;
+    margin: 0;
+    @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: $color-accent; }
+    @media (prefers-color-scheme: dark) {
+      a:hover { color: $color-accent-dark; }
+    }
+  }
+  .card__body {
+    font-size: $fs-sm;
+    color: $color-fg-muted;
+    line-height: $lh-snug;
+    @media (prefers-color-scheme: dark) { color: $color-fg-muted-dark; }
+  }
+  .card__links {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    a { text-decoration: none; }
+    a::before { content: "→ "; }
+  }
+  .card__tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    .tag {
+      font-family: $font-mono;
+      font-size: $fs-xs;
+      padding: 0.15rem 0.5rem;
+      background: $color-accent-soft;
+      color: $color-accent-strong;
+      border-radius: $radius-sm;
+      @media (prefers-color-scheme: dark) {
+        background: $color-accent-soft-dark;
+        color: $color-accent-dark;
+      }
+    }
+  }
+
+  // Book card variant — cover at top
+  .card--book .book__cover {
+    aspect-ratio: 2/3;
+    background: $color-bg-muted;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+    @media (prefers-color-scheme: dark) { background: $color-bg-muted-dark; }
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  // ───── Talks list ─────────────────────────────────────────────────────
+  &__talks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .talk {
+    display: grid;
+    grid-template-columns: 9rem 1fr auto;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid $color-border;
+    align-items: baseline;
+    @media (prefers-color-scheme: dark) { border-top-color: $color-border-dark; }
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+  }
+  .talk__date {
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    color: $color-fg-subtle;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
+  }
+  .talk__title {
+    font-family: $font-display;
+    font-size: $fs-md;
+    font-weight: 500;
+    color: $color-fg;
+    @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover { color: $color-accent; border-bottom-color: $color-accent; }
+  }
+  .talk__org {
+    color: $color-fg-muted;
+    font-size: $fs-sm;
+    margin-top: 0.15em;
+    display: block;
+    @media (prefers-color-scheme: dark) { color: $color-fg-muted-dark; }
+  }
+  .talk__badge {
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    padding: 0.15rem 0.5rem;
+    border-radius: $radius-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    align-self: center;
+    &--upcoming {
+      background: $color-accent-soft;
+      color: $color-accent-strong;
+      @media (prefers-color-scheme: dark) {
+        background: $color-accent-soft-dark;
+        color: $color-accent-dark;
+      }
+    }
+    &--past {
+      color: $color-fg-subtle;
+      @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
+    }
+  }
+
+  // ───── Speaking-event photo gallery (under talks) ─────────────────────
+  &__speaking-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid $color-border;
+    @media (prefers-color-scheme: dark) { border-top-color: $color-border-dark; }
+  }
+  .speaking-shot {
+    margin: 0;
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: $radius-sm;
+      transition: transform $dur-base $ease, filter $dur-base $ease;
+      filter: brightness(0.96) saturate(0.92);
+    }
+    figcaption {
+      font-family: $font-mono;
+      font-size: $fs-xs;
+      color: $color-fg-subtle;
+      margin-top: 0.5rem;
+      em { font-style: italic; color: $color-fg-muted; }
+      @media (prefers-color-scheme: dark) {
+        color: $color-fg-subtle-dark;
+        em { color: $color-fg-muted-dark; }
+      }
+    }
+    &:hover img {
+      transform: translateY(-2px);
+      filter: brightness(1) saturate(1);
+    }
+  }
+
+  // ───── Bio ────────────────────────────────────────────────────────────
+  &__bio {
+    .bio__body {
+      font-family: $font-display;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      line-height: 1.55;
+      color: $color-fg;
+      max-width: $measure;
+      letter-spacing: -0.005em;
+      font-weight: 400;
+      em { font-style: italic; }
+      @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+    }
+  }
+
+  // ───── LinkedIn cards ─────────────────────────────────────────────────
+  &__linkedin {
+    .card__body {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  // ───── Contact ────────────────────────────────────────────────────────
+  &__contact {
+    padding: $section-y 0;
+    text-align: left;
+  }
+  &__contact-line {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 3.5vw, $fs-xl);
+    line-height: $lh-snug;
+    margin-bottom: 1.5rem;
+    color: $color-fg;
+    font-weight: 450;
+    letter-spacing: -0.01em;
+    @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+  }
+  &__contact-links {
+    display: flex; flex-wrap: wrap; gap: 1.25rem;
+    font-family: $font-mono;
+    font-size: $fs-sm;
+  }
+
+  // ───── Footer ─────────────────────────────────────────────────────────
+  &__footer {
+    padding: 2.5rem 0 4rem;
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    color: $color-fg-subtle;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
+    a { color: inherit; }
+  }
+}

@@ -1,0 +1,49 @@
+# Talks & conferences. Order is irrelevant — the layout sorts by date.
+
+- id: cdo-day-madrid-2026
+  title: "Speaker"
+  organisation: "Chief Data Officer Day"
+  city: "Madrid, Spain"
+  venue: "Estadio Atlético de Madrid"
+  date: 2026-05-13
+  url: ""
+  status: upcoming
+  role: speaker
+  tags: [data-strategy, agentic-ai, cdo]
+
+- id: iab-tendencias-2026-chile
+  title: "AI Trends 2026 — keynote and panel"
+  organisation: "IAB Chile"
+  city: "Santiago, Chile"
+  date: 2026-04-15
+  url: "https://iab.cl/noticias-y-estudios/con-sala-llena-presentamos-el-informe-de-tendencias-de-marketing-digital-2026/"
+  status: past
+  role: keynote
+  tags: [marketing, agentic-ai, latam]
+
+- id: ecosystems2030-coruna-2025
+  title: "Agentic AI Masterclass"
+  organisation: "Ecosystems2030"
+  city: "A Coruña, Spain"
+  date: 2025-10-01
+  url: "https://ecosystems2030.com/agentic-ai-masterclass/"
+  status: past
+  role: faculty
+
+- id: ai-big-data-expo-2024
+  title: "Speaker"
+  organisation: "AI & Big Data Expo Global"
+  city: "London, UK"
+  date: 2024-11-30
+  url: "https://www.ai-expo.net/global/speaker/javier-campos/"
+  status: past
+  role: speaker
+
+- id: ai-world-congress-2024
+  title: "Speaker"
+  organisation: "AI World Congress 2024"
+  city: "London, UK"
+  date: 2024-05-30
+  url: "https://aiconference.london/agenda/"
+  status: past
+  role: speaker

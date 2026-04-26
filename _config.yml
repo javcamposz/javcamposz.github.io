@@ -127,15 +127,45 @@ include:
   - .htaccess
   - _pages
 
+exclude:
+  # Internal planning docs — not part of the published site.
+  - REDESIGN_OPTIONS.md
+  - DESIGN_IDEAS.md
+  - PHASE_0_PLAN.md
+  # Source material for the redesign — kept in repo, not published.
+  - javier/
+  # Bundle / build artefacts
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - .bundle/
+  # Legacy template scaffolding (will be removed in Phase 1)
+  - Appraisals
+  - beautiful-jekyll-theme.gemspec
+  - CHANGELOG.md
+  - OLD_config.yml
+  # Untracked drafts not ready to publish
+  - email_template.md
+  - google-apps-script.js
+  - invitation_1.md
+
+# Collections
+collections:
+  linkedin:
+    output: false       # individual post pages not rendered in Phase 0
+    sort_by: date
+
+# Sass — used by /assets/css/javier.scss for the landing page
+sass:
+  sass_dir: _sass
+  style: compressed
+
 # Outputting
 permalink: /:categories/:title/
 timezone: Europe/London
-paginate: 5
-paginate_path: /page:num/
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed

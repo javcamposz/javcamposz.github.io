@@ -1,0 +1,61 @@
+// Design tokens — Claude-design language adapted for javiercampos.
+// Single source of truth for palette, typography, spacing.
+
+// ───── Colour: Light (warm cream) ────────────────────────────────────────
+$color-bg:            #FAF9F5;
+$color-bg-elevated:   #F5F4EE;
+$color-bg-muted:      #EFEDE4;
+$color-fg:            #1A1915;
+$color-fg-muted:      #5C5A52;
+$color-fg-subtle:     #8A8880;
+$color-accent:        #CC785C;
+$color-accent-strong: #A85A40;
+$color-accent-soft:   rgba(204, 120, 92, 0.12);
+$color-border:        #E5E2D6;
+$color-link:          #CC785C;
+$color-link-hover:    #A85A40;
+
+// ───── Colour: Dark (warm dark) ──────────────────────────────────────────
+$color-bg-dark:            #1F1E1D;
+$color-bg-elevated-dark:   #262624;
+$color-bg-muted-dark:      #2E2D2A;
+$color-fg-dark:            #ECEAE0;
+$color-fg-muted-dark:      #A8A599;
+$color-fg-subtle-dark:     #6F6D63;
+$color-accent-dark:        #E08B6E;
+$color-accent-soft-dark:   rgba(224, 139, 110, 0.16);
+$color-border-dark:        #3A3835;
+
+// ───── Typography ────────────────────────────────────────────────────────
+$font-display: "Newsreader", "Source Serif 4", Georgia, serif;
+$font-body:    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-mono:    "JetBrains Mono", "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+// Modular type scale, ratio ~1.25, base 17px
+$fs-xs:   0.75rem;    // 12.75px — captions / metadata
+$fs-sm:   0.875rem;   // 14.875px — small UI
+$fs-base: 1rem;       // 17px — body
+$fs-md:   1.25rem;    // 21.25px — lede
+$fs-lg:   1.75rem;    // 29.75px — h3
+$fs-xl:   2.5rem;     // 42.5px — h2
+$fs-2xl:  3.5rem;     // 59.5px — h1
+$fs-3xl:  5rem;       // 85px — display
+
+$lh-tight: 1.15;
+$lh-snug:  1.35;
+$lh-base:  1.65;
+
+// ───── Spacing & layout ──────────────────────────────────────────────────
+$measure:      68ch;
+$measure-wide: 84ch;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$gutter: clamp(1rem, 4vw, 3rem);
+$section-y: clamp(3rem, 8vw, 6rem);
+
+// ───── Motion ────────────────────────────────────────────────────────────
+$ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+$dur-fast: 120ms;
+$dur-base: 240ms;
+$dur-slow: 480ms;
