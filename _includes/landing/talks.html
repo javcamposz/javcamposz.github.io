@@ -15,7 +15,19 @@
   <ul class="landing__talks-list">
     {% for t in upcoming %}
       <li class="talk">
-        <span class="talk__date">{{ t.date | date: "%b %d, %Y" }}</span>
+        <span class="talk__date">
+          {%- if t.end_date -%}
+            {%- assign start_period = t.date | date: "%b %Y" -%}
+            {%- assign end_period = t.end_date | date: "%b %Y" -%}
+            {%- if start_period == end_period -%}
+              {{ t.date | date: "%b %-d" }}-{{ t.end_date | date: "%-d, %Y" }}
+            {%- else -%}
+              {{ t.date | date: "%b %-d, %Y" }}-{{ t.end_date | date: "%b %-d, %Y" }}
+            {%- endif -%}
+          {%- else -%}
+            {{ t.date | date: "%b %d, %Y" }}
+          {%- endif -%}
+        </span>
         <span>
           <span class="talk__title">
             {%- if t.url and t.url != "" -%}<a href="{{ t.url }}">{{ t.title }} — {{ t.organisation }}</a>{%- else -%}{{ t.title }} — {{ t.organisation }}{%- endif -%}
@@ -27,7 +39,19 @@
     {% endfor %}
     {% for t in past %}
       <li class="talk">
-        <span class="talk__date">{{ t.date | date: "%b %d, %Y" }}</span>
+        <span class="talk__date">
+          {%- if t.end_date -%}
+            {%- assign start_period = t.date | date: "%b %Y" -%}
+            {%- assign end_period = t.end_date | date: "%b %Y" -%}
+            {%- if start_period == end_period -%}
+              {{ t.date | date: "%b %-d" }}-{{ t.end_date | date: "%-d, %Y" }}
+            {%- else -%}
+              {{ t.date | date: "%b %-d, %Y" }}-{{ t.end_date | date: "%b %-d, %Y" }}
+            {%- endif -%}
+          {%- else -%}
+            {{ t.date | date: "%b %d, %Y" }}
+          {%- endif -%}
+        </span>
         <span>
           <span class="talk__title">
             {%- if t.url and t.url != "" -%}<a href="{{ t.url }}">{{ t.title }} — {{ t.organisation }}</a>{%- else -%}{{ t.title }} — {{ t.organisation }}{%- endif -%}

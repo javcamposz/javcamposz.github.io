@@ -11,6 +11,28 @@
   role: speaker
   tags: [data-strategy, agentic-ai, cdo]
 
+- id: ai-world-congress-london-2026
+  title: "Agentic AI"
+  organisation: "AI World Congress"
+  city: "London, UK"
+  date: 2026-06-23
+  end_date: 2026-06-24
+  url: "https://aiconference.london/"
+  status: upcoming
+  role: speaker
+  tags: [agentic-ai, ai-conference, london]
+
+- id: xfutures-summit-madrid-2026
+  title: "Speaker"
+  organisation: "XFutures Summit"
+  city: "Madrid, Spain"
+  date: 2026-10-22
+  end_date: 2026-10-24
+  url: ""
+  status: upcoming
+  role: speaker
+  tags: [future-of-ai, agentic-ai, madrid]
+
 - id: iab-tendencias-2026-chile
   title: "AI Trends 2026 — keynote and panel"
   organisation: "IAB Chile"
