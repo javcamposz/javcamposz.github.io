@@ -5,6 +5,8 @@ main:
     url: /author/
   - title: "New Book"
     url: /autonomous-minds/
+  - title: "Safety AI"
+    url: /safety-ai/
   - title: "Podcasts"
     url: "https://www.youtube.com/@JavierCamposMythBusterAI"
   - title: "Newsletter"

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Published Safety AI Papers | Javier Campos</title>
+    <meta
+      name="description"
+      content="An interactive public guide to Javier Campos's published safety AI papers and the concepts around evaluations, loss of control, and AI assurance."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#papers">Papers</a>
+          <a href="#map">Map</a>
+          <a href="#concepts">Concepts</a>
+          <a href="#assurance">Assurance</a>
+        </nav>
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <span class="kicker">Published safety AI work</span>
+            <h1>From misalignment evaluations to independently reviewed safety cases.</h1>
+            <p>
+              Explore two public papers and the safety AI concepts they connect: agent evaluations,
+              loss of control, scheming, sandbagging, safety cases, Assurance 2.0, and external review.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#papers">Explore papers</a>
+              <a class="secondary-action" href="#map">Open concept map</a>
+            </div>
+          </section>
+          <section class="signal-panel" aria-label="Research signals">
+            <div class="signal active" data-signal="evals">
+              <strong>01</strong>
+              <span>Misalignment propensity</span>
+            </div>
+            <div class="signal" data-signal="control">
+              <strong>02</strong>
+              <span>Loss-of-control pathways</span>
+            </div>
+            <div class="signal" data-signal="assurance">
+              <strong>03</strong>
+              <span>Assurance 2.0 review</span>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <main>
+        <section class="overview-strip" aria-label="Site summary">
+          <article>
+            <strong data-stat-papers>2</strong>
+            <span>public papers</span>
+          </article>
+          <article>
+            <strong data-stat-concepts>0</strong>
+            <span>concepts</span>
+          </article>
+          <article>
+            <strong data-stat-links>0</strong>
+            <span>paper-concept links</span>
+          </article>
+          <article>
+            <strong>public</strong>
+            <span>no internal drafts</span>
+          </article>
+        </section>
+
+        <section class="section intro-section" id="intro">
+          <div class="section-title">
+            <span>Home</span>
+            <h2>Safety AI, from field map to my research focus.</h2>
+          </div>
+          <div class="intro-layout">
+            <article class="prose-card">
+              <h3>What Is Safety AI?</h3>
+              <p>
+                Safety AI is the field concerned with making advanced AI systems reliable, controllable,
+                and beneficial as their capabilities increase. It spans technical work, governance,
+                evaluation, assurance, and institutional design.
+              </p>
+              <div class="area-grid" data-area-grid></div>
+              <a class="inline-action" href="https://aisafety.com/map">Open the AI Safety Map</a>
+            </article>
+            <aside class="focus-card">
+              <span class="eyebrow">My Focus</span>
+              <h3>Evals, loss of control, and assurance.</h3>
+              <p>
+                My public work asks how we know whether an advanced AI system is safe enough to rely on,
+                especially when it may act autonomously, use tools, reason over long horizons, and operate
+                inside complex organizations.
+              </p>
+              <div class="focus-switcher" data-focus-switcher></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section bridge-section" id="bridge">
+          <div class="bridge-card">
+            <div>
+              <span class="eyebrow">The bridge</span>
+              <h2>Evaluation produces evidence. Assurance determines whether that evidence is sufficient for a safety decision.</h2>
+            </div>
+            <div class="bridge-flow" data-bridge-flow></div>
+          </div>
+        </section>
+
+        <section class="section" id="papers">
+          <div class="section-title">
+            <span>Paper Explorer</span>
+            <h2>Key points and deep dives for the two papers.</h2>
+          </div>
+          <div class="paper-tabs" data-paper-tabs></div>
+          <div class="paper-workspace">
+            <article class="paper-detail" data-paper-detail></article>
+            <aside class="paper-side">
+              <div class="side-card">
+                <h3>What to look for</h3>
+                <ul data-paper-lens></ul>
+              </div>
+              <div class="side-card">
+                <h3>Public links</h3>
+                <div class="link-stack" data-paper-links></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section map-section" id="map">
+          <div class="section-title">
+            <span>Interactive Map</span>
+            <h2>Click a node to see how the published papers connect.</h2>
+          </div>
+          <div class="map-layout">
+            <div class="graph-card">
+              <div class="toolbar">
+                <input type="search" placeholder="Search papers and concepts" data-search aria-label="Search papers and concepts" />
+                <div class="filter-row" data-filters></div>
+              </div>
+              <div class="graph" data-graph></div>
+            </div>
+            <article class="node-detail" data-node-detail></article>
+          </div>
+        </section>
+
+        <section class="section" id="concepts">
+          <div class="section-title">
+            <span>Concept Matrix</span>
+            <h2>How the papers cover safety AI concepts.</h2>
+          </div>
+          <div class="matrix" data-matrix></div>
+        </section>
+
+        <section class="section paths-section" id="paths">
+          <div class="section-title">
+            <span>Reader Paths</span>
+            <h2>Choose a route through the material.</h2>
+          </div>
+          <div class="reader-paths" data-reader-paths></div>
+        </section>
+
+        <section class="section split" id="assurance">
+          <div>
+            <div class="section-title compact">
+              <span>Assurance View</span>
+              <h2>Evaluation is evidence. Assurance asks whether the evidence supports the decision.</h2>
+            </div>
+            <div class="assurance-flow" data-assurance-flow></div>
+          </div>
+          <aside class="reader-card">
+            <h3>Build an agent prompt</h3>
+            <p>Select a node in the map, then use this prompt to expand the public explanation without exposing internal drafts.</p>
+            <textarea data-prompt aria-label="Agent prompt"></textarea>
+            <button type="button" data-copy>Copy prompt</button>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/data.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

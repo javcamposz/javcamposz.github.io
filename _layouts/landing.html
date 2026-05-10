@@ -35,6 +35,7 @@
         <span class="landing__brand">javcampos.io</span>
         <nav class="landing__nav" aria-label="Primary">
           <a href="#research">work</a>
+          <a href="{{ '/safety-ai/' | relative_url }}">safety ai</a>
           <a href="#talks">talks</a>
           <a href="#bio">bio</a>
           <a href="#writing">writing</a>
@@ -45,6 +46,7 @@
       {{ content }}
 
       {% include landing/hero.html %}
+      {% include landing/safety_ai_preview.html %}
       {% include landing/intro.html %}
       {% include landing/selected_work.html %}
       {% include landing/talks.html %}

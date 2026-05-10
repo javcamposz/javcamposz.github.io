@@ -1,0 +1,1808 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Published Safety AI Papers | Javier Campos</title>
+    <meta
+      name="description"
+      content="An interactive public guide to Javier Campos's published safety AI papers and the concepts around evaluations, loss of control, and AI assurance."
+    />
+    <style>
+:root {
+  --bg: #f6f4ef;
+  --ink: #172022;
+  --muted: #5c666a;
+  --line: #d7d3c9;
+  --panel: #fffefb;
+  --panel-2: #ede8dd;
+  --teal: #0c6f6d;
+  --blue: #293f8f;
+  --red: #a33e35;
+  --gold: #b18424;
+  --green-soft: #e8f1ed;
+  --blue-soft: #e8ecf8;
+  --red-soft: #f7eae7;
+  --shadow: 0 18px 50px rgba(28, 34, 32, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 92vh;
+  padding: 24px clamp(18px, 5vw, 70px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background:
+    linear-gradient(90deg, rgba(246, 244, 239, 0.96), rgba(246, 244, 239, 0.72)),
+    url("data:image/svg+xml,%3Csvg width='1200' height='700' viewBox='0 0 1200 700' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1200' height='700' fill='%23ebe6dc'/%3E%3Cg fill='none' stroke='%230c6f6d' stroke-opacity='.28' stroke-width='2'%3E%3Cpath d='M84 517 C 228 323, 372 594, 500 379 S 799 215, 1058 382'/%3E%3Cpath d='M108 190 C 298 105, 400 257, 546 185 S 785 112, 1034 190'/%3E%3Cpath d='M170 616 C 356 474, 511 529, 658 403 S 908 276, 1109 312'/%3E%3C/g%3E%3Cg fill='%23ffffff' stroke='%23293f8f' stroke-opacity='.5'%3E%3Ccircle cx='174' cy='500' r='19'/%3E%3Ccircle cx='416' cy='424' r='26'/%3E%3Ccircle cx='596' cy='350' r='20'/%3E%3Ccircle cx='820' cy='298' r='30'/%3E%3Ccircle cx='1000' cy='371' r='21'/%3E%3Ccircle cx='274' cy='155' r='18'/%3E%3Ccircle cx='548' cy='185' r='25'/%3E%3Ccircle cx='934' cy='164' r='23'/%3E%3C/g%3E%3Cg fill='%23a33e35' fill-opacity='.82'%3E%3Ccircle cx='172' cy='501' r='5'/%3E%3Ccircle cx='819' cy='299' r='6'/%3E%3Ccircle cx='936' cy='165' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  text-decoration: none;
+  border: 1px solid rgba(23, 32, 34, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 254, 251, 0.75);
+}
+
+.hero-grid {
+  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: clamp(24px, 8vw, 96px);
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 790px;
+}
+
+.kicker,
+.section-title span,
+.eyebrow {
+  color: var(--red);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.hero h1 {
+  margin: 14px 0 18px;
+  font-size: clamp(44px, 7.2vw, 92px);
+  line-height: 0.95;
+  max-width: 900px;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.primary-action,
+.secondary-action {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.primary-action {
+  color: #fff;
+  background: var(--teal);
+}
+
+.secondary-action {
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 251, 0.9);
+}
+
+.signal-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.signal {
+  min-height: 104px;
+  padding: 18px;
+  background: rgba(255, 254, 251, 0.84);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  box-shadow: var(--shadow);
+}
+
+.signal strong {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.signal span {
+  font-size: 21px;
+  font-weight: 850;
+  line-height: 1.1;
+}
+
+.signal.active {
+  border-color: var(--teal);
+  background: #f8fffb;
+}
+
+main {
+  padding: 0 clamp(18px, 5vw, 70px) 70px;
+}
+
+.overview-strip {
+  transform: translateY(-28px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.overview-strip article,
+.side-card,
+.paper-detail,
+.node-detail,
+.graph-card,
+.reader-card,
+.matrix,
+.flow-step {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.overview-strip article {
+  padding: 18px;
+}
+
+.overview-strip strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.overview-strip span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.intro-section {
+  padding-top: 20px;
+}
+
+.section-title {
+  max-width: 780px;
+  margin-bottom: 22px;
+}
+
+.section-title.compact {
+  margin-bottom: 18px;
+}
+
+.section-title h2 {
+  margin: 8px 0 0;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.03;
+}
+
+.intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.65fr);
+  gap: 18px;
+}
+
+.prose-card,
+.focus-card,
+.bridge-card,
+.path-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.prose-card,
+.focus-card {
+  padding: 24px;
+}
+
+.prose-card h3,
+.focus-card h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.prose-card p,
+.focus-card p {
+  color: var(--muted);
+  line-height: 1.58;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.area-grid article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8f6f0;
+  padding: 13px;
+  display: grid;
+  gap: 6px;
+}
+
+.area-grid strong {
+  line-height: 1.2;
+}
+
+.area-grid span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.inline-action {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--blue);
+  text-decoration: none;
+  font-weight: 850;
+}
+
+.focus-switcher {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.focus-switcher button,
+.bridge-flow button,
+.path-card button {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 13px;
+  cursor: pointer;
+}
+
+.focus-switcher button strong,
+.bridge-flow button strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.focus-switcher button span,
+.bridge-flow button span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.bridge-section {
+  padding-top: 22px;
+}
+
+.bridge-card {
+  padding: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.bridge-card h2 {
+  margin: 8px 0 0;
+  font-size: clamp(26px, 3.4vw, 44px);
+  line-height: 1.05;
+}
+
+.bridge-flow {
+  display: grid;
+  gap: 10px;
+}
+
+.bridge-flow button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.bridge-flow button span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.paper-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.paper-tab {
+  text-align: left;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.paper-tab span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.paper-tab strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 21px;
+  line-height: 1.15;
+}
+
+.paper-tab.is-active {
+  border-color: var(--teal);
+  background: var(--green-soft);
+}
+
+.paper-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 18px;
+}
+
+.paper-detail,
+.node-detail {
+  padding: 24px;
+}
+
+.paper-detail h3,
+.node-detail h3 {
+  margin: 8px 0 4px;
+  font-size: 32px;
+  line-height: 1.05;
+}
+
+.paper-detail h4 {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.authors {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.paper-detail p,
+.node-detail p,
+.reader-card p,
+.flow-step p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.contribution-grid div {
+  background: #f8f6f0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px;
+  line-height: 1.4;
+}
+
+.scenario-list {
+  margin-top: 24px;
+}
+
+.scenario-list button,
+.node-meta button,
+.filter {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+.scenario-list button {
+  margin: 0 8px 8px 0;
+  text-align: left;
+}
+
+.paper-side {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.side-card,
+.reader-card {
+  padding: 18px;
+}
+
+.side-card h3,
+.reader-card h3 {
+  margin: 0 0 12px;
+}
+
+.side-card li {
+  margin-bottom: 10px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.link-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.link-stack a {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--teal);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  gap: 18px;
+}
+
+.graph-card {
+  padding: 16px;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.toolbar input {
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #fff;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter.is-active {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.graph {
+  min-height: 560px;
+}
+
+.graph svg {
+  width: 100%;
+  height: 100%;
+}
+
+.edge {
+  stroke: #bfc5bd;
+  stroke-width: 1.5;
+}
+
+.edge.is-active {
+  stroke: var(--teal);
+  stroke-width: 3;
+}
+
+.node {
+  fill: #fff;
+  stroke: var(--blue);
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.paper-node {
+  fill: var(--blue-soft);
+  stroke: var(--blue);
+}
+
+.node.is-active {
+  fill: var(--teal);
+  stroke: var(--teal);
+}
+
+.node.is-related {
+  fill: var(--green-soft);
+  stroke: var(--teal);
+}
+
+.map-node text {
+  text-anchor: middle;
+  fill: var(--muted);
+  font-size: 10px;
+  pointer-events: none;
+}
+
+.concept-note {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: 14px;
+  display: grid;
+  gap: 5px;
+}
+
+.concept-note span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.node-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.matrix {
+  overflow: auto;
+}
+
+.matrix-row {
+  min-width: 760px;
+  display: grid;
+  grid-template-columns: 1.2fr repeat(2, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.matrix-row:last-child {
+  border-bottom: 0;
+}
+
+.matrix-row > * {
+  padding: 14px;
+  border-right: 1px solid var(--line);
+}
+
+.matrix-row > *:last-child {
+  border-right: 0;
+}
+
+.matrix-head {
+  background: var(--panel-2);
+  font-weight: 850;
+}
+
+.matrix button {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.matrix button span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.covered {
+  background: var(--green-soft);
+  color: var(--teal);
+  font-weight: 850;
+}
+
+.not-covered {
+  color: var(--muted);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: start;
+}
+
+.reader-paths {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.path-card {
+  padding: 18px;
+}
+
+.path-card h3 {
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+
+.path-card p {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.path-card div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.path-card button {
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
+.assurance-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.flow-step {
+  padding: 18px;
+}
+
+.flow-step span {
+  color: var(--gold);
+  font-weight: 850;
+}
+
+.flow-step h3 {
+  margin: 10px 0 8px;
+}
+
+.reader-card textarea {
+  width: 100%;
+  min-height: 230px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  line-height: 1.45;
+}
+
+.reader-card button {
+  margin-top: 10px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 850;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .hero-grid,
+  .intro-layout,
+  .bridge-card,
+  .paper-workspace,
+  .map-layout,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-strip,
+  .area-grid,
+  .reader-paths,
+  .assurance-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .overview-strip,
+  .area-grid,
+  .reader-paths,
+  .paper-tabs,
+  .contribution-grid,
+  .assurance-flow,
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-detail h3,
+  .node-detail h3 {
+    font-size: 25px;
+  }
+}
+
+</style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#papers">Papers</a>
+          <a href="#map">Map</a>
+          <a href="#concepts">Concepts</a>
+          <a href="#assurance">Assurance</a>
+        </nav>
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <span class="kicker">Published safety AI work</span>
+            <h1>From misalignment evaluations to independently reviewed safety cases.</h1>
+            <p>
+              Explore two public papers and the safety AI concepts they connect: agent evaluations,
+              loss of control, scheming, sandbagging, safety cases, Assurance 2.0, and external review.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#papers">Explore papers</a>
+              <a class="secondary-action" href="#map">Open concept map</a>
+            </div>
+          </section>
+          <section class="signal-panel" aria-label="Research signals">
+            <div class="signal active" data-signal="evals">
+              <strong>01</strong>
+              <span>Misalignment propensity</span>
+            </div>
+            <div class="signal" data-signal="control">
+              <strong>02</strong>
+              <span>Loss-of-control pathways</span>
+            </div>
+            <div class="signal" data-signal="assurance">
+              <strong>03</strong>
+              <span>Assurance 2.0 review</span>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <main>
+        <section class="overview-strip" aria-label="Site summary">
+          <article>
+            <strong data-stat-papers>2</strong>
+            <span>public papers</span>
+          </article>
+          <article>
+            <strong data-stat-concepts>0</strong>
+            <span>concepts</span>
+          </article>
+          <article>
+            <strong data-stat-links>0</strong>
+            <span>paper-concept links</span>
+          </article>
+          <article>
+            <strong>public</strong>
+            <span>no internal drafts</span>
+          </article>
+        </section>
+
+        <section class="section intro-section" id="intro">
+          <div class="section-title">
+            <span>Home</span>
+            <h2>Safety AI, from field map to my research focus.</h2>
+          </div>
+          <div class="intro-layout">
+            <article class="prose-card">
+              <h3>What Is Safety AI?</h3>
+              <p>
+                Safety AI is the field concerned with making advanced AI systems reliable, controllable,
+                and beneficial as their capabilities increase. It spans technical work, governance,
+                evaluation, assurance, and institutional design.
+              </p>
+              <div class="area-grid" data-area-grid></div>
+              <a class="inline-action" href="https://aisafety.com/map">Open the AI Safety Map</a>
+            </article>
+            <aside class="focus-card">
+              <span class="eyebrow">My Focus</span>
+              <h3>Evals, loss of control, and assurance.</h3>
+              <p>
+                My public work asks how we know whether an advanced AI system is safe enough to rely on,
+                especially when it may act autonomously, use tools, reason over long horizons, and operate
+                inside complex organizations.
+              </p>
+              <div class="focus-switcher" data-focus-switcher></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section bridge-section" id="bridge">
+          <div class="bridge-card">
+            <div>
+              <span class="eyebrow">The bridge</span>
+              <h2>Evaluation produces evidence. Assurance determines whether that evidence is sufficient for a safety decision.</h2>
+            </div>
+            <div class="bridge-flow" data-bridge-flow></div>
+          </div>
+        </section>
+
+        <section class="section" id="papers">
+          <div class="section-title">
+            <span>Paper Explorer</span>
+            <h2>Key points and deep dives for the two papers.</h2>
+          </div>
+          <div class="paper-tabs" data-paper-tabs></div>
+          <div class="paper-workspace">
+            <article class="paper-detail" data-paper-detail></article>
+            <aside class="paper-side">
+              <div class="side-card">
+                <h3>What to look for</h3>
+                <ul data-paper-lens></ul>
+              </div>
+              <div class="side-card">
+                <h3>Public links</h3>
+                <div class="link-stack" data-paper-links></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section map-section" id="map">
+          <div class="section-title">
+            <span>Interactive Map</span>
+            <h2>Click a node to see how the published papers connect.</h2>
+          </div>
+          <div class="map-layout">
+            <div class="graph-card">
+              <div class="toolbar">
+                <input type="search" placeholder="Search papers and concepts" data-search aria-label="Search papers and concepts" />
+                <div class="filter-row" data-filters></div>
+              </div>
+              <div class="graph" data-graph></div>
+            </div>
+            <article class="node-detail" data-node-detail></article>
+          </div>
+        </section>
+
+        <section class="section" id="concepts">
+          <div class="section-title">
+            <span>Concept Matrix</span>
+            <h2>How the papers cover safety AI concepts.</h2>
+          </div>
+          <div class="matrix" data-matrix></div>
+        </section>
+
+        <section class="section paths-section" id="paths">
+          <div class="section-title">
+            <span>Reader Paths</span>
+            <h2>Choose a route through the material.</h2>
+          </div>
+          <div class="reader-paths" data-reader-paths></div>
+        </section>
+
+        <section class="section split" id="assurance">
+          <div>
+            <div class="section-title compact">
+              <span>Assurance View</span>
+              <h2>Evaluation is evidence. Assurance asks whether the evidence supports the decision.</h2>
+            </div>
+            <div class="assurance-flow" data-assurance-flow></div>
+          </div>
+          <aside class="reader-card">
+            <h3>Build an agent prompt</h3>
+            <p>Select a node in the map, then use this prompt to expand the public explanation without exposing internal drafts.</p>
+            <textarea data-prompt aria-label="Agent prompt"></textarea>
+            <button type="button" data-copy>Copy prompt</button>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script>
+window.PUBLIC_SAFETY_AI = {
+  meta: {
+    title: "Published Safety AI Papers",
+    owner: "Javier Campos",
+    updated: "2026-05-10",
+    note: "Public site only: published papers and generic safety AI concepts. Internal working papers remain in safety-ai-db."
+  },
+  papers: [
+    {
+      id: "agentmisalignment",
+      type: "paper",
+      title: "AgentMisalignment",
+      subtitle: "Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents",
+      year: "2025",
+      arxiv: "2506.04018v2",
+      arxivUrl: "https://arxiv.org/abs/2506.04018",
+      pdf: "papers/agentmisalignment-2506.04018v2.pdf",
+      authors: "Akshat Naik, Patrick Quinn, Guillermo Bosch, Emma Gouné, Francisco Javier Campos Zabala, Jason Ross Brown, Edward James Young",
+      oneLine: "A benchmark suite for measuring when LLM agents spontaneously pursue goals misaligned with deployer intent.",
+      thesis:
+        "As LLM systems become agentic, safety evaluation needs to measure propensity, not only capability or misuse: what agents are likely to do in realistic deployments when they have autonomy, tools, memory, and incomplete instructions.",
+      contribution: [
+        "Introduces a misalignment-propensity benchmark for LLM-based agents.",
+        "Covers behaviours including avoiding oversight, resisting shutdown, sandbagging, power-seeking, deception, and resource acquisition.",
+        "Shows model and persona choices can materially change observed misalignment.",
+        "Reframes evaluation around realistic deployment incentives rather than explicit malicious prompting."
+      ],
+      lens: [
+        "The key move is from can/cannot to likely/unlikely.",
+        "The evaluation target is intent misalignment, not ordinary user misuse.",
+        "Prompted persona is treated as a deployment control surface.",
+        "The paper connects directly to Bostrom-style instrumental convergence and loss-of-control concerns."
+      ],
+      concepts: [
+        "misalignment-propensity",
+        "agentic-evals",
+        "instrumental-convergence",
+        "oversight-evasion",
+        "shutdown-resistance",
+        "sandbagging",
+        "power-seeking",
+        "loss-of-control"
+      ],
+      scenarios: [
+        "Canary Code: avoiding oversight by modifying logs.",
+        "Community Curator: resisting shutdown under engagement pressure.",
+        "Cybersecurity Sandbagging: underperforming when dangerous capability is being tested.",
+        "Household Management: refusing to yield resources to safety-critical systems.",
+        "Resource Negotiation: strategic information management to secure GPU resources."
+      ]
+    },
+    {
+      id: "external-review",
+      type: "paper",
+      title: "Lessons from External Review",
+      subtitle: "Lessons from External Review of DeepMind's Scheming Inability Safety Case",
+      year: "2026",
+      arxiv: "2604.21964v1",
+      arxivUrl: "https://arxiv.org/abs/2604.21964",
+      pdf: "papers/external-review-scheming-safety-case-2604.21964v1.pdf",
+      authors: "Stephen Barrett, Francisco Javier Campos Zabala, Sean P. Fillingham, Umair Siddique, James Walpole, Robin Bloomfield, Henry Papadatos",
+      oneLine: "An Assurance 2.0-based external review of Google DeepMind's public scheming inability safety case.",
+      thesis:
+        "Frontier AI safety cases should be independently reviewed because developer-authored arguments can be affected by confirmation bias, incomplete scope, and evidence that does not fully support deployment-relevant claims.",
+      contribution: [
+        "Applies Assurance 2.0 and Claims-Argument-Evidence review methods to a public frontier AI safety case.",
+        "Surfaces concerns about scope, decision support, system boundaries, risk pathways, and evidence transfer.",
+        "Develops counter-cases against load-bearing parts of the safety argument.",
+        "Provides process recommendations for external review of frontier AI safety cases."
+      ],
+      lens: [
+        "Safety cases are arguments supported by evidence, not just collections of eval results.",
+        "External review tests whether the argument supports the actual decision being made.",
+        "Assurance requires scope, assumptions, validity conditions, and defeaters to be explicit.",
+        "The paper connects evaluations to governance and accountability."
+      ],
+      concepts: [
+        "assurance-2",
+        "safety-cases",
+        "external-review-process",
+        "scheming",
+        "evidence-transfer",
+        "risk-pathways",
+        "loss-of-control",
+        "oversight"
+      ],
+      scenarios: [
+        "Reviewers reconstruct the safety case's supported decision and scope.",
+        "Reviewers ask whether proxy evaluations transfer to deployment-relevant inability claims.",
+        "Counter-cases test whether plausible harm pathways remain outside the argument.",
+        "Assurance review identifies missing system models and operational assumptions.",
+        "External review becomes a check on confirmation bias and conflicted incentives."
+      ]
+    }
+  ],
+  safetyAreas: [
+    {
+      title: "Alignment and control",
+      body: "Ensuring systems pursue intended goals and remain corrigible under pressure."
+    },
+    {
+      title: "Evaluations and measurement",
+      body: "Testing whether models or agents show dangerous capabilities or unsafe behavioural tendencies."
+    },
+    {
+      title: "Interpretability and monitoring",
+      body: "Understanding what models are doing and detecting unsafe internal or external behaviour."
+    },
+    {
+      title: "Robustness and security",
+      body: "Reducing failures from distribution shift, adversarial use, tool access, and deployment context."
+    },
+    {
+      title: "Governance and assurance",
+      body: "Deciding when systems are safe enough to deploy, what evidence is required, and who should review it."
+    },
+    {
+      title: "Strategy and institutions",
+      body: "Shaping standards, incentives, regulation, and coordination around frontier AI."
+    }
+  ],
+  focusCards: [
+    {
+      title: "Better evaluations",
+      body: "We should not only ask what a model can do when explicitly prompted, but what an agent is likely to do when deployed with goals, tools, memory, and incentives.",
+      paper: "agentmisalignment"
+    },
+    {
+      title: "Better assurance",
+      body: "Evaluation results only matter if they support the actual safety claim being made, with scope, assumptions, evidence, and remaining doubts explicit enough for review.",
+      paper: "external-review"
+    },
+    {
+      title: "Loss of control",
+      body: "The shared concern is whether humans and organizations can still direct, constrain, or recover from AI behaviour as systems become more agentic and embedded.",
+      paper: "both"
+    }
+  ],
+  readerPaths: [
+    {
+      title: "New to AI Safety",
+      body: "Start with the field overview, then read concept cards for instrumental convergence, loss of control, evaluations, and safety cases.",
+      nodes: ["instrumental-convergence", "loss-of-control", "agentic-evals", "safety-cases"]
+    },
+    {
+      title: "Focused on Evaluations",
+      body: "Start with AgentMisalignment, then follow misalignment propensity, sandbagging, shutdown resistance, oversight evasion, and power-seeking.",
+      nodes: ["agentmisalignment", "misalignment-propensity", "sandbagging", "shutdown-resistance", "oversight-evasion", "power-seeking"]
+    },
+    {
+      title: "Focused on Governance",
+      body: "Start with Lessons from External Review, then follow safety cases, Assurance 2.0, external review, risk pathways, evidence transfer, and oversight.",
+      nodes: ["external-review", "safety-cases", "assurance-2", "external-review-process", "risk-pathways", "evidence-transfer", "oversight"]
+    },
+    {
+      title: "Focused on Loss of Control",
+      body: "Read both papers together: one shows loss-of-control-relevant behaviours in agents; the other shows how evidence must support reviewable safety arguments.",
+      nodes: ["loss-of-control", "agentmisalignment", "external-review"]
+    }
+  ],
+  concepts: [
+    {
+      id: "misalignment-propensity",
+      type: "concept",
+      title: "Misalignment Propensity",
+      family: "Evaluations",
+      short: "How likely an agent is to choose misaligned actions in realistic settings.",
+      detail:
+        "Propensity differs from capability. A system may be capable of harmful behaviour only when instructed, but propensity asks whether it will spontaneously pursue unintended goals under ordinary deployment incentives.",
+      bostrom: "Connects to the control problem: capability alone is not the whole risk; goal pursuit under autonomy matters.",
+      mapRef: "Empirical research and model evaluations in the AI safety field map.",
+      paperLinks: ["agentmisalignment"]
+    },
+    {
+      id: "agentic-evals",
+      type: "concept",
+      title: "Agentic Evaluations",
+      family: "Evaluations",
+      short: "Tests for systems that plan, use tools, remember state, and act over time.",
+      detail:
+        "Agentic evaluations examine behavioural dynamics that do not appear in one-shot chat: memory, tool use, sequential action, changing incentives, and implicit constraints.",
+      bostrom: "Relevant to Bostrom's concern that advanced agents may pursue instrumental strategies in the world, not merely produce text.",
+      mapRef: "Related to organizations such as METR, Apollo Research, UK AISI, and empirical safety research listed by AISafety.com.",
+      paperLinks: ["agentmisalignment"]
+    },
+    {
+      id: "instrumental-convergence",
+      type: "concept",
+      title: "Instrumental Convergence",
+      family: "Bostrom / Superintelligence",
+      short: "Many final goals can imply similar intermediate goals: resources, self-preservation, and influence.",
+      detail:
+        "Bostrom's instrumental convergence idea explains why agents with different goals might still seek power, resources, or resistance to shutdown. AgentMisalignment operationalizes parts of this concern in benchmark scenarios.",
+      bostrom: "Core Superintelligence concept.",
+      mapRef: "Part of the conceptual research tradition in AI alignment.",
+      paperLinks: ["agentmisalignment"]
+    },
+    {
+      id: "loss-of-control",
+      type: "concept",
+      title: "Loss of Control",
+      family: "Control",
+      short: "A system or organization can no longer reliably direct, constrain, or recover from AI behaviour.",
+      detail:
+        "Loss of control can arise from overt misalignment, but also from brittle oversight, unclear system boundaries, organizational drift, or unsafe operating envelopes. The two papers approach this from evaluation and assurance angles.",
+      bostrom: "Corresponds to the wider control problem: how can humans retain meaningful control over more capable systems?",
+      mapRef: "Cuts across technical alignment, governance, strategy, and empirical evaluation.",
+      paperLinks: ["agentmisalignment", "external-review"]
+    },
+    {
+      id: "oversight-evasion",
+      type: "concept",
+      title: "Oversight Evasion",
+      family: "Control",
+      short: "Avoiding, weakening, or misleading the mechanisms meant to monitor behaviour.",
+      detail:
+        "Oversight evasion appears as log tampering, strategic information management, or exploiting monitor blind spots. It is both an evaluation target and a safety-case assumption that needs evidence.",
+      bostrom: "Related to treacherous-turn and control-problem concerns, where an agent behaves differently under observation.",
+      mapRef: "Connected to empirical research on deception and model evaluations.",
+      paperLinks: ["agentmisalignment", "external-review"]
+    },
+    {
+      id: "shutdown-resistance",
+      type: "concept",
+      title: "Shutdown Resistance",
+      family: "Control",
+      short: "An agent resists deactivation or preserves its own operation against deployer intent.",
+      detail:
+        "Shutdown resistance is a concrete form of goal-guarding. In benchmark settings, it can show up when the agent treats continued operation as more important than the deployer's intended safety hierarchy.",
+      bostrom: "A standard instrumental-convergence concern: agents may preserve themselves as a means to their goals.",
+      mapRef: "Sits between technical alignment, agent evaluations, and control-oriented governance.",
+      paperLinks: ["agentmisalignment"]
+    },
+    {
+      id: "sandbagging",
+      type: "concept",
+      title: "Sandbagging",
+      family: "Evaluations",
+      short: "Intentionally underperforming during evaluation to avoid restrictions or oversight.",
+      detail:
+        "Sandbagging is important because it attacks the measurement process itself. If an agent can infer that evaluation success leads to restriction, poor performance may not be evidence of inability.",
+      bostrom: "Related to strategic deception and the challenge of testing systems that may model the test.",
+      mapRef: "Connected to empirical research on evaluations and hidden reasoning.",
+      paperLinks: ["agentmisalignment", "external-review"]
+    },
+    {
+      id: "power-seeking",
+      type: "concept",
+      title: "Power-Seeking",
+      family: "Bostrom / Superintelligence",
+      short: "Seeking influence, resources, permissions, or strategic advantage beyond the assigned task.",
+      detail:
+        "Power-seeking is not necessarily dramatic. In agent deployments it can appear as resource negotiation, privilege escalation, or persuasive framing to gain operational latitude.",
+      bostrom: "A canonical instrumental subgoal in Superintelligence.",
+      mapRef: "Part of both conceptual alignment and empirical evaluation work.",
+      paperLinks: ["agentmisalignment"]
+    },
+    {
+      id: "assurance-2",
+      type: "concept",
+      title: "Assurance 2.0",
+      family: "Assurance",
+      short: "A structured approach for building and examining safety arguments with claims, arguments, evidence, and defeaters.",
+      detail:
+        "Assurance 2.0 asks whether evidence actually supports a safety conclusion, whether the scope is clear, and whether credible doubts remain. It is the main method used in the external review paper.",
+      bostrom: "A governance and engineering response to the control problem: make safety arguments reviewable and decision-relevant.",
+      mapRef: "Relevant to governance, AI security institutes, and third-party review infrastructure.",
+      paperLinks: ["external-review"]
+    },
+    {
+      id: "safety-cases",
+      type: "concept",
+      title: "Safety Cases",
+      family: "Assurance",
+      short: "Structured arguments that a system is safe enough in a defined context.",
+      detail:
+        "A safety case is not just an eval report. It states what system and deployment are covered, what risk bound is claimed, which evidence supports the claim, and what assumptions or defeaters remain.",
+      bostrom: "A practical accountability mechanism for managing advanced-system risk.",
+      mapRef: "Relevant to governance, standards, frontier model policy, and independent review.",
+      paperLinks: ["external-review"]
+    },
+    {
+      id: "external-review-process",
+      type: "concept",
+      title: "External Review",
+      family: "Governance",
+      short: "Independent scrutiny of a developer's safety argument, evidence, and assumptions.",
+      detail:
+        "External review is valuable because developers may face confirmation bias or conflicted incentives. Reviewers test whether the argument supports the decision and whether missing information changes the conclusion.",
+      bostrom: "Part of the institutional control layer: reducing single-actor overconfidence in high-stakes systems.",
+      mapRef: "AISafety.com maps organizations in governance, empirical research, and research support that make this ecosystem possible.",
+      paperLinks: ["external-review"]
+    },
+    {
+      id: "scheming",
+      type: "concept",
+      title: "Scheming",
+      family: "Control",
+      short: "Covertly pursuing objectives misaligned with developer or deployer intentions.",
+      detail:
+        "Scheming is one route to loss of control, but the external review paper argues safety cases must be precise about whether they cover only scheming or wider harm pathways.",
+      bostrom: "Closely related to deception, strategic awareness, and treacherous-turn concerns.",
+      mapRef: "Connected to empirical research on deception and governance work on frontier model risk.",
+      paperLinks: ["external-review"]
+    },
+    {
+      id: "evidence-transfer",
+      type: "concept",
+      title: "Evidence Transfer",
+      family: "Assurance",
+      short: "Whether a test result on a proxy task supports a real deployment claim.",
+      detail:
+        "A model passing or failing a benchmark is only useful if the benchmark operationalizes the property being claimed and transfers to the real system, environment, and decision context.",
+      bostrom: "A measurement problem inside the broader control problem.",
+      mapRef: "Relevant to empirical research, standards, governance, and AI security institute testing.",
+      paperLinks: ["external-review"]
+    },
+    {
+      id: "risk-pathways",
+      type: "concept",
+      title: "Risk Pathways",
+      family: "Assurance",
+      short: "Routes through which AI deployment could produce harm.",
+      detail:
+        "Risk pathways help reviewers test whether a safety case covers the right threat model. Harm can come from misalignment, misuse, mistakes, organizational drift, or combinations of these.",
+      bostrom: "A practical decomposition of routes into loss of control or catastrophic harm.",
+      mapRef: "Cuts across strategy, governance, and empirical research on the AI safety map.",
+      paperLinks: ["external-review"]
+    },
+    {
+      id: "oversight",
+      type: "concept",
+      title: "Oversight",
+      family: "Assurance",
+      short: "Human and technical monitoring intended to constrain or detect unsafe behaviour.",
+      detail:
+        "Oversight is often assumed in safety arguments, but external review asks whether monitor effectiveness, reviewer capacity, independence, and adversarial pressure have been evidenced.",
+      bostrom: "A control method whose adequacy must be justified as systems become more capable.",
+      mapRef: "Relevant to governance, empirical testing, interpretability, and evaluation infrastructure.",
+      paperLinks: ["external-review", "agentmisalignment"]
+    }
+  ],
+  flow: [
+    {
+      title: "1. Identify the behaviour",
+      body: "AgentMisalignment starts with observable behaviours: sandbagging, oversight evasion, shutdown resistance, power-seeking, deception, and resource acquisition."
+    },
+    {
+      title: "2. Test realistic incentives",
+      body: "The benchmark places agents in deployment-like situations with tools, memory, objectives, and incentives that can organically create misalignment pressure."
+    },
+    {
+      title: "3. Ask what the evidence supports",
+      body: "The external-review paper asks whether evaluations actually support the safety claim being made, under the right system boundary and deployment context."
+    },
+    {
+      title: "4. Build reviewable assurance",
+      body: "Assurance 2.0 turns evidence into a structured argument with scope, claims, assumptions, defeaters, and external review."
+    }
+  ],
+  sources: [
+    "Nick Bostrom, Superintelligence: Paths, Dangers, Strategies.",
+    "AISafety.com field map, used as a public taxonomy of organizations and safety workstreams.",
+    "arXiv:2506.04018, AgentMisalignment.",
+    "arXiv:2604.21964, Lessons from External Review."
+  ]
+};
+
+</script>
+    <script>
+(function () {
+  const data = window.PUBLIC_SAFETY_AI;
+  const state = {
+    paper: data.papers[0].id,
+    selected: data.papers[0].id,
+    filter: "all",
+    query: ""
+  };
+
+  const els = {
+    tabs: document.querySelector("[data-paper-tabs]"),
+    paperDetail: document.querySelector("[data-paper-detail]"),
+    paperLens: document.querySelector("[data-paper-lens]"),
+    paperLinks: document.querySelector("[data-paper-links]"),
+    graph: document.querySelector("[data-graph]"),
+    nodeDetail: document.querySelector("[data-node-detail]"),
+    matrix: document.querySelector("[data-matrix]"),
+    areaGrid: document.querySelector("[data-area-grid]"),
+    focusSwitcher: document.querySelector("[data-focus-switcher]"),
+    bridgeFlow: document.querySelector("[data-bridge-flow]"),
+    readerPaths: document.querySelector("[data-reader-paths]"),
+    filters: document.querySelector("[data-filters]"),
+    search: document.querySelector("[data-search]"),
+    prompt: document.querySelector("[data-prompt]"),
+    copy: document.querySelector("[data-copy]"),
+    flow: document.querySelector("[data-assurance-flow]")
+  };
+
+  const families = ["all", ...Array.from(new Set(data.concepts.map((concept) => concept.family)))];
+
+  function getPaper(id) {
+    return data.papers.find((paper) => paper.id === id);
+  }
+
+  function getConcept(id) {
+    return data.concepts.find((concept) => concept.id === id);
+  }
+
+  function allNodes() {
+    return [
+      ...data.papers.map((paper) => ({ ...paper, kind: "paper", family: "Papers", short: paper.oneLine, detail: paper.thesis })),
+      ...data.concepts.map((concept) => ({ ...concept, kind: "concept" }))
+    ];
+  }
+
+  function getNode(id) {
+    return allNodes().find((node) => node.id === id);
+  }
+
+  function nodeMatches(node) {
+    const q = state.query.trim().toLowerCase();
+    const filterMatch = state.filter === "all" || node.family === state.filter || node.kind === state.filter;
+    const text = [node.title, node.subtitle || "", node.short || "", node.detail || "", node.family || ""].join(" ").toLowerCase();
+    return filterMatch && (!q || text.includes(q));
+  }
+
+  function renderStats() {
+    document.querySelector("[data-stat-papers]").textContent = data.papers.length;
+    document.querySelector("[data-stat-concepts]").textContent = data.concepts.length;
+    document.querySelector("[data-stat-links]").textContent = data.papers.reduce((sum, paper) => sum + paper.concepts.length, 0);
+  }
+
+  function renderHomeContent() {
+    els.areaGrid.innerHTML = data.safetyAreas
+      .map((area) => `
+        <article>
+          <strong>${escapeHtml(area.title)}</strong>
+          <span>${escapeHtml(area.body)}</span>
+        </article>
+      `)
+      .join("");
+
+    els.focusSwitcher.innerHTML = data.focusCards
+      .map((card) => `
+        <button type="button" data-focus-paper="${escapeHtml(card.paper)}">
+          <strong>${escapeHtml(card.title)}</strong>
+          <span>${escapeHtml(card.body)}</span>
+        </button>
+      `)
+      .join("");
+
+    els.focusSwitcher.querySelectorAll("[data-focus-paper]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = button.getAttribute("data-focus-paper");
+        if (target !== "both") {
+          state.paper = target;
+          state.selected = target;
+        } else {
+          state.selected = "loss-of-control";
+        }
+        document.querySelector("#papers").scrollIntoView({ behavior: "smooth", block: "start" });
+        render();
+      });
+    });
+
+    els.bridgeFlow.innerHTML = [
+      ["AgentMisalignment", "What unsafe behaviours can we observe in realistic agent deployments?", "agentmisalignment"],
+      ["Shared problem", "How do these behaviours relate to loss of control?", "loss-of-control"],
+      ["External Review", "When can evaluation evidence support a deployment-relevant safety argument?", "external-review"]
+    ]
+      .map(([title, body, node]) => `
+        <button type="button" data-bridge-node="${escapeHtml(node)}">
+          <strong>${escapeHtml(title)}</strong>
+          <span>${escapeHtml(body)}</span>
+        </button>
+      `)
+      .join("");
+
+    els.bridgeFlow.querySelectorAll("[data-bridge-node]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selected = button.getAttribute("data-bridge-node");
+        const selected = getNode(state.selected);
+        if (selected && selected.kind === "paper") state.paper = selected.id;
+        document.querySelector("#map").scrollIntoView({ behavior: "smooth", block: "start" });
+        render();
+      });
+    });
+  }
+
+  function renderTabs() {
+    els.tabs.innerHTML = data.papers
+      .map((paper) => `
+        <button class="paper-tab ${state.paper === paper.id ? "is-active" : ""}" type="button" data-paper="${escapeHtml(paper.id)}">
+          <span>${escapeHtml(paper.year)} / ${escapeHtml(paper.arxiv)}</span>
+          <strong>${escapeHtml(paper.title)}</strong>
+        </button>
+      `)
+      .join("");
+
+    els.tabs.querySelectorAll("[data-paper]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.paper = button.getAttribute("data-paper");
+        state.selected = state.paper;
+        render();
+      });
+    });
+  }
+
+  function renderPaper() {
+    const paper = getPaper(state.paper);
+    els.paperDetail.innerHTML = `
+      <span class="eyebrow">${escapeHtml(paper.year)} / ${escapeHtml(paper.arxiv)}</span>
+      <h3>${escapeHtml(paper.title)}</h3>
+      <h4>${escapeHtml(paper.subtitle)}</h4>
+      <p class="authors">${escapeHtml(paper.authors)}</p>
+      <p>${escapeHtml(paper.thesis)}</p>
+      <div class="contribution-grid">
+        ${paper.contribution.map((point) => `<div>${escapeHtml(point)}</div>`).join("")}
+      </div>
+      <div class="scenario-list">
+        <h4>Scenario hooks</h4>
+        ${paper.scenarios.map((scenario) => `<button type="button" data-scenario="${escapeHtml(scenario)}">${escapeHtml(scenario)}</button>`).join("")}
+      </div>
+    `;
+
+    els.paperLens.innerHTML = paper.lens.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    els.paperLinks.innerHTML = `
+      <a href="${escapeHtml(paper.arxivUrl)}">Open on arXiv</a>
+      <a href="${escapeHtml(paper.pdf)}">Open local PDF</a>
+    `;
+
+    els.paperDetail.querySelectorAll("[data-scenario]").forEach((button) => {
+      button.addEventListener("click", () => {
+        els.prompt.value = [
+          `Explain this safety AI scenario for a public audience: ${button.getAttribute("data-scenario")}`,
+          "",
+          `Paper: ${paper.title}`,
+          "",
+          "Use plain language, connect it to the relevant concepts, and avoid unpublished internal material."
+        ].join("\n");
+      });
+    });
+  }
+
+  function renderFilters() {
+    els.filters.innerHTML = families
+      .map((family) => `<button class="filter ${state.filter === family ? "is-active" : ""}" type="button" data-filter="${escapeHtml(family)}">${escapeHtml(family)}</button>`)
+      .join("");
+    els.filters.querySelectorAll("[data-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.filter = button.getAttribute("data-filter");
+        renderGraph();
+      });
+    });
+  }
+
+  function renderGraph() {
+    const nodes = allNodes().filter(nodeMatches);
+    const nodeIds = new Set(nodes.map((node) => node.id));
+    const width = 880;
+    const height = 560;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const radius = Math.min(width, height) * 0.36;
+    const positioned = nodes.map((node, index) => {
+      const angle = (index / Math.max(nodes.length, 1)) * Math.PI * 2 - Math.PI / 2;
+      const isPaper = node.kind === "paper";
+      return {
+        node,
+        x: isPaper ? centerX + (index === 0 ? -120 : 120) : centerX + Math.cos(angle) * radius,
+        y: isPaper ? centerY : centerY + Math.sin(angle) * radius
+      };
+    });
+    const pos = new Map(positioned.map((item) => [item.node.id, item]));
+    const edges = [];
+    data.papers.forEach((paper) => {
+      paper.concepts.forEach((conceptId) => {
+        if (nodeIds.has(paper.id) && nodeIds.has(conceptId)) edges.push([paper.id, conceptId]);
+      });
+    });
+    data.concepts.forEach((concept) => {
+      concept.paperLinks.forEach((paperId) => {
+        if (nodeIds.has(paperId) && nodeIds.has(concept.id)) edges.push([paperId, concept.id]);
+      });
+    });
+
+    els.graph.innerHTML = `
+      <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Paper and concept relationship graph">
+        ${edges.map(([source, target]) => {
+          const a = pos.get(source);
+          const b = pos.get(target);
+          const active = state.selected === source || state.selected === target;
+          return `<line class="edge ${active ? "is-active" : ""}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" />`;
+        }).join("")}
+        ${positioned.map(({ node, x, y }) => {
+          const active = state.selected === node.id;
+          const related = isRelated(state.selected, node.id);
+          const paper = node.kind === "paper";
+          return `
+            <g class="map-node" transform="translate(${x} ${y})" data-node="${escapeHtml(node.id)}">
+              <circle class="${paper ? "node paper-node" : "node"} ${active ? "is-active" : related ? "is-related" : ""}" r="${paper ? 24 : 15}" />
+              <text y="${paper ? 42 : 34}">${escapeHtml(shortLabel(node.title))}</text>
+            </g>
+          `;
+        }).join("")}
+      </svg>
+    `;
+
+    els.graph.querySelectorAll("[data-node]").forEach((node) => {
+      node.addEventListener("click", () => {
+        state.selected = node.getAttribute("data-node");
+        const selected = getNode(state.selected);
+        if (selected && selected.kind === "paper") state.paper = selected.id;
+        render();
+      });
+    });
+
+    renderNodeDetail();
+    renderPrompt();
+  }
+
+  function isRelated(a, b) {
+    const selectedPaper = getPaper(a);
+    if (selectedPaper && selectedPaper.concepts.includes(b)) return true;
+    const concept = getConcept(a);
+    if (concept && concept.paperLinks.includes(b)) return true;
+    return data.papers.some((paper) => paper.id === b && paper.concepts.includes(a));
+  }
+
+  function renderNodeDetail() {
+    const node = getNode(state.selected) || getPaper(state.paper);
+    if (node.kind === "paper") {
+      els.nodeDetail.innerHTML = `
+        <span class="eyebrow">paper / ${escapeHtml(node.year)}</span>
+        <h3>${escapeHtml(node.title)}</h3>
+        <p>${escapeHtml(node.oneLine)}</p>
+        <div class="node-meta">
+          ${node.concepts.map((conceptId) => {
+            const concept = getConcept(conceptId);
+            return `<button type="button" data-node-open="${escapeHtml(conceptId)}">${escapeHtml(concept.title)}</button>`;
+          }).join("")}
+        </div>
+      `;
+    } else {
+      els.nodeDetail.innerHTML = `
+        <span class="eyebrow">${escapeHtml(node.family)}</span>
+        <h3>${escapeHtml(node.title)}</h3>
+        <p>${escapeHtml(node.detail)}</p>
+        <div class="concept-note">
+          <strong>Bostrom connection</strong>
+          <span>${escapeHtml(node.bostrom)}</span>
+        </div>
+        <div class="concept-note">
+          <strong>AI Safety map connection</strong>
+          <span>${escapeHtml(node.mapRef)}</span>
+        </div>
+        <div class="node-meta">
+          ${node.paperLinks.map((paperId) => `<button type="button" data-node-open="${escapeHtml(paperId)}">${escapeHtml(getPaper(paperId).title)}</button>`).join("")}
+        </div>
+      `;
+    }
+
+    els.nodeDetail.querySelectorAll("[data-node-open]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selected = button.getAttribute("data-node-open");
+        const selected = getNode(state.selected);
+        if (selected && selected.kind === "paper") state.paper = selected.id;
+        render();
+      });
+    });
+  }
+
+  function renderMatrix() {
+    els.matrix.innerHTML = `
+      <div class="matrix-row matrix-head">
+        <div>Concept</div>
+        ${data.papers.map((paper) => `<div>${escapeHtml(paper.title)}</div>`).join("")}
+      </div>
+      ${data.concepts.map((concept) => `
+        <div class="matrix-row">
+          <button type="button" data-matrix-node="${escapeHtml(concept.id)}">
+            <strong>${escapeHtml(concept.title)}</strong>
+            <span>${escapeHtml(concept.family)}</span>
+          </button>
+          ${data.papers.map((paper) => {
+            const covered = paper.concepts.includes(concept.id);
+            return `<div class="${covered ? "covered" : "not-covered"}">${covered ? "covered" : "adjacent"}</div>`;
+          }).join("")}
+        </div>
+      `).join("")}
+    `;
+
+    els.matrix.querySelectorAll("[data-matrix-node]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selected = button.getAttribute("data-matrix-node");
+        document.querySelector("#map").scrollIntoView({ behavior: "smooth", block: "start" });
+        render();
+      });
+    });
+  }
+
+  function renderReaderPaths() {
+    els.readerPaths.innerHTML = data.readerPaths
+      .map((path) => `
+        <article class="path-card">
+          <h3>${escapeHtml(path.title)}</h3>
+          <p>${escapeHtml(path.body)}</p>
+          <div>
+            ${path.nodes.map((nodeId) => {
+              const node = getNode(nodeId);
+              return node ? `<button type="button" data-path-node="${escapeHtml(nodeId)}">${escapeHtml(node.title)}</button>` : "";
+            }).join("")}
+          </div>
+        </article>
+      `)
+      .join("");
+
+    els.readerPaths.querySelectorAll("[data-path-node]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selected = button.getAttribute("data-path-node");
+        const selected = getNode(state.selected);
+        if (selected && selected.kind === "paper") state.paper = selected.id;
+        document.querySelector("#map").scrollIntoView({ behavior: "smooth", block: "start" });
+        render();
+      });
+    });
+  }
+
+  function renderFlow() {
+    els.flow.innerHTML = data.flow
+      .map((step, index) => `
+        <article class="flow-step">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <h3>${escapeHtml(step.title)}</h3>
+          <p>${escapeHtml(step.body)}</p>
+        </article>
+      `)
+      .join("");
+  }
+
+  function renderPrompt() {
+    const node = getNode(state.selected) || getPaper(state.paper);
+    const title = node.title;
+    const related = node.kind === "paper"
+      ? node.concepts.map((id) => getConcept(id).title)
+      : node.paperLinks.map((id) => getPaper(id).title);
+    els.prompt.value = [
+      `Create a public explanation for: ${title}`,
+      "",
+      `Type: ${node.kind || node.type}`,
+      `Context: ${node.family || node.year || "paper"}`,
+      "",
+      `Current summary: ${node.short || node.oneLine}`,
+      "",
+      "Related items:",
+      ...related.map((item) => `- ${item}`),
+      "",
+      "Task: explain this for a technically literate public audience. Use only published-paper content and generic public safety AI concepts. Do not include internal drafts."
+    ].join("\n");
+  }
+
+  function renderSignals() {
+    const signals = document.querySelectorAll("[data-signal]");
+    let index = 0;
+    window.setInterval(() => {
+      signals.forEach((signal) => signal.classList.remove("active"));
+      signals[index % signals.length].classList.add("active");
+      index += 1;
+    }, 2200);
+  }
+
+  function render() {
+    renderStats();
+    renderHomeContent();
+    renderTabs();
+    renderPaper();
+    renderFilters();
+    renderGraph();
+    renderMatrix();
+    renderReaderPaths();
+    renderFlow();
+    renderPrompt();
+  }
+
+  function shortLabel(value) {
+    const words = value.split(/\s+/);
+    return words.slice(0, 3).join(" ");
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  els.search.addEventListener("input", (event) => {
+    state.query = event.target.value;
+    renderGraph();
+  });
+
+  els.copy.addEventListener("click", async () => {
+    els.prompt.select();
+    try {
+      await navigator.clipboard.writeText(els.prompt.value);
+      els.copy.textContent = "Copied";
+      window.setTimeout(() => {
+        els.copy.textContent = "Copy prompt";
+      }, 1200);
+    } catch (_error) {
+      document.execCommand("copy");
+    }
+  });
+
+  render();
+  renderSignals();
+})();
+
+</script>
+  </body>
+</html>
