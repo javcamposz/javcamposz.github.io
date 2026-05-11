@@ -3,6 +3,7 @@
 .landing {
   min-height: 100vh;
   padding: 0 $gutter;
+  overflow-x: clip;
 
   &__inner { max-width: $measure-wide; margin: 0 auto; }
 
@@ -28,136 +29,127 @@
     @media (max-width: 540px) { display: none; }
   }
 
-  // ───── Hero (static, two-column) ──────────────────────────────────────
+  // ───── Hero (AI-first, two-column) ────────────────────────────────────
   &__hero {
-    padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
+    min-height: calc(100vh - 4.5rem);
+    padding: clamp(1.25rem, 3vw, 2rem) 0 clamp(2rem, 5vw, 3.5rem);
     border-bottom: 1px solid $color-border;
+    display: flex;
+    align-items: flex-start;
     @media (prefers-color-scheme: dark) { border-bottom-color: $color-border-dark; }
+    @media (max-width: 760px) {
+      min-height: auto;
+      align-items: stretch;
+    }
   }
   &__hero-grid {
     display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: clamp(1.5rem, 5vw, 4rem);
+    grid-template-columns: minmax(0, 0.96fr) minmax(360px, 0.84fr);
+    gap: clamp(1.5rem, 5vw, 3.75rem);
     align-items: start;
-    @media (max-width: 760px) {
+    width: 100%;
+    @media (max-width: 860px) {
       grid-template-columns: 1fr;
+      justify-items: start;
     }
   }
-  &__hero-content { min-width: 0; }
+  &__hero-content {
+    min-width: 0;
+    @media (max-width: 860px) {
+      max-width: 22rem;
+      width: 100%;
+    }
+  }
   &__name {
     font-family: $font-display;
-    font-size: clamp(2.5rem, 7.5vw, 5.25rem);
+    font-size: clamp(2.45rem, 4.6vw, 3.35rem);
     font-weight: 450;
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    margin: 0 0 1.5rem 0;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem 0;
     color: $color-fg;
+    max-width: 11.5em;
     @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
-  }
-  &__role {
-    font-family: $font-mono;
-    font-size: $fs-sm;
-    line-height: 1.6;
-    color: $color-fg-muted;
-    margin: 0 0 2rem 0;
-    letter-spacing: 0;
-    max-width: 56ch;
-    a { color: inherit; text-decoration-color: rgba(0,0,0,0.15); }
-    a:hover { color: $color-accent; }
-    .dot { color: $color-accent; margin: 0 0.5rem; }
-    @media (prefers-color-scheme: dark) {
-      color: $color-fg-muted-dark;
-      .dot { color: $color-accent-dark; }
-      a:hover { color: $color-accent-dark; }
+    @media (max-width: 520px) {
+      font-size: clamp(2rem, 9.5vw, 2.45rem);
+      line-height: 1.05;
+      max-width: 100%;
     }
   }
   &__usp {
     font-family: $font-display;
-    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
     font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: -0.012em;
-    margin: 0 0 2rem 0;
+    line-height: $lh-snug;
+    letter-spacing: 0;
+    margin: 0 0 1rem 0;
     color: $color-fg;
-    max-width: 22em;
+    max-width: 26em;
     @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+    @media (max-width: 520px) {
+      font-size: 1rem;
+      max-width: 100%;
+    }
   }
   &__proof {
     font-family: $font-mono;
     font-size: $fs-xs;
     line-height: 1.7;
     color: $color-fg-muted;
-    margin: 0 0 2rem 0;
-    max-width: 56em;
+    margin: 0 0 1.5rem 0;
+    max-width: 58em;
+    a { color: inherit; text-decoration-color: rgba(0,0,0,0.15); }
+    a:hover { color: $color-accent; }
     em { color: $color-fg; font-style: italic; }
     @media (prefers-color-scheme: dark) {
       color: $color-fg-muted-dark;
+      a:hover { color: $color-accent-dark; }
       em { color: $color-fg-dark; }
     }
-  }
-  &__hero-photo {
-    margin: 0;
-    @media (max-width: 760px) {
-      max-width: 220px;
-      order: -1;
-      justify-self: start;
+    @media (max-width: 520px) {
+      font-size: 0.68rem;
+      max-width: 100%;
     }
+  }
+  &__hero-side {
+    min-width: 0;
+    display: grid;
+    gap: 1rem;
+    align-self: stretch;
+    align-content: start;
+    @media (max-width: 860px) {
+      max-width: 22rem;
+      width: 100%;
+    }
+  }
+  &__hero-identity {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0.85rem;
+    align-items: center;
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    line-height: 1.45;
+    color: $color-fg-muted;
+    @media (prefers-color-scheme: dark) { color: $color-fg-muted-dark; }
     img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1;
       object-fit: cover;
       object-position: center 25%;
-      border-radius: $radius-md;
+      border-radius: 50%;
       filter: grayscale(0.2) sepia(0.04) brightness(0.99);
-      transition: filter $dur-slow $ease, transform $dur-slow $ease;
       box-shadow: 0 1px 0 $color-border;
       @media (prefers-color-scheme: dark) {
         box-shadow: 0 1px 0 $color-border-dark;
         filter: grayscale(0.2) brightness(0.92);
       }
     }
-    &:hover img {
-      filter: grayscale(0) sepia(0) brightness(1);
-      transform: translateY(-2px);
+    p { margin: 0; }
+    span {
+      color: $color-fg-subtle;
+      @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
     }
-  }
-
-  // ───── Safety AI preview ──────────────────────────────────────────────
-  &__safety-preview {
-    padding: clamp(2rem, 5vw, 3.5rem) 0;
-    border-bottom: 1px solid $color-border;
-    display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
-    gap: clamp(1.5rem, 4vw, 3rem);
-    align-items: center;
-    @media (prefers-color-scheme: dark) { border-bottom-color: $color-border-dark; }
-    @media (max-width: 760px) {
-      grid-template-columns: 1fr;
-    }
-  }
-  .safety-preview__copy {
-    h2 {
-      font-family: $font-display;
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 450;
-      line-height: $lh-tight;
-      letter-spacing: 0;
-      margin: 0 0 1rem;
-      color: $color-fg;
-      @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
-    }
-    p {
-      color: $color-fg-muted;
-      line-height: $lh-snug;
-      max-width: 48ch;
-      @media (prefers-color-scheme: dark) { color: $color-fg-muted-dark; }
-    }
-  }
-  .safety-preview__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
   }
   .safety-preview__panel {
     position: relative;
@@ -183,6 +175,12 @@
       transform: translateY(-2px);
       text-decoration: none;
       @media (prefers-color-scheme: dark) { border-color: #57b2ab; }
+    }
+  }
+  .safety-preview__panel--hero {
+    min-height: clamp(320px, 38vw, 400px);
+    @media (max-width: 860px) {
+      min-height: 360px;
     }
     @media (max-width: 520px) {
       min-height: 390px;
@@ -431,10 +429,16 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: 0.5rem;
+    @media (max-width: 860px) {
+      align-items: stretch;
+      flex-direction: column;
+      max-width: 22rem;
+    }
   }
   .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.4rem;
     padding: 0.75rem 1.35rem;
     font-family: $font-body;
@@ -444,7 +448,7 @@
     border-radius: $radius-sm;
     transition: background $dur-base $ease, color $dur-base $ease, border-color $dur-base $ease;
     border: 1px solid transparent;
-    line-height: 1;
+    line-height: 1.2;
     em { font-style: italic; font-weight: 500; }
   }
   .btn--primary {

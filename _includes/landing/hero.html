@@ -1,55 +1,71 @@
 {%- comment -%}
-  Hero — static, scannable USP block.
-  Two columns: name + role + USP + proof + CTAs on the left, photo on the right.
-  The streaming Q&A moves to landing/intro.html as the second beat.
+  Hero — AI-first positioning with the Safety AI interactive preview in the
+  first viewport. The portrait is demoted to a credibility row so the page
+  leads with the work, not only the author.
 {%- endcomment -%}
 
 <section class="landing__hero" aria-label="Introduction">
   <div class="landing__hero-grid">
     <div class="landing__hero-content">
+      <p class="landing__section-eyebrow">ai transformation + safety</p>
+
       <h1 class="landing__name">
-        Francisco Javier<br>Campos&nbsp;Zabala
+        Deploy AI safely.<br>Build trusted agents.
       </h1>
 
-      <p class="landing__role">
-        Group CTO &amp; Chief AI Officer @ <a href="https://cape.io">Cape.io</a>
-        <span class="dot">·</span>
-        AI Safety Researcher
-        <span class="dot">·</span>
-        Cambridge AI Safety Hub &amp; Arcadia Impact
-      </p>
-
       <p class="landing__usp">
-        I help boards and frontier labs turn AI into reality —
-        safely, and at scale.
+        I help boards and frontier teams turn agentic AI into real operating
+        systems, with evaluations, safety cases, and governance designed before
+        scale.
       </p>
 
       <p class="landing__proof">
-        Author of <em>Autonomous Minds</em> (Wiley, 2025) and
-        <em>Grow Your Business with AI</em> (Springer, 2023).
-        Advisor to the Bank of England, FCA, and EU AI Act.
-        Co-author <em>AgentMisalignment</em> (ICLR 2026).
+        Group CTO &amp; Chief AI Officer @ <a href="https://cape.io">Cape.io</a>.
+        AI Safety Researcher at Cambridge AI Safety Hub &amp; Arcadia Impact.
+        Author of <em>Autonomous Minds</em> and co-author of
+        <em>AgentMisalignment</em> (ICLR 2026).
       </p>
 
       <div class="landing__cta">
-        <a class="btn btn--primary"
-           href="https://www.wiley.com/en-us/Autonomous+Minds%3A+How+Agentic+AI+Predicts+and+Learns+to+Enable+Productivity+and+Empowerment-p-9781394350100">
-          Get <em>Autonomous Minds</em>
+        <a class="btn btn--primary" href="{{ '/safety-ai/' | relative_url }}">
+          Explore Safety AI
         </a>
         <a class="btn btn--ghost" href="https://arxiv.org/abs/2506.04018">
           Read AgentMisalignment →
         </a>
-        <a class="btn btn--ghost" href="{{ '/safety-ai/' | relative_url }}">
-          Explore Safety AI →
-        </a>
       </div>
     </div>
 
-    <figure class="landing__hero-photo">
-      <img src="{{ '/assets/img/JavierCampos.jpg' | relative_url }}"
-           alt="Francisco Javier Campos Zabala"
-           loading="eager"
-           width="320" height="400">
-    </figure>
+    <aside class="landing__hero-side" aria-label="Safety AI preview">
+      <a class="safety-preview__panel safety-preview__panel--hero"
+         href="{{ '/safety-ai/' | relative_url }}"
+         aria-label="Open the Safety AI interactive guide">
+        <div class="safety-preview__graph" aria-hidden="true">
+          <span class="safety-preview__edge safety-preview__edge--one"></span>
+          <span class="safety-preview__edge safety-preview__edge--two"></span>
+          <span class="safety-preview__edge safety-preview__edge--three"></span>
+          <span class="safety-preview__node safety-preview__node--paper">AgentMisalignment</span>
+          <span class="safety-preview__node safety-preview__node--concept safety-preview__node--control">loss of control</span>
+          <span class="safety-preview__node safety-preview__node--concept safety-preview__node--assurance">Assurance 2.0</span>
+          <span class="safety-preview__node safety-preview__node--paper safety-preview__node--review">External Review</span>
+        </div>
+        <div class="safety-preview__footer">
+          <span>2 papers</span>
+          <span>15 concepts</span>
+          <span>interactive map</span>
+        </div>
+      </a>
+
+      <div class="landing__hero-identity">
+        <img src="{{ '/assets/img/JavierCampos.jpg' | relative_url }}"
+             alt="Francisco Javier Campos Zabala"
+             loading="eager"
+             width="96" height="120">
+        <p>
+          Francisco Javier Campos Zabala<br>
+          <span>AI executive, author, and safety researcher</span>
+        </p>
+      </div>
+    </aside>
   </div>
 </section>
