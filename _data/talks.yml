@@ -7,7 +7,7 @@
   venue: "Estadio Atlético de Madrid"
   date: 2026-05-13
   url: ""
-  status: upcoming
+  status: past
   role: speaker
   tags: [data-strategy, agentic-ai, cdo]
 
@@ -18,7 +18,7 @@
   date: 2026-06-23
   end_date: 2026-06-24
   url: "https://aiconference.london/"
-  status: upcoming
+  status: past
   role: speaker
   tags: [agentic-ai, ai-conference, london]
 
@@ -28,7 +28,7 @@
   city: "Madrid, Spain"
   date: 2026-10-22
   end_date: 2026-10-24
-  url: ""
+  url: "https://www.xfutures.net/"
   status: upcoming
   role: speaker
   tags: [future-of-ai, agentic-ai, madrid]

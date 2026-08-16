@@ -4,8 +4,8 @@
 - id: deepmind-safety-case-review
   title: "Lessons from External Review of DeepMind's Scheming Inability Safety Case"
   authors: "Francisco Javier Campos Zabala et al."
-  venue: "Arcadia Impact preprint"
-  status: preprint
+  venue: "ICML 2026"
+  status: accepted
   date: 2026-04-01
   pdf: "/assets/papers/deepmind-safety-case-review.pdf"
   summary: >

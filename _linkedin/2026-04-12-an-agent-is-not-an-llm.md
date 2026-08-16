@@ -1,6 +1,7 @@
 ---
 date: 2026-04-12
 url: https://www.linkedin.com/feed/update/urn:li:activity:7449033478035288064/
+external_url: https://www.linkedin.com/feed/update/urn:li:activity:7449033478035288064/
 title: "An Agent is NOT an LLM — Patrick Winston, Gary Marcus, and what the Claude Code leak revealed"
 topics: [agentic-ai, claude-code, fundamentals, scaffolding, autonomous-minds]
 featured: true

@@ -526,6 +526,68 @@
     margin-bottom: 2rem;
   }
 
+  &__proof-points {
+    padding-top: clamp(1.5rem, 3vw, 2.25rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    .landing__section-title { margin-bottom: 1.25rem; }
+  }
+
+  // ───── Proof points ───────────────────────────────────────────────────
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    @media (max-width: 960px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (max-width: 620px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .proof-card {
+    min-height: 11.5rem;
+    padding: 1rem 0 0;
+    border-top: 1px solid $color-border;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    @media (prefers-color-scheme: dark) { border-top-color: $color-border-dark; }
+    h3 {
+      margin: 0;
+      color: $color-fg;
+      font-family: $font-display;
+      font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+      font-weight: 450;
+      line-height: $lh-snug;
+      @media (prefers-color-scheme: dark) { color: $color-fg-dark; }
+    }
+    p {
+      margin: 0;
+      color: $color-fg-muted;
+      font-size: $fs-sm;
+      line-height: 1.5;
+      @media (prefers-color-scheme: dark) { color: $color-fg-muted-dark; }
+    }
+    a {
+      margin-top: auto;
+      color: $color-accent;
+      font-family: $font-mono;
+      font-size: $fs-xs;
+      text-decoration: none;
+      &::before { content: "→ "; }
+      @media (prefers-color-scheme: dark) { color: $color-accent-dark; }
+    }
+  }
+  .proof-card__label {
+    color: $color-fg-subtle;
+    font-family: $font-mono;
+    font-size: $fs-xs;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    @media (prefers-color-scheme: dark) { color: $color-fg-subtle-dark; }
+  }
+
   // ───── Card grid (papers + books in selected_work) ────────────────────
   &__grid {
     display: grid;

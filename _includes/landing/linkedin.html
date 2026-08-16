@@ -1,21 +1,28 @@
 {%- assign featured_li = site.linkedin | where: "featured", true | sort: "date" | reverse -%}
 
 {% if featured_li.size > 0 %}
-<section id="writing" class="landing__section landing__linkedin" aria-label="Recent writing">
+<section id="writing" class="landing__section landing__linkedin" aria-label="Popular LinkedIn field notes">
   <p class="landing__section-eyebrow">writing</p>
-  <h2 class="landing__section-title">Recent essays on LinkedIn</h2>
+  <h2 class="landing__section-title">Popular field notes from LinkedIn</h2>
 
   <div class="landing__grid">
-    {% for post in featured_li limit: 3 %}
+    {% for post in featured_li limit: 6 %}
+      {%- assign linkedin_url = post.external_url | default: "" -%}
       <article class="card">
         <div class="card__meta">{{ post.date | date: "%b %d, %Y" }} · LinkedIn</div>
         <h3 class="card__title">
-          <a href="{{ post.url }}">{{ post.title }}</a>
+          {%- if linkedin_url != "" -%}
+            <a href="{{ linkedin_url }}">{{ post.title }}</a>
+          {%- else -%}
+            {{ post.title }}
+          {%- endif -%}
         </h3>
         <p class="card__body">{{ post.content | strip_html | truncatewords: 55 }}</p>
-        <div class="card__links">
-          <a href="{{ post.url }}">Read on LinkedIn</a>
-        </div>
+        {%- if linkedin_url != "" -%}
+          <div class="card__links">
+            <a href="{{ linkedin_url }}">Read on LinkedIn</a>
+          </div>
+        {%- endif -%}
       </article>
     {% endfor %}
   </div>

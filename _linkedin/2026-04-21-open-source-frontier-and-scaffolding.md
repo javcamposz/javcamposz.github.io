@@ -1,6 +1,7 @@
 ---
 date: 2026-04-21
 url: https://www.linkedin.com/feed/update/urn:li:activity:7452247441422204928/
+external_url: https://www.linkedin.com/feed/update/urn:li:activity:7452247441422204928/
 title: "The moat of proprietary AI is vanishing — Kimi K2.6 and the scaffolding thesis"
 topics: [open-source, agents, frontier-models, kimi-k2.6, autonomous-minds]
 featured: true

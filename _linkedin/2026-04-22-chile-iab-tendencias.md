@@ -1,6 +1,7 @@
 ---
 date: 2026-04-22
 url: https://www.linkedin.com/feed/update/urn:li:activity:7452631178907643904/
+external_url: https://www.linkedin.com/feed/update/urn:li:activity:7452631178907643904/
 title: "Closing the Wanamaker loop — agentic AI in Chile"
 topics: [chile, iab-2026, agentic-ai, marketing, autonomous-minds]
 featured: true
