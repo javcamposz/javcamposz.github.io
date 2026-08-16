@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-Driven Software Delivery | Javier Campos</title>
+    <meta
+      name="description"
+      content="A practical guide to moving from AI-assisted coding to AI-driven software delivery: specify, delegate, verify, and govern agentic engineering work."
+    />
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/safety-ai/assets/styles.css" />
+    <style>
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(246, 244, 239, 0.96), rgba(246, 244, 239, 0.74)),
+          url("data:image/svg+xml,%3Csvg width='1200' height='700' viewBox='0 0 1200 700' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1200' height='700' fill='%23ebe6dc'/%3E%3Cg fill='none' stroke='%23293f8f' stroke-opacity='.28' stroke-width='2'%3E%3Cpath d='M108 506 C 258 370, 370 614, 500 430 S 760 200, 1092 350'/%3E%3Cpath d='M90 198 C 278 112, 420 260, 560 184 S 820 110, 1045 205'/%3E%3Cpath d='M160 610 C 345 470, 520 540, 680 410 S 915 292, 1120 316'/%3E%3C/g%3E%3Cg fill='%23fffefb' stroke='%230c6f6d' stroke-opacity='.65'%3E%3Crect x='150' y='470' width='132' height='62' rx='12'/%3E%3Crect x='390' y='390' width='142' height='66' rx='12'/%3E%3Crect x='620' y='318' width='126' height='62' rx='12'/%3E%3Crect x='850' y='352' width='150' height='66' rx='12'/%3E%3Ccircle cx='292' cy='180' r='26'/%3E%3Ccircle cx='570' cy='182' r='28'/%3E%3Ccircle cx='918' cy='176' r='25'/%3E%3C/g%3E%3Cg fill='%23a33e35' fill-opacity='.82'%3E%3Ccircle cx='216' cy='502' r='5'/%3E%3Ccircle cx='690' cy='350' r='6'/%3E%3Ccircle cx='925' cy='384' r='5'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .delivery-panel {
+        display: grid;
+        gap: 12px;
+      }
+
+      .delivery-node {
+        min-height: 98px;
+        padding: 18px;
+        background: rgba(255, 254, 251, 0.86);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .delivery-node strong {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+
+      .delivery-node span {
+        font-size: 21px;
+        font-weight: 850;
+        line-height: 1.1;
+      }
+
+      .delivery-node.active {
+        border-color: var(--teal);
+        background: #f8fffb;
+      }
+
+      .loop-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .loop-step {
+        min-height: 190px;
+        padding: 18px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .loop-step span {
+        color: var(--red);
+        font-weight: 850;
+        font-size: 13px;
+      }
+
+      .loop-step h3 {
+        margin: 10px 0 8px;
+        line-height: 1.1;
+      }
+
+      .loop-step p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .metric-card strong {
+        color: var(--teal);
+      }
+
+      .decision-table {
+        overflow: auto;
+      }
+
+      .decision-row {
+        min-width: 760px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1.2fr;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .decision-row:last-child {
+        border-bottom: 0;
+      }
+
+      .decision-row > * {
+        padding: 14px;
+        border-right: 1px solid var(--line);
+        line-height: 1.45;
+      }
+
+      .decision-row > *:last-child {
+        border-right: 0;
+      }
+
+      .decision-head {
+        background: var(--panel-2);
+        font-weight: 850;
+      }
+
+      .course-links {
+        display: grid;
+        gap: 10px;
+      }
+
+      .course-links a {
+        display: block;
+        padding: 13px;
+        border: 1px solid var(--teal);
+        border-radius: 8px;
+        color: var(--teal);
+        text-decoration: none;
+        font-weight: 850;
+        background: var(--panel);
+      }
+
+      @media (max-width: 1100px) {
+        .loop-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 700px) {
+        .loop-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="/">Home</a>
+          <a href="/safety-ai/">Safety AI</a>
+          <a href="#loop">Delivery loop</a>
+          <a href="#governance">Governance</a>
+          <a href="#courses">Course signals</a>
+        </nav>
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <span class="kicker">AI-driven engineering</span>
+            <h1>From coding assistance to verified delivery loops.</h1>
+            <p>
+              The shift is not from engineers to tools. It is from manual implementation
+              to an operating model where humans specify intent, agents execute bounded
+              work, and the harness proves what changed.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#loop">Explore the loop</a>
+              <a class="secondary-action" href="#stages">See the journey</a>
+            </div>
+          </section>
+          <section class="delivery-panel" aria-label="Delivery signals">
+            <div class="delivery-node active">
+              <strong>01</strong>
+              <span>Specs before prompts</span>
+            </div>
+            <div class="delivery-node">
+              <strong>02</strong>
+              <span>Agents inside harnesses</span>
+            </div>
+            <div class="delivery-node">
+              <strong>03</strong>
+              <span>Evidence before scale</span>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <main>
+        <section class="overview-strip" aria-label="Delivery summary">
+          <article class="metric-card">
+            <strong>3</strong>
+            <span>maturity stages</span>
+          </article>
+          <article class="metric-card">
+            <strong>5</strong>
+            <span>loop steps</span>
+          </article>
+          <article class="metric-card">
+            <strong>4</strong>
+            <span>governance tests</span>
+          </article>
+          <article class="metric-card">
+            <strong>1</strong>
+            <span>measured workflow first</span>
+          </article>
+        </section>
+
+        <section class="section intro-section" id="stages">
+          <div class="section-title">
+            <span>Journey</span>
+            <h2>Three stages from autocomplete to agentic-scale delivery.</h2>
+          </div>
+          <div class="intro-layout">
+            <article class="prose-card">
+              <h3>AI-augmented</h3>
+              <p>
+                Engineers use AI for explanation, refactoring, tests, and local
+                implementation help. Productivity improves, but the process is still
+                centered on individual prompting.
+              </p>
+              <div class="area-grid">
+                <article>
+                  <strong>Primary artifact</strong>
+                  <span>Prompt, code suggestion, local test.</span>
+                </article>
+                <article>
+                  <strong>Leader question</strong>
+                  <span>Are teams learning the tool or changing the workflow?</span>
+                </article>
+              </div>
+            </article>
+            <aside class="focus-card">
+              <span class="eyebrow">Target state</span>
+              <h3>AI-driven, then agentic-scale.</h3>
+              <p>
+                The team moves from prompts to specs. Agents implement bounded
+                units against context, engineers review evidence, and leaders manage
+                architecture, evals, cost, and release risk as first-class concerns.
+              </p>
+              <div class="area-grid">
+                <article>
+                  <strong>AI-driven</strong>
+                  <span>Specs, context packages, tests, evidence review.</span>
+                </article>
+                <article>
+                  <strong>Agentic-scale</strong>
+                  <span>Parallel agents, held-out evals, cost gates, release controls.</span>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section bridge-section" id="principle">
+          <div class="bridge-card">
+            <div>
+              <span class="eyebrow">Core principle</span>
+              <h2>The model proposes. The harness disposes.</h2>
+            </div>
+            <div class="bridge-flow">
+              <button type="button">
+                <strong>Harness</strong>
+                <span>Sandbox, files, tools, memory, permissions, and routing around the model.</span>
+              </button>
+              <button type="button">
+                <strong>Verifier</strong>
+                <span>Compile pass, test green, runtime trace, policy check, or human verdict.</span>
+              </button>
+              <button type="button">
+                <strong>Learning loop</strong>
+                <span>Evidence flows back into the next plan instead of becoming a demo transcript.</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="loop">
+          <div class="section-title">
+            <span>Delivery loop</span>
+            <h2>Spec, plan, implement, validate, replan.</h2>
+          </div>
+          <div class="loop-grid">
+            <article class="loop-step">
+              <span>01</span>
+              <h3>Constitution</h3>
+              <p>Capture mission, architecture, constraints, coding standards, and non-negotiables.</p>
+            </article>
+            <article class="loop-step">
+              <span>02</span>
+              <h3>Feature spec</h3>
+              <p>Define outcome, edge cases, acceptance tests, and what must not change.</p>
+            </article>
+            <article class="loop-step">
+              <span>03</span>
+              <h3>Agent plan</h3>
+              <p>Ask the agent to decompose work before touching files or running tools.</p>
+            </article>
+            <article class="loop-step">
+              <span>04</span>
+              <h3>Implementation</h3>
+              <p>Delegate bounded tasks with clear permissions, context, and test commands.</p>
+            </article>
+            <article class="loop-step">
+              <span>05</span>
+              <h3>Validation</h3>
+              <p>Review diff, tests, trace, cost, rollback path, and the next replan.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="governance">
+          <div class="section-title">
+            <span>Governance</span>
+            <h2>Forward the constraint before the capability.</h2>
+          </div>
+          <div class="paper-workspace">
+            <article class="paper-detail">
+              <span class="eyebrow">When to use agents</span>
+              <h3>Use autonomy where evidence is inspectable.</h3>
+              <p>
+                Parallel agents can cover more ground, but they also consume more
+                context and compute. The discipline is to name cost, failure modes,
+                and stop conditions before the architecture becomes fashionable.
+              </p>
+              <div class="contribution-grid">
+                <div>Clear outcome and inspectable artifacts.</div>
+                <div>Reliable verifier: tests, traces, or held-out review.</div>
+                <div>Bounded, reversible steps.</div>
+                <div>Explicit owner for escalation and release decisions.</div>
+              </div>
+            </article>
+            <aside class="paper-side">
+              <div class="side-card">
+                <h3>Slow down when</h3>
+                <ul>
+                  <li>Acceptance criteria are vague.</li>
+                  <li>The agent cannot access a reliable verifier.</li>
+                  <li>Cost rises faster than evidence quality.</li>
+                  <li>The rollback path is unclear.</li>
+                </ul>
+              </div>
+              <div class="side-card">
+                <h3>Measure outcomes</h3>
+                <ul>
+                  <li>Shipped, defect-free customer value.</li>
+                  <li>Cycle time from spec to verified merge.</li>
+                  <li>Review quality and escaped defects.</li>
+                  <li>Cost per accepted change.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="decision-table">
+          <div class="section-title">
+            <span>Decision table</span>
+            <h2>The delegation question moves from can it code to can we verify it.</h2>
+          </div>
+          <div class="matrix decision-table">
+            <div class="decision-row decision-head">
+              <div>Work type</div>
+              <div>Good first delegation</div>
+              <div>Required evidence</div>
+            </div>
+            <div class="decision-row">
+              <div>Refactor with no behavior change</div>
+              <div>Agent drafts, engineer reviews boundaries.</div>
+              <div>Tests unchanged, diff readable, performance stable.</div>
+            </div>
+            <div class="decision-row">
+              <div>Feature slice</div>
+              <div>Agent implements a bounded spec.</div>
+              <div>Acceptance tests, trace, screenshots, rollback path.</div>
+            </div>
+            <div class="decision-row">
+              <div>Architecture change</div>
+              <div>Agent explores options, humans decide.</div>
+              <div>Trade-off memo, dependency map, migration plan.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section split" id="courses">
+          <div>
+            <div class="section-title compact">
+              <span>Course signals</span>
+              <h2>The public curriculum is moving toward disciplined agentic delivery.</h2>
+            </div>
+            <div class="course-links">
+              <a href="https://www.deeplearning.ai/courses/agentic-ai/">Agentic AI: reflection, tool use, planning, multi-agent workflows, evals, and production deployment</a>
+              <a href="https://www.deeplearning.ai/courses/build-with-andrew/">Build with Andrew: building and refining web applications through prompting</a>
+              <a href="https://www.deeplearning.ai/courses/spec-driven-development-with-coding-agents/">Spec-Driven Development with Coding Agents: constitutions, feature specs, validation, legacy support, and portable workflows</a>
+            </div>
+          </div>
+          <aside class="reader-card">
+            <h3>Smallest useful unit</h3>
+            <p>
+              Pick one valuable engineering workflow, write the spec, define the
+              verifier, run the agent under constraint, and decide from evidence.
+            </p>
+            <a class="inline-action" href="/safety-ai/">Connect to evals and assurance</a>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="site-footer" aria-label="Site footer">
+        <span>© 2026 Francisco Javier Campos Zabala</span>
+        <span>
+          <a href="/blog/">blog archive</a>
+          <span aria-hidden="true">·</span>
+          <a href="/feed.xml">rss</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/javcamposz/javcamposz.github.io">source</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

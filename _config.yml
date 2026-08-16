@@ -96,6 +96,8 @@ nav:
     url: /autonomous-minds/
   - title: "Safety AI"
     url: /safety-ai/
+  - title: "AI Engineering"
+    url: /ai-driven-software-delivery/
   - title: "Podcasts"
     url: "https://www.youtube.com/@JavierCamposMythBusterAI"
   - title: "Newsletter"
@@ -150,6 +152,9 @@ exclude:
   - email_template.md
   - google-apps-script.js
   - invitation_1.md
+  # Private teaching material kept locally, not published.
+  - ai-for-senior-leaders.md
+  - assets/img/mit-xpro/
 
 # Collections
 collections:
