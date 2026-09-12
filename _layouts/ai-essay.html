@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="{{ site.locale | default: 'en-US' | slice: 0,2 }}">
+  <head>
+    {%- assign page_description = page.excerpt | default: site.description | strip_html | strip_newlines -%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | Javier Campos</title>
+    <meta name="description" content="{{ page_description }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ page.image | absolute_url }}">
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page_description }}">
+    <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+
+    <link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}" type="image/png">
+    <link rel="stylesheet" href="{{ '/safety-ai/assets/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/ai-essay.css' | relative_url }}">
+    {% feed_meta %}
+  </head>
+  <body class="essay-page">
+    <div class="app-shell">
+      <header class="hero essay-hero">
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/safety-ai/' | relative_url }}">Safety AI</a>
+          <a href="{{ '/ai-driven-software-delivery/' | relative_url }}">AI Engineering</a>
+          <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        </nav>
+
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <span class="kicker">AI safety essay</span>
+            <h1>{{ page.title }}</h1>
+            <p>{{ page_description }}</p>
+            <div class="essay-byline">
+              <span>{{ page.date | date: "%-d %B %Y" }}</span>
+              <span aria-hidden="true">·</span>
+              <span>16 min read</span>
+              <span aria-hidden="true">·</span>
+              <span>Javier Campos</span>
+            </div>
+            <div class="hero-actions">
+              <a class="primary-action" href="#article">Read the essay</a>
+              <a class="secondary-action" href="{{ '/blog/' | relative_url }}">Browse all writing</a>
+            </div>
+          </section>
+
+          <section class="signal-panel essay-signals" aria-label="Essay themes">
+            <div class="signal active">
+              <strong>01</strong>
+              <span>Coordination failure</span>
+            </div>
+            <div class="signal">
+              <strong>02</strong>
+              <span>Loss of control</span>
+            </div>
+            <div class="signal">
+              <strong>03</strong>
+              <span>Competition without malice</span>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <main class="essay-main">
+        <section class="overview-strip" aria-label="Article summary">
+          <article>
+            <strong>4</strong>
+            <span>catastrophe pathways</span>
+          </article>
+          <article>
+            <strong>5</strong>
+            <span>common objections</span>
+          </article>
+          <article>
+            <strong>2</strong>
+            <span>documented warning shots</span>
+          </article>
+          <article>
+            <strong>Moloch</strong>
+            <span>the coordination problem</span>
+          </article>
+        </section>
+
+        <div class="essay-layout" id="article">
+          <aside class="essay-rail" aria-label="Reading guide">
+            <span class="eyebrow">Reading guide</span>
+            <nav>
+              <a href="#the-story-everyone-knows">The familiar story</a>
+              <a href="#moloch">Moloch</a>
+              <a href="#four-pathways-from-ai-to-catastrophe">Four pathways</a>
+              <a href="#the-objections-i-hear-most-often">The objections</a>
+              <a href="#the-warning-shots-are-real-and-limited">The evidence</a>
+              <a href="#what-follows-from-this">What follows</a>
+            </nav>
+            <a class="essay-rail__back" href="{{ '/blog/' | relative_url }}">Back to blog archive</a>
+          </aside>
+
+          <article class="essay-content">
+            {{ content }}
+          </article>
+        </div>
+      </main>
+
+      <footer class="site-footer" aria-label="Site footer">
+        <span>© {{ 'now' | date: "%Y" }} Francisco Javier Campos Zabala</span>
+        <span>
+          <a href="{{ '/' | relative_url }}">home</a>
+          <span aria-hidden="true">·</span>
+          <a href="{{ '/blog/' | relative_url }}">blog archive</a>
+          <span aria-hidden="true">·</span>
+          <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/{{ site.repository }}">source</a>
+        </span>
+      </footer>
+    </div>
+
+    {% if site.analytics.google.tracking_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.tracking_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.analytics.google.tracking_id }}', { 'anonymize_ip': true });
+    </script>
+    {% endif %}
+  </body>
+</html>

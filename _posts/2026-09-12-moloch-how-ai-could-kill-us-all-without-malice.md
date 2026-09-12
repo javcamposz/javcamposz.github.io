@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: ai-essay
 title: "Moloch: How AI Could Kill Us All Without Malice"
 date: 2026-09-12
 author: Francisco Javier Campos Zabala
