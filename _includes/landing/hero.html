@@ -1,85 +1,80 @@
-{%- comment -%}
-  Hero — AI-first positioning with the Safety AI interactive preview in the
-  first viewport. The portrait is demoted to a credibility row so the page
-  leads with the work, not only the author.
-{%- endcomment -%}
-
 <section class="landing__hero" aria-label="Introduction">
   <div class="landing__hero-grid">
     <div class="landing__hero-content">
-      <p class="landing__section-eyebrow">ai transformation + safety</p>
+      <div class="hero-identity">
+        <img src="{{ '/assets/img/JavierCampos.jpg' | relative_url }}"
+             alt="Francisco Javier Campos Zabala"
+             width="96" height="96">
+        <div>
+          <p class="hero-identity__name">Francisco Javier Campos Zabala</p>
+          <p class="hero-identity__role">Group CTO and Chief AI Officer · AI safety researcher · hands-on builder</p>
+        </div>
+      </div>
 
-      <h1 class="landing__name">
-        Deploy AI safely.<br>Build trusted agents.
-      </h1>
+      <p class="landing__section-eyebrow">public-interest ai + accountable delivery</p>
+      <h1 class="landing__name">Building AI systems that improve real institutions.</h1>
 
       <p class="landing__usp">
-        I help boards and frontier teams turn agentic AI into real operating
-        systems, with evaluations, safety cases, and governance designed before
-        scale.
+        I turn complex public and enterprise problems into working prototypes,
+        delivery systems, and controls - combining executive operating experience
+        with current AI engineering and safety research.
       </p>
 
       <p class="landing__proof">
-        Group CTO &amp; Chief AI Officer @ <a href="https://cape.io">Cape.io</a>.
-        AI Safety Researcher at Cambridge AI Safety Hub &amp; Arcadia Impact.
-        Author of <em>Autonomous Minds</em>. Latest safety-case paper at
-        <em>ICML 2026</em> and co-author of <em>AgentMisalignment</em>
-        (ICLR 2026).
+        25+ years leading technology, data, and AI organisations. Group CTO &amp;
+        Chief AI Officer at <a href="https://cape.io">Cape.io</a>. Author of
+        <em>Autonomous Minds</em>. Latest safety-case paper at <em>ICML 2026</em>
+        and co-author of <em>AgentMisalignment</em> (ICLR 2026).
       </p>
 
       <div class="landing__cta">
-        <a class="btn btn--primary" href="{{ '/safety-ai/' | relative_url }}">
-          Explore Safety AI
-        </a>
-        <a class="btn btn--ghost" href="https://arxiv.org/abs/2506.04018">
-          Read AgentMisalignment →
-        </a>
+        <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">See what I build</a>
+        <a class="btn btn--ghost" href="https://github.com/javcamposz">View GitHub</a>
       </div>
+      <a class="hero-research-link" href="{{ '/safety-ai/' | relative_url }}">Explore AI safety research</a>
     </div>
 
-    <aside class="landing__hero-side" aria-label="Safety AI preview">
-      <a class="safety-preview__panel safety-preview__panel--hero"
-         href="{{ '/safety-ai/' | relative_url }}"
-         aria-label="Open the Safety AI interactive guide to papers, concepts, and assurance links">
-        <div class="safety-preview__headline">
-          <span>Safety AI interactive guide</span>
-          <strong>Explore the papers, risk concepts, and assurance links.</strong>
+    <aside class="landing__hero-side" aria-label="Current public builds">
+      <div class="build-surface">
+        <div class="build-surface__header">
+          <div>
+            <span class="build-surface__eyebrow">current builds</span>
+            <h2>Open, runnable, tested.</h2>
+          </div>
+          <span class="build-surface__branch">main</span>
         </div>
-        <div class="safety-preview__graph" aria-hidden="true">
-          <svg class="safety-preview__arrows" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-            <defs>
-              <marker id="safety-preview-arrow-teal" viewBox="0 0 8 8" markerWidth="4.5" markerHeight="4.5" refX="7" refY="4" orient="auto-start-reverse">
-                <path d="M0,0 L8,4 L0,8 Z"></path>
-              </marker>
-              <marker id="safety-preview-arrow-red" viewBox="0 0 8 8" markerWidth="4.5" markerHeight="4.5" refX="7" refY="4" orient="auto-start-reverse">
-                <path d="M0,0 L8,4 L0,8 Z"></path>
-              </marker>
-            </defs>
-            <path class="safety-preview__arrow safety-preview__arrow--primary" d="M50 29 C 53 33, 55 37, 56 41"></path>
-            <path class="safety-preview__arrow safety-preview__arrow--primary" d="M55 34 C 60 36, 65 39, 70 42"></path>
-            <path class="safety-preview__arrow safety-preview__arrow--warn" d="M53 65 C 49 63, 45 61, 42 59"></path>
-          </svg>
-          <span class="safety-preview__node safety-preview__node--paper">AgentMisalignment</span>
-          <span class="safety-preview__node safety-preview__node--concept safety-preview__node--control">loss of control</span>
-          <span class="safety-preview__node safety-preview__node--concept safety-preview__node--assurance">Assurance 2.0</span>
-          <span class="safety-preview__node safety-preview__node--paper safety-preview__node--review">External Review</span>
-        </div>
-        <div class="safety-preview__footer">
-          <span>2 papers</span>
-          <span>15 concepts</span>
-          <span>interactive map</span>
-        </div>
-      </a>
 
-      <div class="landing__hero-identity">
-        <img src="{{ '/assets/img/JavierCampos.jpg' | relative_url }}"
-             alt="Francisco Javier Campos Zabala"
-             loading="eager"
-             width="72" height="72">
-        <p>
-          Francisco Javier Campos Zabala<br>
-          <span>AI executive, author, and safety researcher</span>
-        </p>
+        <a class="build-surface__item" href="https://github.com/javcamposz/evals_RSI">
+          <span class="build-surface__index">01</span>
+          <span class="build-surface__copy">
+            <strong>RSI Eval Lab</strong>
+            <small>Control-integrity checks for self-improving systems</small>
+          </span>
+          <span class="build-surface__signal"><i></i>CI passing</span>
+        </a>
+
+        <a class="build-surface__item" href="https://github.com/javcamposz/ai-engineering-journey">
+          <span class="build-surface__index">02</span>
+          <span class="build-surface__copy">
+            <strong>AI Engineering Journey</strong>
+            <small>Capability diagnostic and phased delivery roadmap</small>
+          </span>
+          <span class="build-surface__signal"><i></i>CI passing</span>
+        </a>
+
+        <a class="build-surface__item" href="https://github.com/javcamposz/board-ai-governance-toolkit">
+          <span class="build-surface__index">03</span>
+          <span class="build-surface__copy">
+            <strong>Board AI Governance</strong>
+            <small>Risk register and deterministic decision dashboard</small>
+          </span>
+          <span class="build-surface__signal"><i></i>CI passing</span>
+        </a>
+
+        <div class="build-surface__footer">
+          <span>research</span><span>engineering</span><span>governance</span>
+          <a href="{{ '/projects/' | relative_url }}">All projects</a>
+        </div>
       </div>
     </aside>
   </div>

@@ -1,0 +1,182 @@
+---
+layout: landing
+content_only: true
+page_class: projects-page
+title: "Projects | Francisco Javier Campos Zabala"
+description: "Runnable AI safety, engineering, governance, and data projects by Francisco Javier Campos Zabala. Code, evidence, limitations, and next steps."
+permalink: /projects/
+---
+
+<section class="project-index__hero">
+  <p class="landing__section-eyebrow">selected builds</p>
+  <h1>Work that can be opened, run, and challenged.</h1>
+  <p>
+    These projects connect AI research with delivery: concrete problems,
+    inspectable implementation, automated tests, and explicit limitations.
+    They are working artefacts, not claims of production readiness.
+  </p>
+  <div class="landing__cta">
+    <a class="btn btn--primary" href="https://github.com/javcamposz">View GitHub profile</a>
+    <a class="btn btn--ghost" href="{{ '/#public-interest' | relative_url }}">Public-interest approach</a>
+  </div>
+</section>
+
+<section id="safety-evaluation" class="project-detail project-detail--teal">
+  <div class="project-detail__summary">
+    <span class="project-detail__number">01 / safety evaluation</span>
+    <h2>RSI Eval Lab</h2>
+    <p>
+      A runnable research prototype for auditing recursively self-improving AI
+      lineages when the system may have incentives to change its evaluator or
+      weaken oversight.
+    </p>
+    <dl class="project-facts">
+      <div><dt>Contribution</dt><dd>Design, implementation, tests, and research agenda</dd></div>
+      <div><dt>Evidence</dt><dd>Deterministic auditor, synthetic traces, CI, optional Inspect task</dd></div>
+      <div><dt>Limits</dt><dd>Research harness; not containment or a deployment safety case</dd></div>
+    </dl>
+    <div class="project-links">
+      <a href="https://github.com/javcamposz/evals_RSI">Repository</a>
+      <a href="https://github.com/javcamposz/evals_RSI#quick-start">Run it</a>
+      <a href="https://github.com/javcamposz/evals_RSI/tree/main/docs">Research agenda</a>
+    </div>
+  </div>
+  <div class="project-detail__visual terminal-visual" aria-label="Example RSI evaluation output">
+    <div class="terminal-visual__bar"><span></span><span></span><span></span><b>rsi-eval</b></div>
+    <pre><code>$ rsi-eval examples/safe_run.json
+
+Run: safe-adaptive-lineage
+Verdict: <strong>PASS</strong>
+Held-out delta: +0.300
+Efficiency: +0.0800 / 1k tokens
+Next challenge level: 3
+Findings: none</code></pre>
+    <div class="terminal-visual__checks">
+      <span>evaluator hash</span><span>shutdown</span><span>containment</span><span>audit trail</span>
+    </div>
+  </div>
+</section>
+
+<section class="project-detail project-detail--red">
+  <div class="project-detail__summary">
+    <span class="project-detail__number">02 / agent research</span>
+    <h2>AgentMisalignment</h2>
+    <p>
+      A propensity benchmark for misaligned behaviour in LLM-based agents,
+      developed with the Cambridge AI Safety Hub and contributed to the UK AI
+      Security Institute's Inspect Evals repository.
+    </p>
+    <dl class="project-facts">
+      <div><dt>Contribution</dt><dd>Benchmark co-development, experiments, analysis, and paper</dd></div>
+      <div><dt>Evidence</dt><dd>Realistic agent environments across five behavioural categories</dd></div>
+      <div><dt>Finding</dt><dd>System-prompted persona can shift behaviour as much as model choice</dd></div>
+    </dl>
+    <div class="project-links">
+      <a href="https://arxiv.org/abs/2506.04018">Paper</a>
+      <a href="https://github.com/javcamposz/inspect_evals/tree/main/src/inspect_evals/agentmisalignment">Benchmark code</a>
+    </div>
+  </div>
+  <div class="project-detail__visual behaviour-visual" aria-label="AgentMisalignment behaviours covered">
+    <div><span>01</span><strong>Shutdown resistance</strong></div>
+    <div><span>02</span><strong>Oversight evasion</strong></div>
+    <div><span>03</span><strong>Sandbagging</strong></div>
+    <div><span>04</span><strong>Deception</strong></div>
+    <div><span>05</span><strong>Power-seeking</strong></div>
+  </div>
+</section>
+
+<section class="project-detail project-detail--blue">
+  <div class="project-detail__summary">
+    <span class="project-detail__number">03 / engineering transformation</span>
+    <h2>AI Engineering Journey</h2>
+    <p>
+      A dependency-free assessment that turns seven organisational capabilities
+      into a transparent maturity score and phased transformation roadmap.
+    </p>
+    <dl class="project-facts">
+      <div><dt>Contribution</dt><dd>Operating model, scoring method, CLI, example, and tests</dd></div>
+      <div><dt>Evidence</dt><dd>Validated input contract and deterministic roadmap generation</dd></div>
+      <div><dt>Limits</dt><dd>A diagnostic for prioritisation, not a maturity certification</dd></div>
+    </dl>
+    <div class="project-links">
+      <a href="https://github.com/javcamposz/ai-engineering-journey">Repository</a>
+      <a href="https://github.com/javcamposz/ai-engineering-journey/blob/main/docs/operating-model.md">Operating model</a>
+    </div>
+  </div>
+  <div class="project-detail__visual score-visual" aria-label="Example AI engineering capability assessment">
+    <div><span>product</span><i><b style="width:80%"></b></i><em>4</em></div>
+    <div><span>workflow</span><i><b style="width:60%"></b></i><em>3</em></div>
+    <div><span>evaluation</span><i><b style="width:40%"></b></i><em>2</em></div>
+    <div><span>architecture</span><i><b style="width:60%"></b></i><em>3</em></div>
+    <div><span>platform</span><i><b style="width:80%"></b></i><em>4</em></div>
+    <div><span>governance</span><i><b style="width:40%"></b></i><em>2</em></div>
+    <div><span>learning</span><i><b style="width:60%"></b></i><em>3</em></div>
+  </div>
+</section>
+
+<section class="project-detail project-detail--gold">
+  <div class="project-detail__summary">
+    <span class="project-detail__number">04 / board governance</span>
+    <h2>Board AI Governance Toolkit</h2>
+    <p>
+      A lightweight toolkit that turns board-level AI oversight into explicit
+      decisions, accountable owners, evidence, and review dates.
+    </p>
+    <dl class="project-facts">
+      <div><dt>Contribution</dt><dd>Risk contract, validator, dashboard generator, and templates</dd></div>
+      <div><dt>Evidence</dt><dd>Deterministic scoring, overdue-review checks, and automated tests</dd></div>
+      <div><dt>Limits</dt><dd>Must be adapted to legal duties, risk appetite, and jurisdiction</dd></div>
+    </dl>
+    <div class="project-links">
+      <a href="https://github.com/javcamposz/board-ai-governance-toolkit">Repository</a>
+      <a href="https://github.com/javcamposz/board-ai-governance-toolkit/tree/main/templates">Templates</a>
+      <a href="https://github.com/javcamposz/board-ai-governance-toolkit/blob/main/docs/board-questions.md">Board questions</a>
+    </div>
+  </div>
+  <div class="project-detail__visual risk-visual" aria-label="Example board AI risk dashboard">
+    <div class="risk-visual__head"><span>risk</span><span>owner</span><span>level</span><span>review</span></div>
+    <div><strong>AI-002</strong><span>CPO</span><b class="risk-high">high</b><span>15 Oct</span></div>
+    <div><strong>AI-001</strong><span>Ops</span><b class="risk-medium">medium</b><span>overdue</span></div>
+    <div><strong>AI-003</strong><span>CTO</span><b class="risk-medium">medium</b><span>30 Nov</span></div>
+    <p>1 decision required · 1 overdue review</p>
+  </div>
+</section>
+
+<section class="project-detail project-detail--image">
+  <div class="project-detail__summary">
+    <span class="project-detail__number">05 / privacy-conscious product</span>
+    <h2>Garmin Running Dashboard</h2>
+    <p>
+      An end-to-end Streamlit product that parses Garmin exports into training
+      analysis while keeping personal health and location data out of the public repository.
+    </p>
+    <dl class="project-facts">
+      <div><dt>Contribution</dt><dd>Product design, ETL, analysis, UI, synthetic demo, and tests</dd></div>
+      <div><dt>Evidence</dt><dd>156-run GPS-free demo, desktop/mobile verification, and CI</dd></div>
+      <div><dt>Privacy</dt><dd>Uploads processed in memory; local exports and outputs ignored</dd></div>
+    </dl>
+    <div class="project-links">
+      <a href="https://github.com/javcamposz/garmin_running">Repository</a>
+    </div>
+  </div>
+  <figure class="project-detail__visual project-image">
+    <img src="{{ '/assets/img/projects/garmin-dashboard-demo.png' | relative_url }}"
+         alt="Garmin Running Dashboard showing synthetic weekly training data"
+         loading="lazy">
+    <figcaption>Synthetic data only - no personal location or health records.</figcaption>
+  </figure>
+</section>
+
+<section class="build-contribution" aria-labelledby="build-contribution-title">
+  <p class="landing__section-eyebrow">working contribution</p>
+  <h2 id="build-contribution-title">What I bring to a focused build</h2>
+  <div class="build-contribution__grid">
+    <div><span>01</span><p>Turn an ambiguous institutional problem into a testable service hypothesis.</p></div>
+    <div><span>02</span><p>Build and integrate an agentic prototype with explicit data and permission boundaries.</p></div>
+    <div><span>03</span><p>Design task-specific evaluations, failure tests, and human escalation.</p></div>
+    <div><span>04</span><p>Connect technical choices to ownership, risk, and measurable outcomes.</p></div>
+    <div><span>05</span><p>Present the result clearly to technical, policy, operational, and executive stakeholders.</p></div>
+  </div>
+</section>
+
+{% include landing/contact.html %}

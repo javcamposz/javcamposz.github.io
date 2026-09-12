@@ -11,17 +11,17 @@ minimal_mistakes_skin    : "neon" # Modern vibrant color scheme
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Francisco Javier Campos - AI & Business Growth Expert"
+title                    : "Francisco Javier Campos Zabala - AI Executive and Builder"
 title_separator          : "-"
-subtitle                 : "AI Innovation, Ethical AI Deployment & AI Safety Frameworks"
+subtitle                 : "Public-interest AI, agentic engineering, governance, and safety"
 name                     : "Francisco Javier Campos Zabala"
-description              : "Technology leader specializing in AI innovation, ethical AI deployment, and AI safety frameworks. Expert in scaling AI solutions across industries with extensive experience in marketing, telco, and financial services."
+description              : "Group CTO and Chief AI Officer building accountable AI systems, operating models, and evaluations for public and enterprise institutions."
 url                      : "https://javcamposz.github.io"
 baseurl                  : ""
 repository               : "javcamposz/javcamposz.github.io"
 teaser                   : "/assets/img/JavierCampos.jpg"
 logo                     : "/assets/img/JavierCampos.jpg"
-masthead_title           : "AI Horizons"
+masthead_title           : "Francisco Javier Campos"
 breadcrumbs              : false
 words_per_minute         : 200
 comments:
@@ -69,7 +69,7 @@ analytics:
 author:
   name             : "Francisco Javier Campos Zabala"
   avatar           : "/assets/img/JavierCampos.jpg"
-  bio              : "Technology leader specializing in AI innovation, ethical AI deployment, and AI safety frameworks. Expert in scaling AI solutions across industries."
+  bio              : "Group CTO and Chief AI Officer building accountable AI systems, operating models, and evaluations."
   location         : "London, UK"
   email            : "javcamposz@hotmail.com"
   links:
@@ -136,6 +136,8 @@ exclude:
   - REDESIGN_OPTIONS.md
   - DESIGN_IDEAS.md
   - PHASE_0_PLAN.md
+  - SITE_IMPACT_SUGGESTIONS.md
+  - LANDING_REDESIGN.md
   # Source material for the redesign — kept in repo, not published.
   - javier/
   # Bundle / build artefacts
