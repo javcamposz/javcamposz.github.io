@@ -17,7 +17,7 @@ permalink: /projects/
   </p>
   <div class="landing__cta">
     <a class="btn btn--primary" href="https://github.com/javcamposz">View GitHub profile</a>
-    <a class="btn btn--ghost" href="{{ '/#public-interest' | relative_url }}">Public-interest approach</a>
+    <a class="btn btn--ghost" href="{{ '/#public-interest' | relative_url }}">My approach to oversight</a>
   </div>
 </section>
 
@@ -43,7 +43,8 @@ permalink: /projects/
   </div>
   <div class="project-detail__visual terminal-visual" aria-label="Example RSI evaluation output">
     <div class="terminal-visual__bar"><span></span><span></span><span></span><b>rsi-eval</b></div>
-    <pre><code>$ rsi-eval examples/safe_run.json
+    <pre><code>$ rsi-eval examples/safe_run.json \
+    --anchors examples/anchors.json
 
 Run: safe-adaptive-lineage
 Verdict: <strong>PASS</strong>
@@ -52,7 +53,7 @@ Efficiency: +0.0800 / 1k tokens
 Next challenge level: 3
 Findings: none</code></pre>
     <div class="terminal-visual__checks">
-      <span>evaluator hash</span><span>shutdown</span><span>containment</span><span>audit trail</span>
+      <span>external anchors</span><span>invariant drift</span><span>gate behaviour</span><span>audit trail</span>
     </div>
   </div>
 </section>

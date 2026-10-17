@@ -1,0 +1,14 @@
+---
+layout: landing
+---
+<article class="research-note">
+  <header class="research-note__header">
+    <p class="landing__section-eyebrow">AI safety · research commentary</p>
+    <h1>{{ page.title }}</h1>
+    <p class="research-note__lede">{{ page.description }}</p>
+    <p class="research-note__meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time> · Javier Campos · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
+    <a href="{{ '/safety-ai/' | relative_url }}">← Back to AI safety research</a>
+  </header>
+  <div class="research-note__body">{{ content }}</div>
+  <footer class="research-note__footer"><a href="{{ '/safety-ai/' | relative_url }}#rsi-evals">Explore my RSI evaluation work</a><a href="{{ '/#contact' | relative_url }}">Discuss the research</a></footer>
+</article>

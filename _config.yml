@@ -11,11 +11,11 @@ minimal_mistakes_skin    : "neon" # Modern vibrant color scheme
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Francisco Javier Campos Zabala - AI Executive and Builder"
+title                    : "Francisco Javier Campos Zabala - Agentic AI and Safety Research"
 title_separator          : "-"
-subtitle                 : "Public-interest AI, agentic engineering, governance, and safety"
+subtitle                 : "Agentic AI engineering, evaluations, and technical oversight"
 name                     : "Francisco Javier Campos Zabala"
-description              : "Group CTO and Chief AI Officer building accountable AI systems, operating models, and evaluations for public and enterprise institutions."
+description              : "Agentic AI engineering, evaluations, and technical oversight. Open research and runnable projects by Group CTO and Chief AI Officer Javier Campos."
 url                      : "https://javcamposz.github.io"
 baseurl                  : ""
 repository               : "javcamposz/javcamposz.github.io"

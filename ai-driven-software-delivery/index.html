@@ -152,6 +152,7 @@
         <nav class="nav" aria-label="Primary navigation">
           <a href="/">Home</a>
           <a href="/safety-ai/">Safety AI</a>
+          <a href="#code">My code</a>
           <a href="#loop">Delivery loop</a>
           <a href="#governance">Governance</a>
           <a href="#courses">Course signals</a>
@@ -161,13 +162,13 @@
             <span class="kicker">AI-driven engineering</span>
             <h1>From coding assistance to verified delivery loops.</h1>
             <p>
-              The shift is not from engineers to tools. It is from manual implementation
-              to an operating model where humans specify intent, agents execute bounded
-              work, and the harness proves what changed.
+              I work on the engineering around the agent: specifications, evaluation,
+              review, and operational control. These are the delivery patterns I use
+              and the public tools I build to make their assumptions inspectable.
             </p>
             <div class="hero-actions">
-              <a class="primary-action" href="#loop">Explore the loop</a>
-              <a class="secondary-action" href="#stages">See the journey</a>
+              <a class="primary-action" href="https://github.com/javcamposz">Explore my GitHub</a>
+              <a class="secondary-action" href="#code">Start with the engineering project</a>
             </div>
           </section>
           <section class="delivery-panel" aria-label="Delivery signals">
@@ -205,6 +206,26 @@
             <strong>1</strong>
             <span>measured workflow first</span>
           </article>
+        </section>
+
+        <section class="section portfolio-feature" id="code" aria-labelledby="engineering-code-title">
+          <div class="section-title"><span>Code and contribution</span><h2 id="engineering-code-title">AI Engineering Journey</h2></div>
+          <div class="portfolio-feature__grid">
+            <article class="prose-card">
+              <p class="project-status">Public Python tool · design and implementation</p>
+              <h3>What has to change before a team can delegate more?</h3>
+              <p>I built <a href="https://github.com/javcamposz/ai-engineering-journey">AI Engineering Journey</a> to turn an organisation’s capability assessment into a focused 90-day roadmap. It examines discovery, workflow, evaluation, architecture, platform, governance, and learning, then identifies the capabilities constraining progress.</p>
+              <p>The interesting engineering choice is to make the evidence visible. A later assessment is compared with the earlier priorities, so a higher self-reported score is distinguishable from a demonstrated improvement. A workflow-readiness check shows where an agentic pipeline would have to stop for human intervention.</p>
+              <p>This is a decision-support tool. Its scores depend on the assessment supplied; it does not independently audit an organisation or certify autonomous delivery.</p>
+              <div class="hero-actions"><a class="primary-action" href="https://github.com/javcamposz/ai-engineering-journey">Read the code on GitHub</a><a class="secondary-action" href="https://github.com/javcamposz/ai-engineering-journey/blob/main/docs/ux-bug-automation.md">Follow a worked workflow</a></div>
+            </article>
+            <aside class="focus-card">
+              <span class="eyebrow">What to inspect</span>
+              <h3>Assessment → roadmap → evidence of progress</h3>
+              <ul class="portfolio-list"><li>Capability constraints and explicit scoring rules.</li><li>Progress against the priorities the original roadmap set.</li><li>Readiness gates for a bounded UX bug-fixing workflow.</li><li>Examples, tests, and the limits of self-reported evidence.</li></ul>
+              <p>My <a href="https://github.com/javcamposz">GitHub profile</a> also links evaluation and governance projects. For the research behind control and evaluator integrity, see <a href="/safety-ai/#rsi-evals">RSI Eval Lab</a>.</p>
+            </aside>
+          </div>
         </section>
 
         <section class="section intro-section" id="stages">

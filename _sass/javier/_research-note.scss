@@ -1,0 +1,33 @@
+.research-dispatch {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  h2 { font-family: $font-display; font-size: 1.9rem; line-height: 1.2; font-weight: 450; margin: 0; }
+  h2 a { color: inherit; text-decoration: none; }
+  p { margin-top: 0; }
+  @media (max-width: 650px) { grid-template-columns: 1fr; gap: 1rem; }
+  @media (prefers-color-scheme: dark) { border-color: $color-border-dark; }
+}
+.research-note {
+  max-width: 74ch;
+  margin: 0 auto;
+  &__header { padding: 3rem 0 2rem; border-bottom: 1px solid $color-border; }
+  h1 { font-family: $font-display; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 450; line-height: 1.1; margin: 1rem 0; }
+  &__lede { font-size: 1.2rem; color: $color-fg-muted; }
+  &__meta { font-family: $font-mono; font-size: .75rem; color: $color-fg-muted; }
+  &__body { padding: 1rem 0 2rem; line-height: 1.8; overflow-wrap: anywhere; }
+  &__body h2 { font-family: $font-display; font-size: 1.8rem; font-weight: 450; line-height: 1.25; margin-top: 2.5rem; }
+  &__body h3 { font-size: 1.15rem; margin-top: 1.6rem; }
+  &__body li { margin-bottom: .9rem; }
+  &__body blockquote { margin: 1.7rem 0; padding: .1rem 1.4rem; border-left: 3px solid $color-accent; font-size: 1.2rem; }
+  &__body a { text-decoration: underline; text-underline-offset: 3px; color: $color-accent-strong; }
+  &__footer { display: flex; gap: 1rem 2rem; flex-wrap: wrap; padding: 1.5rem 0; border-top: 1px solid $color-border; }
+  @media (prefers-color-scheme: dark) {
+    &__header, &__footer { border-color: $color-border-dark; }
+    &__lede, &__meta { color: $color-fg-muted-dark; }
+    &__body a { color: $color-accent-dark; }
+  }
+}

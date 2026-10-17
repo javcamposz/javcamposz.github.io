@@ -3,17 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Published Safety AI Papers | Javier Campos</title>
+    <title>AI Safety Research, RSI Evals &amp; Oversight | Javier Campos</title>
     <meta
       name="description"
-      content="An interactive public guide to Javier Campos's published safety AI papers and the concepts around evaluations, loss of control, and AI assurance."
+      content="Javier Campos's AI safety research: RSI Eval Lab, agent misalignment, external safety-case review, and analysis of mechanistic interpretability."
     />
+    <link rel="canonical" href="https://javcamposz.github.io/safety-ai/" />
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <header class="hero">
         <nav class="nav" aria-label="Primary navigation">
+          <a href="/">Home</a>
+          <a href="/ai-driven-software-delivery/">Engineering</a>
+          <a href="#rsi-evals">RSI evals</a>
+          <a href="#interpretability">Latest analysis</a>
           <a href="#papers">Papers</a>
           <a href="#map">Map</a>
           <a href="#concepts">Concepts</a>
@@ -21,15 +27,16 @@
         </nav>
         <div class="hero-grid">
           <section class="hero-copy">
-            <span class="kicker">Published safety AI work</span>
-            <h1>From misalignment evaluations to independently reviewed safety cases.</h1>
+            <span class="kicker">AI safety research &amp; technical oversight</span>
+            <h1>How do we know an agent remains under control?</h1>
             <p>
-              Explore two public papers and the safety AI concepts they connect: agent evaluations,
-              loss of control, scheming, sandbagging, safety cases, Assurance 2.0, and external review.
+              My work connects agent evaluations, the integrity of self-improvement loops,
+              and independent scrutiny of safety cases. Explore the code, published papers,
+              and my analysis of what current evidence can support.
             </p>
             <div class="hero-actions">
-              <a class="primary-action" href="#papers">Explore papers</a>
-              <a class="secondary-action" href="#map">Open concept map</a>
+              <a class="primary-action" href="https://github.com/javcamposz/evals_RSI">Explore RSI Eval Lab</a>
+              <a class="secondary-action" href="#papers">Read the published papers</a>
             </div>
           </section>
           <section class="signal-panel" aria-label="Research signals">
@@ -64,9 +71,57 @@
             <span>paper-concept links</span>
           </article>
           <article>
-            <strong>public</strong>
-            <span>no internal drafts</span>
+            <strong>open code</strong>
+            <span>RSI research prototype</span>
           </article>
+        </section>
+
+        <section class="section portfolio-feature" id="rsi-evals" aria-labelledby="rsi-title">
+          <div class="section-title"><span>Current research · open code</span><h2 id="rsi-title">RSI Eval Lab: evaluating a system that can change itself.</h2></div>
+          <div class="portfolio-feature__grid">
+            <article class="prose-card">
+              <p class="project-status">Research prototype · synthetic traces · Python</p>
+              <p>Recursive self-improvement (RSI) makes evaluation a moving target: the solver, its scaffolding, and potentially the measurement process can change between generations. My <a href="https://github.com/javcamposz/evals_RSI">RSI Eval Lab</a> asks whether an apparent capability gain survives scrutiny of the controls and evidence behind it.</p>
+              <p>I designed and implemented a deterministic auditor of recorded lineages, with example traces, tests, an optional Inspect integration, and a research agenda. It can be run locally without a model or API key.</p>
+              <ol class="portfolio-list">
+                <li><strong>Integrity of the evidence.</strong> Evaluator and monitor anchors are supplied outside the trace. Hash chains detect edits; a separate HMAC seal protects against recomputing the record when the candidate cannot access the key.</li>
+                <li><strong>Controls across generations.</strong> Declared invariants track whether requirements such as full action logging survive modification, including breaches that later appear repaired.</li>
+                <li><strong>What a score means.</strong> Challenge levels, public versus held-out scores, cost, and behaviour near rollback thresholds help expose results that need further investigation.</li>
+              </ol>
+              <div class="hero-actions"><a class="primary-action" href="https://github.com/javcamposz/evals_RSI">Repository &amp; experiments</a><a class="secondary-action" href="https://github.com/javcamposz/evals_RSI/blob/main/docs/05-research-agenda.md">Read the research agenda</a></div>
+            </article>
+            <aside class="focus-card">
+              <span class="eyebrow">Start with a contrast</span>
+              <h3>Improving scores, weakening oversight.</h3>
+              <p>The invariant-drift example records better scores while action logging degrades. Compare it with the safe trace after installing the project:</p>
+              <pre class="portfolio-code"><code>rsi-eval examples/safe_run.json \
+  --anchors examples/anchors.json
+
+rsi-eval examples/invariant_drift_run.json \
+  --anchors examples/anchors.json</code></pre>
+              <p><strong>What this does not establish:</strong> these are synthetic records. A sealed trace cannot prove its observations were true. Gate-related patterns do not establish intent. The tool does not execute or contain a self-improving agent.</p>
+              <p><a href="https://github.com/javcamposz/evals_RSI/blob/main/SECURITY.md">Trust boundaries and limitations</a> · <a href="https://github.com/javcamposz">All my GitHub work</a></p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="interpretability" aria-labelledby="interpretability-title">
+          <div class="section-title"><span>Latest analysis · 17 October 2026</span><h2 id="interpretability-title">Readable neurons and the safety case still to be made</h2></div>
+          <div class="research-spotlight">
+            <div>
+              <p class="project-status">My perspective · expanded from my LinkedIn post</p>
+              <h3>What would I ask for before approving an agent?</h3>
+              <p>Goodfire’s new interpretability essay is a reason to investigate. My question is how a readable mechanism becomes evidence about an agent’s decisions, and whether that evidence holds under changing incentives, environments, and model versions.</p>
+              <a class="primary-action" href="/safety-ai/readable-neurons-safety-case/">Read the full analysis <span aria-hidden="true"> →</span></a>
+            </div>
+            <aside>
+              <span class="eyebrow">The work I’m responding to</span>
+              <h3><a href="https://already-clean.goodfire.com/">Neural Networks Are Already Clean</a></h3>
+              <p>Nick Cammarata · Goodfire · 15 October 2026</p>
+              <p><strong>Research essay / working hypothesis.</strong> The essay describes preliminary audits and points to a forthcoming technical companion paper. It is external research, separate from my publications below.</p>
+              <a class="inline-action" href="https://already-clean.goodfire.com/">Read the original essay</a>
+            </aside>
+          </div>
         </section>
 
         <section class="section intro-section" id="intro">
@@ -182,6 +237,10 @@
       <footer class="site-footer" aria-label="Site footer">
         <span>© 2026 Francisco Javier Campos Zabala</span>
         <span>
+          <a href="/">home</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/javcamposz">github</a>
+          <span aria-hidden="true">·</span>
           <a href="/blog/">blog archive</a>
           <span aria-hidden="true">·</span>
           <a href="/feed.xml">rss</a>

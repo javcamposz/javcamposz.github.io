@@ -8,7 +8,8 @@
 
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
-  <meta property="og:type" content="website">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.layout == 'research-note' %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -44,11 +45,11 @@
 
       {% unless page.content_only %}
         {% include landing/hero.html %}
-        {% include landing/public_interest.html %}
         {% include landing/playbooks.html %}
+        {% include landing/research_note.html %}
+        {% include landing/public_interest.html %}
         {% include landing/proof.html %}
         {% include landing/selected_work.html %}
-        {% include landing/intro.html %}
         {% include landing/talks.html %}
         {% include landing/bio.html %}
         {% include landing/linkedin.html %}

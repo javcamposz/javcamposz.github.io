@@ -825,3 +825,27 @@ main {
     font-size: 25px;
   }
 }
+
+/* Public work: code, contribution, and the limits of the evidence. */
+.portfolio-feature__grid, .research-spotlight {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.project-status { color: var(--teal); font-size: 13px; font-weight: 700; }
+.portfolio-list { padding-left: 1.3rem; line-height: 1.65; }
+.portfolio-list li + li { margin-top: 14px; }
+.portfolio-code { max-width: 100%; overflow-x: auto; padding: 16px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; font-size: 12px; line-height: 1.7; }
+.portfolio-feature a:not(.primary-action):not(.secondary-action), .research-spotlight a:not(.primary-action) { text-underline-offset: 3px; }
+.research-spotlight { padding: clamp(20px, 4vw, 40px); border: 1px solid var(--line); border-top: 3px solid var(--teal); background: var(--panel); }
+.research-spotlight h3 { font-size: 25px; line-height: 1.25; margin: 12px 0; }
+.research-spotlight p { color: var(--muted); line-height: 1.65; }
+.research-spotlight aside { padding-left: 24px; border-left: 1px solid var(--line); }
+.section[id] { scroll-margin-top: 24px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
+@media (max-width: 800px) {
+  .portfolio-feature__grid, .research-spotlight { grid-template-columns: minmax(0, 1fr); }
+  .research-spotlight aside { padding: 20px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
