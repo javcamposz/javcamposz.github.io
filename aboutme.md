@@ -36,10 +36,10 @@ I'm a regular speaker at major tech events including London Tech Week, BBC, NASA
 - Various speaking engagements on AI ethics and safety
 
 ### Connect & Collaborate
-Let's discuss AI innovation, safety frameworks, and business transformation opportunities. I'm always interested in connecting with fellow AI enthusiasts and professionals.
+Let's discuss AI safety, AI transformation, and research. I'm always interested in exchanging ideas with fellow researchers and practitioners.
 
 <div class="notice--primary">
   <h4>Get in Touch</h4>
-  <p>Ready to explore AI opportunities? Let's connect and discuss how we can work together.</p>
+  <p>Get in touch to share perspectives on responsible AI and its practical applications.</p>
   <a href="https://www.linkedin.com/in/camposjavier/" class="btn btn--primary">Connect on LinkedIn</a>
 </div>
