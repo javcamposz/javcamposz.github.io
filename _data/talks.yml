@@ -1,5 +1,26 @@
 # Talks & conferences. Order is irrelevant — the layout sorts by date.
 
+- id: intersections-iab-italia-2026
+  title: "Agentic AI in Advertising: Beyond the Hype"
+  organisation: "Intersections / IAB Italia"
+  city: "Milan, Italy"
+  venue: "Allianz MiCo"
+  date: 2026-10-29
+  url: "https://en.intersections.it/workshop/agentic-ai-in-advertising-beyond-the-hype/"
+  status: upcoming
+  role: speaker
+  tags: [agentic-ai, advertising, iab]
+
+- id: ai-world-congress-london-november-2026
+  title: "Autonomous Minds: How Agentic AI Predicts and Learns to Enable Productivity and Empowerment"
+  organisation: "AI World Congress"
+  city: "London, UK"
+  date: 2026-11-26
+  url: "https://aiconference.london/agenda/day2/autonomous-minds-how-agentic-ai-predicts-and-learns-to-enable-productivity-and-empowerment"
+  status: upcoming
+  role: speaker
+  tags: [agentic-ai, ai-conference, london]
+
 - id: cdo-day-madrid-2026
   title: "Speaker"
   organisation: "Chief Data Officer Day"
